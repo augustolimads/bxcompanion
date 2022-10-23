@@ -1,0 +1,15 @@
+import { Box, Text } from '@chakra-ui/react';
+import { {{pascalCase name}}Props } from './{{pascalCase name}}.types';
+import { use{{pascalCase name}} } from './{{pascalCase name}}.viewmodel';
+
+const {{pascalCase name}} = () => {
+  const {} = use{{pascalCase name}}()
+
+  return (
+    <Box>
+      <Text fontSize='md'>{{pascalCase name}}</Text>
+    </Box>
+  );
+}
+
+export default {{pascalCase name}}

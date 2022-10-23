@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next",
+  "parserOptions": {
+    "project": ".tsconfig.json",
+    "tsconfigRootDir": "src",
+    "sourceType": "module"
+  },
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/strinct-boolean-expressions": "off"
+  }
 }

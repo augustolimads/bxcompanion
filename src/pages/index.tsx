@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
-import { Header, Layout } from 'src/components'
-import { Logo } from 'src/components/Logo'
+import { Header, Layout, LogoHeader } from 'src/components'
 
 const Home: NextPage = () => {
   return (
     <div>
       <Layout>
-        <Header><Logo /></Header>
+        <Header>
+         <LogoHeader />
+        </Header>
       </Layout>
     </div>
   )

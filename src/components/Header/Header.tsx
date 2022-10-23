@@ -1,4 +1,4 @@
-import { Center, Drawer, Grid, IconButton } from '@chakra-ui/react';
+import { Drawer, Flex, IconButton } from '@chakra-ui/react';
 import { HeaderDrawer } from '../HeaderDrawer';
 import { MenuIcon } from '../Icons';
 import { HeaderProps, useHeader } from './index';
@@ -7,8 +7,7 @@ export const Header = ({children}: HeaderProps) => {
  const {isOpen, onClose, onOpen, btnRef} = useHeader()
 
   return (
-    <Grid
-      templateColumns='repeat(3, 1fr)'
+    <Flex
       as="header"
       bg='gray.700'
       w='full'
@@ -21,10 +20,9 @@ export const Header = ({children}: HeaderProps) => {
         ref={btnRef}
         colorScheme='transparent'
         onClick={onOpen}
-        icon={<MenuIcon />}
+        icon={<MenuIcon size='24'/>}
         justifySelf="self-start"
       />
-
       <Drawer
         isOpen={isOpen}
         placement='left'
@@ -33,9 +31,7 @@ export const Header = ({children}: HeaderProps) => {
       >
         <HeaderDrawer />
       </Drawer>
-      <Center>
-        {children}
-      </Center>
-    </Grid>
+      {children}
+    </Flex>
   );
 }

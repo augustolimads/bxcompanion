@@ -6,7 +6,7 @@ export const Logo = (props:LogoProps) => {
 
   return (
     <Link href='/'>
-      <Text fontSize='lg' fontWeight='black'>BXCompanion</Text>
+      <Text fontSize='lg' fontWeight='black' _hover={{cursor: 'pointer'}} >BXCompanion</Text>
     </Link>
   )
 }

@@ -1,6 +1,6 @@
 import { Center, Drawer, Grid, IconButton } from '@chakra-ui/react';
 import { HeaderDrawer } from '../HeaderDrawer';
-import { Icon } from '../Icon';
+import { MenuIcon } from '../Icons';
 import { HeaderProps, useHeader } from './index';
 
 export const Header = ({children}: HeaderProps) => {
@@ -21,7 +21,7 @@ export const Header = ({children}: HeaderProps) => {
         ref={btnRef}
         colorScheme='transparent'
         onClick={onOpen}
-        icon={<Icon as="menu" />}
+        icon={<MenuIcon />}
         justifySelf="self-start"
       />
 

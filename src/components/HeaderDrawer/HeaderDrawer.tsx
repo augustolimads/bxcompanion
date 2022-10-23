@@ -1,4 +1,5 @@
-import { Center, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Text } from '@chakra-ui/react';
+import { Center, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay } from '@chakra-ui/react';
+import { DrawerLink } from '../index';
 import { Logo } from '../Logo';
 
 export const HeaderDrawer = () => {
@@ -12,8 +13,8 @@ export const HeaderDrawer = () => {
           <Logo />
           </Center>
         </DrawerHeader>
-        <DrawerBody>
-          <Text>ihu</Text>
+        <DrawerBody px='3'>
+          <DrawerLink label='Equipes' href='/equipes' />
         </DrawerBody>
       </DrawerContent>
     </>

@@ -1,8 +1,12 @@
 import { Text } from '@chakra-ui/react';
-import { LogoProps, useLogo } from './index';
+import Link from 'next/link';
+import { LogoProps } from './index';
 
 export const Logo = (props:LogoProps) => {
-  const {result} = useLogo()
 
-  return <Text fontSize='lg' fontWeight='black'>BXCompanion</Text>;
+  return (
+    <Link href='/'>
+      <Text fontSize='lg' fontWeight='black'>BXCompanion</Text>
+    </Link>
+  )
 }

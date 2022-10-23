@@ -1,31 +1,41 @@
-import { Box, Button, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Text, useDisclosure } from '@chakra-ui/react';
-import React from 'react';
-import { useHeader } from './Header.viewmodel';
+import { Center, Drawer, Grid, IconButton } from '@chakra-ui/react';
+import { HeaderDrawer } from '../HeaderDrawer';
+import { Icon } from '../Icon';
+import { HeaderProps, useHeader } from './index';
 
-export const Header = () => {
-  const {} = useHeader()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+export const Header = ({children}: HeaderProps) => {
+ const {isOpen, onClose, onOpen, btnRef} = useHeader()
 
   return (
-    <Box bg='gray.700' w='full' p={6} color='white'>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        menu
-      </Button>
+    <Grid
+      templateColumns='repeat(3, 1fr)'
+      as="header"
+      bg='gray.700'
+      w='full'
+      p={6}
+      color='white'
+      alignItems='center'
+    >
+      <IconButton
+        aria-label='Search database'
+        ref={btnRef}
+        colorScheme='transparent'
+        onClick={onOpen}
+        icon={<Icon as="menu" />}
+        justifySelf="self-start"
+      />
+
       <Drawer
         isOpen={isOpen}
         placement='left'
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader>Create your account</DrawerHeader>
-          <DrawerBody>
-            <Text>ihu</Text>
-          </DrawerBody>
-        </DrawerContent>
+        <HeaderDrawer />
       </Drawer>
-    </Box>
+      <Center>
+        {children}
+      </Center>
+    </Grid>
   );
 }

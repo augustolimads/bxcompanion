@@ -1,3 +1,3 @@
 export type HeaderProps = {
-    id: string
+    children: JSX.Element
 }

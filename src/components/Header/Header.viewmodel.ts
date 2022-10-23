@@ -1,4 +1,9 @@
+import { useDisclosure } from "@chakra-ui/react";
+import React from 'react';
+
 export const useHeader = () => {
-    const result = true
-    return {result}
+    const {  onOpen, isOpen, onClose } = useDisclosure()
+    const btnRef = React.useRef()
+
+    return {btnRef, onOpen , isOpen, onClose}
 }

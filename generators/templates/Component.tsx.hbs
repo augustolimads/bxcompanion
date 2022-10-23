@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react';
 import { {{pascalCase name}}Props } from './{{pascalCase name}}.types';
 import { use{{pascalCase name}} } from './{{pascalCase name}}.viewmodel';
 
-const {{pascalCase name}} = () => {
+export const {{pascalCase name}} = () => {
   const {} = use{{pascalCase name}}()
 
   return (
@@ -11,5 +11,3 @@ const {{pascalCase name}} = () => {
     </Box>
   );
 }
-
-export default {{pascalCase name}}

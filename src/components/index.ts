@@ -1,6 +1,6 @@
+export { DrawerLink } from './DrawerLink';
 export { Header } from './Header';
 export { HeaderDrawer } from './HeaderDrawer';
-export { Icon } from './Icon';
-export { Logo } from './Logo';
-
 export { Layout } from './Layout';
+export { Logo } from './Logo';
+export { TeamContent } from './TeamContent';

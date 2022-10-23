@@ -1,0 +1,19 @@
+#!/bin/sh bash
+. "$(dirname "$0")/_/husky.sh"
+
+getBranchName()
+{
+    echo $(git rev-parse --abbrev-ref HEAD)
+}
+
+getMergedBranches()
+{
+    echo $(git branch --merged)
+}
+
+if [ "$(getBranchName)" != *"release/"* ]; then
+    if [[ $(getMergedBranches) == *"release/"* ]]; then
+        echo "Don't create branches from the release branch!"
+        exit 1
+    fi
+fi

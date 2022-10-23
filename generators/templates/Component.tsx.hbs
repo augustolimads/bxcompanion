@@ -2,8 +2,8 @@ import { Box, Text } from '@chakra-ui/react';
 import { {{pascalCase name}}Props } from './{{pascalCase name}}.types';
 import { use{{pascalCase name}} } from './{{pascalCase name}}.viewmodel';
 
-export const {{pascalCase name}} = () => {
-  const {} = use{{pascalCase name}}()
+export const {{pascalCase name}} = (props:{{pascalCase name}}Props) => {
+  const {result} = use{{pascalCase name}}()
 
   return (
     <Box>

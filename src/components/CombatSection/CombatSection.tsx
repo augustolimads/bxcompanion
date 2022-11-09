@@ -1,22 +1,22 @@
-import { Button, HStack, VStack } from '@chakra-ui/react';
+import { Button, ButtonGroup, VStack } from '@chakra-ui/react';
 import { CombatSectionProps, useCombatSection } from './index';
 
 export const CombatSection = (props:CombatSectionProps) => {
   const {result} = useCombatSection()
 
   return (
-    <VStack>
-      <HStack>
-        <Button>
+    <VStack w="full">
+      <ButtonGroup w="full">
+        <Button w="full">
           CA 10
         </Button>
-        <Button>
-          Atk corporal +1
+        <Button w="full">
+          corporal +1
         </Button>
-        <Button>
-          Atk distância +2
+        <Button w="full">
+          distância +2
         </Button>
-      </HStack>
+      </ButtonGroup>
       {/* armas */}
       {/* armaduras */}
     </VStack>

@@ -22,3 +22,5 @@ export { ItemSection } from './ItemSection';
 export { ItemSectionAside } from './ItemSectionAside';
 export { AbilitySection } from './AbilitySection';
 export { SheetContentContainer } from './SheetContentContainer';
+export { AbilitySectionAside } from './AbilitySectionAside';
+export { SimpleNote } from './SimpleNote';

@@ -6,7 +6,7 @@ export const TeamItem = (props: TeamItemProps) => {
   const { result } = useTeamItem()
 
   return (
-    <Link href={`/equipes/sheet`}>
+    <Link href={`/personagens/ficha`}>
       <Flex
         alignItems="center"
         gap="4"

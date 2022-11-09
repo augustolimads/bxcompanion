@@ -7,6 +7,7 @@ import {
   MainMenu
 } from 'src/components'
 import { PencilIcon } from 'src/components/Icons'
+import { ItemSection } from 'src/components/ItemSection'
 import { SheetContainer } from 'src/components/SheetContainer'
 
 const Ficha: NextPage = () => {
@@ -34,6 +35,7 @@ const Ficha: NextPage = () => {
         <Box pt={80} flex="1">
           <SheetContainer>
             {/* <CombatSection /> */}
+            <ItemSection />
           </SheetContainer>
         </Box>
       </Layout>

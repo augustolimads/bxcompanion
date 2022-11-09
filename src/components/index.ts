@@ -18,3 +18,5 @@ export { ProgressHp } from './ProgressHp';
 export { MainMenu } from './MainMenu';
 export { MainMenuItem } from './MainMenuItem';
 export { CombatSection } from './CombatSection';
+export { ItemSection } from './ItemSection';
+export { ItemSectionAside } from './ItemSectionAside';

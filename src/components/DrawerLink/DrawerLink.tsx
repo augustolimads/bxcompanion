@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { StarIcon } from '../Icons';
 import { DrawerLinkProps, useDrawerLink } from './index';
 
-export const DrawerLink = (props:DrawerLinkProps) => {
-  const {result} = useDrawerLink()
+export const DrawerLink = (props: DrawerLinkProps) => {
+  const { result } = useDrawerLink()
 
   return (
     <Link href={props.href}>
@@ -12,14 +12,14 @@ export const DrawerLink = (props:DrawerLinkProps) => {
         templateColumns='2rem 1fr 2rem'
         alignItems='center'
         p={4}
-        bg='gray.600'
+        bg='neutral.700'
         rounded='md'
         _hover={{
           background: 'gray.800',
           cursor: 'pointer'
         }}>
-      <Icon as={StarIcon}/>
-        <Text fontSize='md'>{props.label}</Text>
+        <Icon as={StarIcon} color="secondary.100" />
+        <Text fontSize='md' color="secondary.100" >{props.label}</Text>
       </Grid>
     </Link>
   );

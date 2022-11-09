@@ -7,7 +7,7 @@ export const HeaderDrawer = () => {
   return (
     <>
       <DrawerOverlay />
-      <DrawerContent bg='gray.700' color='white'>
+      <DrawerContent bg='neutral.900' color='white'>
         <DrawerHeader bgImage='url("/images/drawer-image.jpg")' minHeight='180px'>
           <Center height='100%'>
           <Logo />

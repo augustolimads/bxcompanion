@@ -4,7 +4,7 @@ import { LayoutProps } from './index';
 export const Layout = (props:LayoutProps) => {
 
   return (
-    <Flex bg='gray.600' minHeight='100vh' flexDir='column'>
+    <Flex bg='neutral.700' minHeight='100vh' flexDir='column'>
       {props.children}
     </Flex>
   );

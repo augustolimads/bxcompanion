@@ -1,7 +1,8 @@
 import { Flex, IconButton, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header, Layout } from 'src/components'
+import { Header, Layout, MainContent, MainMenu } from 'src/components'
 import { PencilIcon } from 'src/components/Icons'
+import { SheetContainer } from 'src/components/SheetContainer'
 
 const Sheet: NextPage = () => {
   return (
@@ -20,6 +21,13 @@ const Sheet: NextPage = () => {
               />
             </Flex>
           </Header>
+          <SheetContainer>
+            <MainContent />
+          </SheetContainer>
+            <MainMenu />
+          <SheetContainer>
+            {/* componente de conteudo */}
+          </SheetContainer>
         </>
       </Layout>
     </div>

@@ -9,9 +9,10 @@ export const Header = ({children}: HeaderProps) => {
   return (
     <Flex
       as="header"
-      bg='gray.700'
+      bg='neutral.900'
       w='full'
-      p={6}
+      px={6}
+      py={3}
       color='white'
       alignItems='center'
     >
@@ -20,7 +21,7 @@ export const Header = ({children}: HeaderProps) => {
         ref={btnRef}
         colorScheme='transparent'
         onClick={onOpen}
-        icon={<MenuIcon size='24'/>}
+        icon={<MenuIcon size='24' />}
         justifySelf="self-start"
       />
       <Drawer

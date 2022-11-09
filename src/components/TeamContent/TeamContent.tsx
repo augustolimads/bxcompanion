@@ -12,7 +12,7 @@ export const TeamContent = (props:TeamContentProps) => {
         <TeamItem id='1' />
         <TeamItem id='1' />
       </Flex>
-      <Button w='full' h='14' bg='gray.500' color='white' _hover={{bg: 'gray.700'}}>Novo Personagem</Button>
+      <Button w='full' h='14' bg='neutral.500' color='white' _hover={{bg: 'neutral.300'}}>Novo Personagem</Button>
     </Flex>
   );
 }

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { Header, Layout, Logo, TeamContent } from 'src/components'
 
-const Equipes: NextPage = () => {
+const Personagens: NextPage = () => {
   return (
     <div>
       <Layout>
@@ -14,4 +14,4 @@ const Equipes: NextPage = () => {
   )
 }
 
-export default Equipes
+export default Personagens

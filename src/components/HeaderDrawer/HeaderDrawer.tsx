@@ -14,7 +14,7 @@ export const HeaderDrawer = () => {
           </Center>
         </DrawerHeader>
         <DrawerBody px='3'>
-          <DrawerLink label='Equipes' href='/equipes' />
+          <DrawerLink label='Personagens' href='/personagens' />
         </DrawerBody>
       </DrawerContent>
     </>

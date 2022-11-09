@@ -17,3 +17,4 @@ export { Hitpoint } from './Hitpoint';
 export { ProgressHp } from './ProgressHp';
 export { MainMenu } from './MainMenu';
 export { MainMenuItem } from './MainMenuItem';
+export { CombatSection } from './CombatSection';

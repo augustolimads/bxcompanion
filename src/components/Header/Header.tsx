@@ -15,6 +15,8 @@ export const Header = ({children}: HeaderProps) => {
       py={3}
       color='white'
       alignItems='center'
+      position="fixed"
+      zIndex={3}
     >
       <IconButton
         aria-label='Search database'

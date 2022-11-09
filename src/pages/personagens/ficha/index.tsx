@@ -1,6 +1,11 @@
-import { Flex, IconButton, Text } from '@chakra-ui/react'
+import { Box, Flex, IconButton, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header, Layout, MainContent, MainMenu } from 'src/components'
+import {
+  Header,
+  Layout,
+  MainContent,
+  MainMenu
+} from 'src/components'
 import { PencilIcon } from 'src/components/Icons'
 import { SheetContainer } from 'src/components/SheetContainer'
 
@@ -11,7 +16,7 @@ const Ficha: NextPage = () => {
         <Header>
           <Flex flex="1" alignItems="center">
             <Text flex="1" textAlign="center">
-              Guerreiro neutro
+              Falkor Merak
             </Text>
             <IconButton
               aria-label="Search database"
@@ -22,11 +27,15 @@ const Ficha: NextPage = () => {
             />
           </Flex>
         </Header>
-        <SheetContainer>
+        <Box position="fixed" w="full" pt={16} zIndex={2} bg="neutral.700">
           <MainContent />
-        </SheetContainer>
-        <MainMenu />
-        <SheetContainer>{/* componente de conteudo */}</SheetContainer>
+          <MainMenu />
+        </Box>
+        <Box pt={80} flex="1">
+          <SheetContainer>
+            {/* <CombatSection /> */}
+          </SheetContainer>
+        </Box>
       </Layout>
     </div>
   )

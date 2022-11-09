@@ -20,3 +20,5 @@ export { MainMenuItem } from './MainMenuItem';
 export { CombatSection } from './CombatSection';
 export { ItemSection } from './ItemSection';
 export { ItemSectionAside } from './ItemSectionAside';
+export { AbilitySection } from './AbilitySection';
+export { SheetContentContainer } from './SheetContentContainer';

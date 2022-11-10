@@ -26,12 +26,12 @@ const Ficha: NextPage = () => {
           <MainMenu />
         </Box>
         <Box pt={80} flex="1">
-          <SheetContentContainer aside={<ItemSectionAside />}>
-            <ItemSection />
-          </SheetContentContainer>
           {/* <SheetContentContainer>
             <CombatSection /> 
           </SheetContentContainer> */}
+          <SheetContentContainer aside={<ItemSectionAside />}>
+            <ItemSection />
+          </SheetContentContainer>
           {/* <SheetContentContainer aside={<AbilitySectionAside />}>
             <AbilitySection />
           </SheetContentContainer> */}

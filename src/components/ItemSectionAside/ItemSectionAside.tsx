@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Text, VStack } from '@chakra-ui/react'
+import { Box, Heading, HStack, Text, VStack } from '@chakra-ui/react'
 import { ItemSectionAsideProps, useItemSectionAside } from './index'
 
 export const ItemSectionAside = (props: ItemSectionAsideProps) => {
@@ -7,9 +7,29 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
   return (
     <VStack w="6rem" color="neutral.100">
       <Box bg="neutral.500" rounded="md" p={2} w="full">
-        <Text textAlign="center" fontWeight="bold">
-          carga
+        <Heading textAlign="center" fontWeight="bold" fontSize="sm">
+          Jornada
+        </Heading>
+        <Text textAlign="center" fontSize="md">
+          20
         </Text>
+        <Heading textAlign="center" fontWeight="bold" fontSize="sm">
+          Exploração
+        </Heading>
+        <Text textAlign="center" fontSize="md">
+          20
+        </Text>
+        <Heading textAlign="center" fontWeight="bold" fontSize="sm">
+          Encontro
+        </Heading>
+        <Text textAlign="center" fontSize="md">
+          20
+        </Text>
+      </Box>
+      <Box bg="neutral.500" rounded="md" p={2} w="full">
+        <Heading textAlign="center" fontWeight="bold" fontSize="md">
+          carga
+        </Heading>
         <Text textAlign="center" fontSize="xl">
           100/100
         </Text>
@@ -36,9 +56,6 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
           <Text>0</Text>
         </HStack>
       </VStack>
-      <Button size="xs" w="full" bg="neutral.900" color="neutral.100">
-        Comprar Itens
-      </Button>
     </VStack>
   )
 }

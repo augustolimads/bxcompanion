@@ -1,67 +1,65 @@
-import { Box, Button, Flex } from '@chakra-ui/react'
+import { Button, VStack } from '@chakra-ui/react'
 import { ItemSectionProps, useItemSection } from './index'
 
 export const ItemSection = (props: ItemSectionProps) => {
   const { result } = useItemSection()
 
   return (
-    <Box overflowY="scroll" flex="1" height="55vh">
-      <Flex flexDir="column" gap={2}>
-        <Button size="xs" w="full">
+    <VStack  flex="1" w="full">
+      <Button size="xs" bg="neutral.900" color="neutral.100">
+        Comprar Itens
+      </Button>
+      <VStack w="full" overflowY="scroll" height="50vh">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
+        <Button size="md" w="full">
           teste
         </Button>
-        <Button size="xs" w="full">
-          teste
-        </Button>
-        <Button size="xs" w="full">
-          teste
-        </Button>
-      </Flex>
-    </Box>
+       
+      </VStack>
+    </VStack>
   )
 }

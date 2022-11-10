@@ -10,7 +10,7 @@ export const MainMenu = (props: MainMenuProps) => {
       <Container display="flex" flexDir="row" gap={1}>
         <MainMenuItem>Combate</MainMenuItem>
         <MainMenuItem>Itens</MainMenuItem>
-        <MainMenuItem>Habilidades</MainMenuItem>
+        <MainMenuItem>Características</MainMenuItem>
         <MainMenuItem>Magias</MainMenuItem>
         <MainMenuItem>Notas</MainMenuItem>
       </Container>

@@ -8,6 +8,10 @@ export const AbilitySectionAside = (props: AbilitySectionAsideProps) => {
     <VStack align="start" color="neutral.100" w="32vw">
       <Box>
         <Heading fontWeight="bold" fontSize="sm">
+          Alinhamento
+        </Heading>
+        <Text fontSize="sm">Neutro</Text>
+        <Heading fontWeight="bold" fontSize="sm">
           Visão
         </Heading>
         <Text fontSize="sm">Penumbra</Text>

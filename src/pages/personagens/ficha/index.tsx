@@ -1,6 +1,6 @@
 import { Box, Flex, IconButton, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header, Layout, MainContent, MainMenu } from 'src/components'
+import { Header, ItemSection, ItemSectionAside, Layout, MainContent, MainMenu, SheetContentContainer } from 'src/components'
 import { PencilIcon } from 'src/components/Icons'
 
 const Ficha: NextPage = () => {
@@ -26,14 +26,20 @@ const Ficha: NextPage = () => {
           <MainMenu />
         </Box>
         <Box pt={80} flex="1">
-          {/* <SheetContentContainer aside={<ItemSectionAside />}>
+          <SheetContentContainer aside={<ItemSectionAside />}>
             <ItemSection />
-          </SheetContentContainer> */}
+          </SheetContentContainer>
           {/* <SheetContentContainer>
             <CombatSection /> 
           </SheetContentContainer> */}
           {/* <SheetContentContainer aside={<AbilitySectionAside />}>
             <AbilitySection />
+          </SheetContentContainer> */}
+          {/* <SheetContentContainer>
+            <SpellSection />
+          </SheetContentContainer> */}
+          {/* <SheetContentContainer>
+            <NoteSection />
           </SheetContentContainer> */}
         </Box>
       </Layout>

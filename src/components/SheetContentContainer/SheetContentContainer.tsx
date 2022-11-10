@@ -7,9 +7,9 @@ export const SheetContentContainer = (props: SheetContentContainerProps) => {
 
   return (
     <SheetContainer>
-      <HStack h="55vh" overflow="hidden" align="start">
-      {props.aside && props.aside}
-      {props.children}
+      <HStack h="64vh" overflow="hidden" align="start">
+        {props.aside && props.aside}
+        {props.children}
       </HStack>
     </SheetContainer>
   )

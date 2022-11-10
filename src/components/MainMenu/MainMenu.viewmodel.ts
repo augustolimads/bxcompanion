@@ -1,5 +1,5 @@
 
 export const useMainMenu = () => {
-  const menuButtons = ['Combate', 'Itens', 'Características', 'Magias', 'Notas']
+  const menuButtons = ['Combate', 'Itens', 'Magias', 'Notas']
   return { menuButtons }
 }

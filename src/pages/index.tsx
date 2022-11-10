@@ -1,13 +1,12 @@
+import { Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header, Layout, LogoHeader } from 'src/components'
+import { Layout } from 'src/components'
 
 const Home: NextPage = () => {
   return (
     <div>
       <Layout>
-        <Header>
-         <LogoHeader />
-        </Header>
+        <Text>home</Text>
       </Layout>
     </div>
   )

@@ -1,65 +1,44 @@
-import { Button, VStack } from '@chakra-ui/react'
+import { SheetList } from '../SheetList'
+import { SimpleNote } from '../SimpleNote'
 import { ItemSectionProps, useItemSection } from './index'
 
 export const ItemSection = (props: ItemSectionProps) => {
   const { result } = useItemSection()
 
   return (
-    <VStack  flex="1" w="full">
-      <Button size="xs" bg="neutral.900" color="neutral.100">
-        Comprar Itens
-      </Button>
-      <VStack w="full" overflowY="scroll" height="50vh">
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-        <Button size="md" w="full">
-          teste
-        </Button>
-       
-      </VStack>
-    </VStack>
+    <SheetList buttonLabel='Novo Item'>
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+      <SimpleNote
+        title="Ataque Básico à Distância"
+        content="Padrão / à distância 20, Padrão / à distância 20, Padrão / à "
+      />
+    </SheetList>
   )
 }

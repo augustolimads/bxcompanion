@@ -6,7 +6,7 @@ export const TeamContent = (props:TeamContentProps) => {
   const {result} = useTeamContent()
 
   return (
-    <Flex p='4' flex='1' flexDir='column' justifyContent='space-between'>
+    <Flex p='4' h="full" flexDir='column' justifyContent='space-between'>
       <Flex flexDir='column' overflowY='scroll' maxHeight='80vh' flex='1' gap='2'>
         <TeamItem id='1' />
         <TeamItem id='1' />

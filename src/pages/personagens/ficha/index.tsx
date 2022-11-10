@@ -1,6 +1,6 @@
 import { Box, Flex, IconButton, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header, Layout, MainContent, MainMenu } from 'src/components'
+import { Layout, MainContent, MainMenu } from 'src/components'
 import { PencilIcon } from 'src/components/Icons'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
@@ -8,8 +8,8 @@ import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
 const Ficha: NextPage = () => {
   return (
     <SheetMenuProvider>
-      <Layout>
-        <Header>
+      <Layout
+        headerChildren={
           <Flex flex="1" alignItems="center">
             <Text flex="1" textAlign="center">
               Falkor Merak
@@ -22,12 +22,13 @@ const Ficha: NextPage = () => {
               rounded="md"
             />
           </Flex>
-        </Header>
-        <Box position="fixed" w="full" pt={16} zIndex={2} bg="neutral.700">
+        }
+      >
+        <Box position="fixed" w="full" zIndex={2} bg="neutral.700">
           <MainContent />
           <MainMenu />
         </Box>
-        <Box pt={80} flex="1">
+        <Box pt="16rem" flex="1">
           <SheetContentDisplay />
         </Box>
       </Layout>

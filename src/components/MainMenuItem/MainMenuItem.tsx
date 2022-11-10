@@ -11,6 +11,7 @@ export const MainMenuItem = (props: MainMenuItemProps) => {
       fontSize="xs"
       bg="transparent"
       color="neutral.100"
+      onClick={props.onClick}
     >
       {props.children}
     </Button>

@@ -26,3 +26,4 @@ export { AbilitySectionAside } from './AbilitySectionAside';
 export { SimpleNote } from './SimpleNote';
 export { SpellSection } from './SpellSection';
 export { NoteSection } from './NoteSection';
+export { SheetContentDisplay } from './SheetContentDisplay';

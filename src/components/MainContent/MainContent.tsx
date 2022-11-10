@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Show, VStack } from '@chakra-ui/react'
+import { Box, Flex, VStack } from '@chakra-ui/react'
 import { Attribute } from '../Attribute'
 import { Hitpoint } from '../Hitpoint'
 import { LevelControl } from '../LevelControl'
@@ -14,9 +14,6 @@ export const MainContent = (props: MainContentProps) => {
       <SheetContainer>
         <VStack align="normal">
           <Flex justifyContent="space-between" gap={3}>
-            <Show above="sm">
-              <Image src="/images/avatar.jpg" rounded="md" objectFit="cover" />
-            </Show>
             <LevelControl />
           </Flex>
           <Flex gap={1} justify="space-between">

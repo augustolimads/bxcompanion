@@ -7,7 +7,7 @@ export const SheetList = (props: SheetListProps) => {
   const pb = props.pb ? props.pb : 3
 
   return (
-    <VStack w="full" h="65vh">
+    <VStack w="full" h="60vh">
       {props.buttonLabel && (
         <Button
           size="xs"
@@ -18,7 +18,7 @@ export const SheetList = (props: SheetListProps) => {
           {props.buttonLabel}
         </Button>
       )}
-      <VStack flex="1" w="full" overflowY="scroll" h="65vh" pb={pb}>
+      <VStack flex="1" w="full" overflowY="scroll" h="60vh" pb={pb}>
         {props.children}
       </VStack>
     </VStack>

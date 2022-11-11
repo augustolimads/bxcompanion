@@ -5,7 +5,7 @@ export const NoteSectionAside = (props: NoteSectionAsideProps) => {
   const { result } = useNoteSectionAside()
 
   return (
-    <VStack align="start" color="neutral.100" w="32vw">
+    <VStack align="start" color="neutral.100" w="10rem">
       <Box>
         <Heading fontWeight="bold" fontSize="sm">
           Alinhamento

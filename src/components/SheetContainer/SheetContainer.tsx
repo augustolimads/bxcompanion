@@ -5,7 +5,7 @@ export const SheetContainer = (props:SheetContainerProps) => {
   const {result} = useSheetContainer()
 
   return (
-    <Container py={2} px={4}>
+    <Container py={2} px={4} >
       {props.children}
     </Container>
   );

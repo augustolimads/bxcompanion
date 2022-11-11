@@ -28,7 +28,7 @@ const Ficha: NextPage = () => {
           <MainContent />
           <MainMenu />
         </Box>
-        <Box pt="16rem" flex="1">
+        <Box pt="16rem">
           <SheetContentDisplay />
         </Box>
       </Layout>

@@ -5,7 +5,7 @@ export const SpellSectionAside = (props: SpellSectionAsideProps) => {
   const { result } = useSpellSectionAside()
 
   return (
-    <VStack color="neutral.100" mb={2}>
+    <VStack color="neutral.100" mb={2} w='4rem'>
       <Text>Círculo</Text>
       <Button size="sm" bg="neutral.500">
         1º

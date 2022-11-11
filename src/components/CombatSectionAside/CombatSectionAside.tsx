@@ -1,4 +1,4 @@
-import { Button, Text, VStack } from '@chakra-ui/react'
+import { Button, Center, Heading, Text, VStack } from '@chakra-ui/react'
 import { CombatSectionAsideGroup } from '../CombatSectionAsideGroup'
 import { CombatSectionAsideProps, useCombatSectionAside } from './index'
 
@@ -6,45 +6,53 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
   const { result } = useCombatSectionAside()
 
   return (
-    <VStack w="30vw">
+    <VStack w="8rem" color="white">
       <CombatSectionAsideGroup>
-        <Button size="md" w="full" fontSize="xl">
+        <Center w="full" fontSize="xl" fontWeight="bold">
           CA 10
-        </Button>
+        </Center>
       </CombatSectionAsideGroup>
       <CombatSectionAsideGroup>
-        <Button size="sm" w="full" flexDir="column" h={12}>
+        <Center w="full" flexDir="column" h={12}>
           <Text as="p" fontWeight="bold">
             Tac0
           </Text>
           <Text as="p" fontSize="xl">
             +1
           </Text>
-        </Button>
-        <Button size="sm" w="full" flexDir="column" h={12}>
+        </Center>
+        <Center w="full" flexDir="column" h={12}>
           <Text as="p" fontWeight="bold">
-            Tac0 corp.
+            corporal
           </Text>
           <Text as="p" fontSize="xl">
             +3
           </Text>
-        </Button>
-        <Button size="sm" w="full" flexDir="column" h={12}>
+        </Center>
+        <Center w="full" flexDir="column" h={12}>
           <Text as="p" fontWeight="bold">
-            Tac0 dist.
+            distância
           </Text>
           <Text as="p" fontSize="xl">
             +2
           </Text>
-        </Button>
+        </Center>
       </CombatSectionAsideGroup>
       <CombatSectionAsideGroup>
-        <Button size="sm" w="full" flexDir="column" h={12}>
+        <Heading fontSize="md">Munição</Heading>
+        <Button
+          size="sm"
+          w="full"
+          flexDir="column"
+          h={12}
+          bg="neutral.900"
+          color="neutral.100"
+        >
           <Text as="p" fontWeight="bold">
-            Tac0 dist.
+            Flechas
           </Text>
           <Text as="p" fontSize="xl">
-            +2
+            20
           </Text>
         </Button>
       </CombatSectionAsideGroup>

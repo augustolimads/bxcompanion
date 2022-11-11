@@ -30,3 +30,5 @@ export { SpellSectionAside } from './SpellSectionAside'
 export { TeamContent } from './TeamContent'
 export { TeamItem } from './TeamItem'
 
+
+export { Equipment } from './Equipment';

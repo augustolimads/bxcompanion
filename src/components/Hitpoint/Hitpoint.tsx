@@ -3,11 +3,25 @@ import { ProgressHp } from '../ProgressHp'
 import { HitpointProps, useHitpoint } from './index'
 
 export const Hitpoint = (props: HitpointProps) => {
-  const { result } = useHitpoint()
+  const {
+    currentHP,
+    maxHP,
+    excededHP,
+    isExceded,
+    fullCurrentHP,
+    increaseHitpoint,
+    decreaseHitpoint
+  } = useHitpoint()
 
   return (
     <Flex gap={1}>
-      <Button size="sm" bg="neutral.900" color="neutral.100" fontWeight="bold">
+      <Button
+        size="sm"
+        bg="neutral.900"
+        color="neutral.100"
+        fontWeight="bold"
+        onClick={decreaseHitpoint}
+      >
         -
       </Button>
       <Flex
@@ -19,10 +33,19 @@ export const Hitpoint = (props: HitpointProps) => {
         align="center"
         gap={1}
       >
-        <Text color="neutral.100" fontSize="xs">10/20+2</Text>
-        <ProgressHp value={20} max={100} extra={3} />
+        <Text color="neutral.100" fontSize="xs">
+          {currentHP}/{maxHP}
+          {isExceded && excededHP}
+        </Text>
+        <ProgressHp value={fullCurrentHP} max={maxHP} />
       </Flex>
-      <Button size="sm" bg="neutral.900" color="neutral.100" fontWeight="bold">
+      <Button
+        size="sm"
+        bg="neutral.900"
+        color="neutral.100"
+        fontWeight="bold"
+        onClick={increaseHitpoint}
+      >
         +
       </Button>
     </Flex>

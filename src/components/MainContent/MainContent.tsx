@@ -7,7 +7,20 @@ import { SheetContainer } from '../SheetContainer'
 import { MainContentProps, useMainContent } from './index'
 
 export const MainContent = (props: MainContentProps) => {
-  const { result } = useMainContent()
+  const {
+    str,
+    dex,
+    con,
+    int,
+    wis,
+    cha,
+    death,
+    wand,
+    paralysis,
+    breath,
+    spells,
+    vsMagic
+  } = useMainContent()
 
   return (
     <Box w="full">
@@ -17,20 +30,20 @@ export const MainContent = (props: MainContentProps) => {
             <LevelControl />
           </Flex>
           <Flex gap={1} justify="space-between">
-            <Attribute label="for" value={12} />
-            <Attribute label="des" value={12} />
-            <Attribute label="con" value={12} />
-            <Attribute label="int" value={12} />
-            <Attribute label="sab" value={12} />
-            <Attribute label="car" value={12} />
+            <Attribute label="for" value={str} />
+            <Attribute label="des" value={dex} />
+            <Attribute label="con" value={con} />
+            <Attribute label="int" value={int} />
+            <Attribute label="sab" value={wis} />
+            <Attribute label="car" value={cha} />
           </Flex>
           <Flex gap={1} justify="space-between">
-            <SavingThrow label="vs magia" value={1} highLight symbol />
-            <SavingThrow label="morte" value={2} />
-            <SavingThrow label="varinhas" value={2} />
-            <SavingThrow label="paralisia" value={2} />
-            <SavingThrow label="sopro" value={2} />
-            <SavingThrow label="feitiços" value={2} />
+            <SavingThrow label="vs magia" value={vsMagic} highLight symbol />
+            <SavingThrow label="morte" value={death} />
+            <SavingThrow label="varinhas" value={wand} />
+            <SavingThrow label="paralisia" value={paralysis} />
+            <SavingThrow label="sopro" value={breath} />
+            <SavingThrow label="feitiços" value={spells} />
           </Flex>
           <Hitpoint />
         </VStack>

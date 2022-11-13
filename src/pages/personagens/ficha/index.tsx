@@ -3,16 +3,18 @@ import type { NextPage } from 'next'
 import { Layout, MainContent, MainMenu } from 'src/components'
 import { PencilIcon } from 'src/components/Icons'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
+import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
 
 const Ficha: NextPage = () => {
+  const { character } = useCharacter()
   return (
     <SheetMenuProvider>
       <Layout
         headerChildren={
           <Flex flex="1" alignItems="center">
             <Text flex="1" textAlign="center">
-              Falkor Merak
+              {character.name}
             </Text>
             <IconButton
               aria-label="Search database"

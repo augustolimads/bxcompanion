@@ -37,23 +37,23 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
       <VStack bg="neutral.500" rounded="md" p={2} w="full" align="start">
         <HStack>
           <Text w={8}>PC</Text>
-          <Text>0</Text>
+          <Text flex="1">0</Text>
         </HStack>
         <HStack>
           <Text w={8}>PP</Text>
-          <Text>0</Text>
+          <Text flex="1">1000</Text>
         </HStack>
         <HStack>
           <Text w={8}>PE</Text>
-          <Text>0</Text>
+          <Text flex="1">999</Text>
         </HStack>
         <HStack>
           <Text w={8}>PO</Text>
-          <Text>0</Text>
+          <Text flex="1">555</Text>
         </HStack>
         <HStack>
           <Text w={8}>PL</Text>
-          <Text>0</Text>
+          <Text flex="1">777</Text>
         </HStack>
       </VStack>
     </VStack>

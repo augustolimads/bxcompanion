@@ -2,7 +2,7 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 import { AttributeProps, useAttribute } from './index'
 
 export const Attribute = (props: AttributeProps) => {
-  const { result } = useAttribute()
+  const { modifier, isPositive } = useAttribute(props.value)
 
   return (
     <Box
@@ -31,7 +31,7 @@ export const Attribute = (props: AttributeProps) => {
           fontSize="xs"
           p={1}
         >
-          +{1}
+          {isPositive}{modifier}
         </Text>
       </Flex>
       <Text as="p" fontSize="xl" textAlign="center" w="100%">

@@ -1,16 +1,16 @@
 export const sheetMock = {
-  name: 'Falkor Merak',
+  name: 'Falkor Merako',
   class: 'Guerreiro',
   level: 1,
-  currentLevel: 10,
-  maxLevel: 200,
+  currentXP: 9,
+  maxXP: 10,
   attr: {
     str: 14,
-    des: 12,
-    con: 10,
+    dex: 12,
+    con: 7,
     int: 11,
-    sab: 9,
-    car: 19
+    wis: 9,
+    cha: 19
   },
   saves: {
     vsMagic: 1,
@@ -23,7 +23,7 @@ export const sheetMock = {
   hp: {
     hd: 8,
     current: 10,
-    max: 20
+    max: 8
   },
   combat: {
     AC: 9,

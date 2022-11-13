@@ -90,5 +90,5 @@ export type CharacterProviderProps = {
 
 export type CharacterContextProps = {
   character: CharacterProps
-  setCharacter: () => void
+  setCharacter: (props:any) => void
 }

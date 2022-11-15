@@ -34,7 +34,12 @@ export const LevelControl = (props: LevelControlProps) => {
         </Flex>
         <ProgressLevel current={currentXP} max={maxXP} />
       </Box>
-      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor
+        label="Edição de nível"
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+      >
         <LevelSheetEditor />
       </CharacterSheetEditor>
     </>

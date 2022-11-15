@@ -14,7 +14,7 @@ class MyDocument extends Document {
             content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
           />
           <meta name="description" content="description of your project" />
-          <link rel="manifest" href="pwa/manifest.json" />
+          <link rel="manifest" href="pwa/manifest.webmanifest" />
           <link rel="apple-touch-icon" href="pwa/icon-192x192.png" />
           <link rel="shortcut icon" href="/favicon-16x16.ico" />
           <title>BX Companion</title>

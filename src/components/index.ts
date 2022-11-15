@@ -35,3 +35,4 @@ export { Equipment } from './Equipment';
 export { ProgressLevel } from './ProgressLevel';
 export { CharacterSheetName } from './CharacterSheetName';
 export { CharacterSheetEditor } from './CharacterSheetEditor';
+export { NameSheetEditor } from './NameSheetEditor';

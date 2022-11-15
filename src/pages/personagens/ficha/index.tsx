@@ -9,7 +9,7 @@ import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
 
 const Ficha: NextPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const btnRef = React.useRef<HTMLButtonElement>(null)
   return (
     <SheetMenuProvider>
       <Layout

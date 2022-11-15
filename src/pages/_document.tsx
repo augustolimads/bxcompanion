@@ -7,7 +7,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <meta name="theme-color" content={theme.colors.primary[500]} />
+          <meta name="theme-color" content={theme.colors.neutral[900]} />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"

@@ -1,4 +1,5 @@
 import { Button, Text } from '@chakra-ui/react'
+import { formatBonus } from 'src/utils/formatBonus'
 import { EquipmentProps, useEquipment } from './index'
 
 export const Equipment = (props: EquipmentProps) => {
@@ -19,10 +20,10 @@ export const Equipment = (props: EquipmentProps) => {
         </Text>
       )}
       <Text>{props.label}</Text>
-      {props.bonus && <Text color="neutral.100">{props.bonus}</Text>}
+      {props.bonus && <Text color="neutral.100">{formatBonus(props.bonus)}</Text>}
       {props.damage && (
         <Text color="neutral.100" ml={3}>
-          {props.damage}
+          dano: {props.damage}
         </Text>
       )}
     </Button>

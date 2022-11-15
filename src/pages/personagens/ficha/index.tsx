@@ -1,12 +1,15 @@
-import { Box, Flex, IconButton } from '@chakra-ui/react'
+import { Box, Drawer, Flex, IconButton, useDisclosure } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Layout, MainContent, MainMenu } from 'src/components'
+import React from 'react'
+import { CharacterSheetEditor, Layout, MainContent, MainMenu } from 'src/components'
 import { CharacterSheetName } from 'src/components/CharacterSheetName'
 import { PencilIcon } from 'src/components/Icons'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
 
 const Ficha: NextPage = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = React.useRef()
   return (
     <SheetMenuProvider>
       <Layout
@@ -19,6 +22,8 @@ const Ficha: NextPage = () => {
               icon={<PencilIcon size="24" />}
               justifySelf="self-start"
               rounded="md"
+              ref={btnRef} 
+              onClick={onOpen}
             />
           </Flex>
         }
@@ -31,6 +36,15 @@ const Ficha: NextPage = () => {
           <SheetContentDisplay />
         </Box>
       </Layout>
+      <Drawer
+        isOpen={isOpen}
+        placement='bottom'
+        onClose={onClose}
+        finalFocusRef={btnRef}
+        size={'lg'}
+      >
+      <CharacterSheetEditor />
+      </Drawer>
     </SheetMenuProvider>
   )
 }

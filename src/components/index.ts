@@ -33,3 +33,4 @@ export { TeamItem } from './TeamItem'
 
 export { Equipment } from './Equipment';
 export { ProgressLevel } from './ProgressLevel';
+export { CharacterSheetName } from './CharacterSheetName';

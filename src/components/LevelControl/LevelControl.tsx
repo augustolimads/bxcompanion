@@ -1,7 +1,7 @@
 import { Box, Flex, Text, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
-import { NameSheetEditor } from '../NameSheetEditor'
+import { LevelSheetEditor } from '../LevelSheetEditor'
 import { ProgressLevel } from '../ProgressLevel'
 import { LevelControlProps, useLevelControl } from './index'
 
@@ -35,7 +35,7 @@ export const LevelControl = (props: LevelControlProps) => {
         <ProgressLevel current={currentXP} max={maxXP} />
       </Box>
       <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
-        <NameSheetEditor />
+        <LevelSheetEditor />
       </CharacterSheetEditor>
     </>
   )

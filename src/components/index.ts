@@ -36,3 +36,4 @@ export { ProgressLevel } from './ProgressLevel';
 export { CharacterSheetName } from './CharacterSheetName';
 export { CharacterSheetEditor } from './CharacterSheetEditor';
 export { NameSheetEditor } from './NameSheetEditor';
+export { LevelSheetEditor } from './LevelSheetEditor';

@@ -6,21 +6,19 @@ export type CharacterProps = {
   currentXP: number
   maxXP: number
   attr: {
-    str: number
-    dex: number
-    con: number
-    int: number
-    wis: number
-    cha: number
-  }
+    id: string
+    label: string
+    abbreviate: string
+    ref: string
+    value: number
+  }[]
   saves: {
-    vsMagic: number
-    death: number
-    wand: number
-    paralysis: number
-    breath: number
-    spells: number
-  }
+    id: string
+    label: string
+    abbreviate: string
+    ref: string
+    value: number
+  }[]
   hp: {
     hd: number
     current: number
@@ -90,5 +88,5 @@ export type CharacterProviderProps = {
 
 export type CharacterContextProps = {
   character: CharacterProps
-  setCharacter: (props:any) => void
+  setCharacter: (props: any) => void
 }

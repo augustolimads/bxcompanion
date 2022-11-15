@@ -14,7 +14,6 @@ export const useHitpoint = () => {
   const fullCurrentHP = isExceded ? currentHP + operation : currentHP
 
   const increaseHitpoint = () => {
-    console.log(character.hp.current)
     setCharacter({
       ...character,
       hp: {
@@ -25,7 +24,6 @@ export const useHitpoint = () => {
   }
 
   const decreaseHitpoint = () => {
-    console.log(character.hp.current)
     setCharacter({
       ...character,
       hp: {

@@ -19,7 +19,7 @@ export const AttributeList = (props: AttributeListProps) => {
           <Attribute label={item.abbreviate} value={item.value} />
         ))}
       </Flex>
-      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor label="Edição de atributos" isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
         <AttributeListEditor />
       </CharacterSheetEditor>
     </>

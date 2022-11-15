@@ -26,7 +26,7 @@ export const SaveList = (props: SaveListProps) => {
           )
         })}
       </Flex>
-      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor label="Edição de salvaguardas" isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
         <SaveListEditor />
       </CharacterSheetEditor>
     </>

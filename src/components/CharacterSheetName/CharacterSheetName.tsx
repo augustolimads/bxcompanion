@@ -20,7 +20,7 @@ export const CharacterSheetName = (props: CharacterSheetNameProps) => {
       >
         {name}
       </Text>
-      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor label='Edição do personagem' isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
         <NameSheetEditor />
       </CharacterSheetEditor>
     </>

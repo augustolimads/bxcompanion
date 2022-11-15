@@ -58,7 +58,7 @@ export const Hitpoint = (props: HitpointProps) => {
           +
         </Button>
       </Flex>
-      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor label="Edição de Pontos de vida" isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
         <HitpointEditor />
       </CharacterSheetEditor>
     </>

@@ -1,4 +1,5 @@
 import {
+  CloseButton,
   Drawer,
   DrawerBody,
   DrawerContent,
@@ -20,8 +21,9 @@ export const CharacterSheetEditor = (props: CharacterSheetEditorProps) => {
     >
       <DrawerOverlay />
       <DrawerContent bg="neutral.700" color="white" roundedTop="2xl">
-        <DrawerHeader>
-          <Heading size="lg">Edição de personagem</Heading>
+        <DrawerHeader display="flex" justifyContent="space-between">
+          <Heading size="lg">{props.label}</Heading>
+          <CloseButton onClick={props.onClose} />
         </DrawerHeader>
         <DrawerBody px="3">
           {props.children}

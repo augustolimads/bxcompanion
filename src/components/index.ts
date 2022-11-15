@@ -41,3 +41,4 @@ export { AttributeList } from './AttributeList';
 export { AttributeListEditor } from './AttributeListEditor';
 export { SaveList } from './SaveList';
 export { SaveListEditor } from './SaveListEditor';
+export { HitpointEditor } from './HitpointEditor';

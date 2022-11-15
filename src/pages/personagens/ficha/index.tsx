@@ -1,22 +1,12 @@
-import { Box, Flex, IconButton, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, IconButton } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { useRef } from 'react'
-import {
-  CharacterSheetEditor,
-  Layout,
-  MainContent,
-  MainMenu
-} from 'src/components'
+import { Layout, MainContent, MainMenu } from 'src/components'
 import { CharacterSheetName } from 'src/components/CharacterSheetName'
-import { PencilIcon } from 'src/components/Icons'
-import { NameSheetEditor } from 'src/components/NameSheetEditor'
+import { ThreeDotsIcon } from 'src/components/Icons'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
 
 const Ficha: NextPage = () => {
-  const btnRef = useRef<HTMLButtonElement>(null)
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
   return (
     <SheetMenuProvider>
       <Layout
@@ -26,11 +16,9 @@ const Ficha: NextPage = () => {
             <IconButton
               aria-label="Search database"
               colorScheme="transparent"
-              icon={<PencilIcon size="24" />}
+              icon={<ThreeDotsIcon size="24" />}
               justifySelf="self-start"
               rounded="md"
-              ref={btnRef}
-              onClick={onOpen}
             />
           </Flex>
         }
@@ -43,9 +31,6 @@ const Ficha: NextPage = () => {
           <SheetContentDisplay />
         </Box>
       </Layout>
-      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
-        <NameSheetEditor />
-      </CharacterSheetEditor>
     </SheetMenuProvider>
   )
 }

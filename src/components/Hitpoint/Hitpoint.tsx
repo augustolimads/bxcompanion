@@ -1,4 +1,7 @@
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Button, Flex, Text, useDisclosure } from '@chakra-ui/react'
+import { useRef } from 'react'
+import { CharacterSheetEditor } from '../CharacterSheetEditor'
+import { HitpointEditor } from '../HitpointEditor'
 import { ProgressHp } from '../ProgressHp'
 import { HitpointProps, useHitpoint } from './index'
 
@@ -13,41 +16,51 @@ export const Hitpoint = (props: HitpointProps) => {
     decreaseHitpoint
   } = useHitpoint()
 
+  const btnRef = useRef<HTMLDivElement>(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
-    <Flex gap={1}>
-      <Button
-        size="sm"
-        bg="neutral.900"
-        color="neutral.100"
-        fontWeight="bold"
-        onClick={decreaseHitpoint}
-      >
-        -
-      </Button>
-      <Flex
-        flex="1"
-        bg="neutral.500"
-        rounded="md"
-        px={2}
-        justify="space-between"
-        align="center"
-        gap={1}
-      >
-        <Text color="neutral.100" fontSize="xs">
-          {currentHP}/{maxHP}
-          {isExceded && excededHP}
-        </Text>
-        <ProgressHp value={fullCurrentHP} max={maxHP} />
+    <>
+      <Flex gap={1}>
+        <Button
+          size="sm"
+          bg="neutral.900"
+          color="neutral.100"
+          fontWeight="bold"
+          onClick={decreaseHitpoint}
+        >
+          -
+        </Button>
+        <Flex
+          flex="1"
+          bg="neutral.500"
+          rounded="md"
+          px={2}
+          justify="space-between"
+          align="center"
+          gap={1}
+          ref={btnRef}
+          onClick={onOpen}
+        >
+          <Text color="neutral.100" fontSize="xs">
+            {currentHP}/{maxHP}
+            {isExceded && excededHP}
+          </Text>
+          <ProgressHp value={fullCurrentHP} max={maxHP} />
+        </Flex>
+        <Button
+          size="sm"
+          bg="neutral.900"
+          color="neutral.100"
+          fontWeight="bold"
+          onClick={increaseHitpoint}
+        >
+          +
+        </Button>
       </Flex>
-      <Button
-        size="sm"
-        bg="neutral.900"
-        color="neutral.100"
-        fontWeight="bold"
-        onClick={increaseHitpoint}
-      >
-        +
-      </Button>
-    </Flex>
+      <CharacterSheetEditor isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+        <HitpointEditor />
+      </CharacterSheetEditor>
+    </>
   )
 }

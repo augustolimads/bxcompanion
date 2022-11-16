@@ -9,7 +9,7 @@ export type CharacterProps = {
     id: string
     label: string
     abbreviate: string
-    ref: string
+    ref: itemAttributeProps
     value: number
   }[]
   saves: {
@@ -90,3 +90,5 @@ export type CharacterContextProps = {
   character: CharacterProps
   setCharacter: (props: any) => void
 }
+
+export type itemAttributeProps = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'

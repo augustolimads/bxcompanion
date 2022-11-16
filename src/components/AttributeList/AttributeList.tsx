@@ -10,7 +10,7 @@ export const AttributeList = (props: AttributeListProps) => {
   const { result } = useAttributeList()
   const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const {character} = useCharacter()
+  const { character } = useCharacter()
 
   return (
     <>
@@ -19,7 +19,12 @@ export const AttributeList = (props: AttributeListProps) => {
           <Attribute label={item.abbreviate} value={item.value} />
         ))}
       </Flex>
-      <CharacterSheetEditor label="Edição de atributos" isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor
+        label="Edição de atributos"
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+      >
         <AttributeListEditor />
       </CharacterSheetEditor>
     </>

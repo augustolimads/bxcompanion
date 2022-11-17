@@ -19,7 +19,11 @@ export const SaveListEditor = (props: SaveListEditorProps) => {
 
   return (
     <VStack as="form" align="left">
-      {character.saves.map((item) => (
+      {character.saves.map((item, index) => {
+        if(index === 0) {
+          return
+        }
+        return(
         <FormControl key={item.id}>
           <FormLabel>{item.label}</FormLabel>
           <NumberInput defaultValue={item.value} min={-3} max={20}>
@@ -30,7 +34,7 @@ export const SaveListEditor = (props: SaveListEditorProps) => {
             </NumberInputStepper>
           </NumberInput>
         </FormControl>
-      ))}
+      )})}
 
       <Spacer />
       <Button bg="neutral.900" color="neutral.100">

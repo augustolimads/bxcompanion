@@ -7,11 +7,11 @@ import { SavingThrow } from '../SavingThrow'
 import { SaveListProps, useSaveList } from './index'
 
 export const SaveList = (props: SaveListProps) => {
-  const { result } = useSaveList()
+  const { vsMagicMod } = useSaveList()
   const { character } = useCharacter()
   const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
-  
+
   return (
     <>
       <Flex gap={1} justify="space-between" ref={btnRef} onClick={onOpen}>
@@ -19,14 +19,23 @@ export const SaveList = (props: SaveListProps) => {
           return (
             <SavingThrow
               label={item.abbreviate}
-              value={item.value}
+              value={
+                item.ref === 'vsMagic'
+                  ? vsMagicMod
+                  : item.value
+              }
               highLight={item.ref === 'vsMagic'}
               symbol={item.ref === 'vsMagic'}
             />
           )
         })}
       </Flex>
-      <CharacterSheetEditor label="Edição de salvaguardas" isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor
+        label="Edição de salvaguardas"
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+      >
         <SaveListEditor />
       </CharacterSheetEditor>
     </>

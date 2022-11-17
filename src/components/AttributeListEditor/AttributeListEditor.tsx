@@ -1,6 +1,8 @@
 import {
   Button,
-  FormControl, FormLabel,
+  Divider,
+  FormControl,
+  FormLabel,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
@@ -10,6 +12,7 @@ import {
   VStack
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
+import { AttributeModifiers } from '../AttributeModifiers'
 import { AttributeListEditorProps, useAttributeListEditor } from './index'
 
 export const AttributeListEditor = (props: AttributeListEditorProps) => {
@@ -31,21 +34,34 @@ export const AttributeListEditor = (props: AttributeListEditorProps) => {
 
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editAttributeSheet)}>
-      {character.attr.map((item) => (
-        <FormControl key={item.id}>
-          <FormLabel htmlFor={item.ref}>{item.label}</FormLabel>
-          <NumberInput
-            min={3}
-            max={20}
-          >
-            <NumberInputField {...register(item.ref)} />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
-        </FormControl>
-      ))}
+      <AttributeModifiers attrRef={props.attrRef} />
+
+      <Divider mt={2} />
+
+      <FormControl
+        display="flex"
+        alignItems="center"
+        bg="neutral.500"
+        roundedLeft="lg"
+      >
+        <FormLabel
+          htmlFor={props.attrRef}
+          mt={2}
+          ml={2}
+          color="neutral.100"
+          flex="1"
+          textAlign="right"
+        >
+          Valor do Atributo
+        </FormLabel>
+        <NumberInput min={3} max={20} flex="0.4" bg="neutral.700">
+          <NumberInputField {...register(props.attrRef)} />
+          <NumberInputStepper>
+            <NumberIncrementStepper />
+            <NumberDecrementStepper />
+          </NumberInputStepper>
+        </NumberInput>
+      </FormControl>
 
       <Spacer />
       <Button
@@ -54,7 +70,7 @@ export const AttributeListEditor = (props: AttributeListEditorProps) => {
         type="submit"
         isLoading={isSubmitting}
       >
-        Confirmar
+        Atualizar
       </Button>
     </VStack>
   )

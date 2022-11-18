@@ -3,13 +3,13 @@ import { CombatSectionAsideGroup } from '../CombatSectionAsideGroup'
 import { CombatSectionAsideProps, useCombatSectionAside } from './index'
 
 export const CombatSectionAside = (props: CombatSectionAsideProps) => {
-  const { result } = useCombatSectionAside()
+  const { ac, tac0, meelee, range } = useCombatSectionAside()
 
   return (
     <VStack w="8rem" color="white">
       <CombatSectionAsideGroup>
         <Center w="full" fontSize="xl" fontWeight="bold">
-          CA 10
+          CA {ac}
         </Center>
       </CombatSectionAsideGroup>
       <CombatSectionAsideGroup>
@@ -18,7 +18,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
             Tac0
           </Text>
           <Text as="p" fontSize="xl">
-            +1
+            {tac0}
           </Text>
         </Center>
         <Center w="full" flexDir="column" h={12}>
@@ -26,7 +26,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
             corporal
           </Text>
           <Text as="p" fontSize="xl">
-            +3
+            {meelee}
           </Text>
         </Center>
         <Center w="full" flexDir="column" h={12}>
@@ -34,7 +34,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
             distância
           </Text>
           <Text as="p" fontSize="xl">
-            +2
+            {range}
           </Text>
         </Center>
       </CombatSectionAsideGroup>

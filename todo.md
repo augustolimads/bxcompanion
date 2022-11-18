@@ -21,13 +21,13 @@
 ## development
 - [x] criar um util que limita o tamanho do texto pra não quebrar o layout
 - [x] formatar melhor a exibição dos equipamentos
-- [] salvar salvaguardas no state
-- [] salvar editor de pv
+- [x] salvar salvaguardas no state
+- [x] salvar editor de pv
+- [x] corrigir a cor dos botões quando clicado
 - [] adicionar o dropdown de deletar o personagem nos 3 pontinhos
 
 ## extra
 - [] colocar foto do personagem no modal do nome
-- [] corrigir a cor dos botões quando clicado
 - [] colocar XP em 2 colunas
 - [] pv atual e pv máximo e pv extra que soma no atual
 - [] pv em 2 colunas

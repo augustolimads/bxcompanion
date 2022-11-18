@@ -1,8 +1,7 @@
-import { Box, Flex, IconButton } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Layout, MainContent, MainMenu } from 'src/components'
+import { Layout, MainContent, MainMenu, SheetOptions } from 'src/components'
 import { CharacterSheetName } from 'src/components/CharacterSheetName'
-import { ThreeDotsIcon } from 'src/components/Icons'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
 
@@ -13,13 +12,7 @@ const Ficha: NextPage = () => {
         headerChildren={
           <Flex flex="1" alignItems="center">
             <CharacterSheetName />
-            <IconButton
-              aria-label="Search database"
-              colorScheme="transparent"
-              icon={<ThreeDotsIcon size="24" />}
-              justifySelf="self-start"
-              rounded="md"
-            />
+            <SheetOptions />
           </Flex>
         }
       >

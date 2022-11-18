@@ -18,7 +18,7 @@ export const useHitpoint = () => {
       ...character,
       hp: {
         ...character.hp,
-        current: character.hp.current + 1
+        current: Number(character.hp.current) + 1
       }
     })
   }
@@ -28,7 +28,7 @@ export const useHitpoint = () => {
       ...character,
       hp: {
         ...character.hp,
-        current: character.hp.current - 1
+        current: Number(character.hp.current) - 1
       }
     })
   }

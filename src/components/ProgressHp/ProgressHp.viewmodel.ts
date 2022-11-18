@@ -1,4 +1,9 @@
-export const useProgressHp = (current: number, max: number) => {
+import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
+
+export const useProgressHp = () => {
+  const {character} = useCharacter()
+  const current = character.hp.current
+  const max = character.hp.max
   const operationPercentage = (current * 100) / max
   const extraPercent = ((current - max) * 100) / max
   const currentExibition = operationPercentage < 100 ? operationPercentage : 100

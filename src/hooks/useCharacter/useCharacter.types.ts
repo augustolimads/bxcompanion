@@ -16,7 +16,7 @@ export type CharacterProps = {
     id: string
     label: string
     abbreviate: string
-    ref: string
+    ref: itemSavesProps
     value: number
   }[]
   hp: {
@@ -92,3 +92,5 @@ export type CharacterContextProps = {
 }
 
 export type itemAttributeProps = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
+
+export type itemSavesProps = 'death' | 'vsMagic' | 'wand' | 'paralysis' | 'breath' | 'spells'

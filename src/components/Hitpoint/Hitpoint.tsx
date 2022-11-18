@@ -28,6 +28,7 @@ export const Hitpoint = (props: HitpointProps) => {
           color="neutral.100"
           fontWeight="bold"
           onClick={decreaseHitpoint}
+          _focus={{ bg: 'neutral.900' }}
         >
           -
         </Button>
@@ -54,11 +55,17 @@ export const Hitpoint = (props: HitpointProps) => {
           color="neutral.100"
           fontWeight="bold"
           onClick={increaseHitpoint}
+          _focus={{ bg: 'neutral.900' }}
         >
           +
         </Button>
       </Flex>
-      <CharacterSheetEditor label="Edição de Pontos de vida" isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
+      <CharacterSheetEditor
+        label="Edição de Pontos de vida"
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+      >
         <HitpointEditor />
       </CharacterSheetEditor>
     </>

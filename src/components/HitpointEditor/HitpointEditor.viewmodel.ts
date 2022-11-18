@@ -1,29 +1,31 @@
+import { useEffect, useState } from 'react'
 import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { editHpProps, formProps } from './HitpointEditor.types'
 
+const forms:formProps[] = [
+  {
+    id: '1',
+    label: 'DV',
+    ref: 'hd',
+    value: 0
+  },
+  {
+    id: '2',
+    label: 'PV atual',
+    ref: 'current',
+    value: 0
+  },
+  {
+    id: '3',
+    label: 'PV máximo',
+    ref: 'max',
+    value: 0
+  }
+]
+
 export const useHitpointEditor = () => {
   const { character, setCharacter } = useCharacter()
-
-  const forms:formProps[] = [
-    {
-      id: '1',
-      label: 'DV',
-      ref: 'hd',
-      value: character.hp.hd
-    },
-    {
-      id: '2',
-      label: 'PV atual',
-      ref: 'current',
-      value: character.hp.current
-    },
-    {
-      id: '3',
-      label: 'PV máximo',
-      ref: 'max',
-      value: character.hp.max
-    }
-  ]
+  const [formState, setFormState] = useState(forms)
 
   const editHpSheet = ({hd, current, max}: editHpProps) => {
     setCharacter({
@@ -35,6 +37,15 @@ export const useHitpointEditor = () => {
         }
     })
 }
+
+useEffect(() => {
+  setFormState([
+    ...formState,
+    {...forms[0], value: character.hp.hd},
+   {...forms[1], value: character.hp.current},
+   {...forms[2], value: character.hp.max}
+  ])
+},[character.hp.current, character.hp.max])
 
   return { forms, character, editHpSheet }
 }

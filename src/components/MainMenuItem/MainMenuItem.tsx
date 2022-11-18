@@ -3,7 +3,6 @@ import { MainMenuItemProps, useMainMenuItem } from './index'
 
 export const MainMenuItem = (props: MainMenuItemProps) => {
   const { result } = useMainMenuItem()
-
   return (
     <Button
       w="full"
@@ -12,7 +11,13 @@ export const MainMenuItem = (props: MainMenuItemProps) => {
       bg="transparent"
       color="neutral.100"
       onClick={props.onClick}
-      _focus={{border: '1px solid', borderColor: 'neutral.100', bg: 'neutral.900'}}
+      border={props.isActive ? '1px solid' : ''}
+      borderColor={props.isActive ? 'neutral.100' : ''}
+      _focus={{
+        border: '1px solid',
+        borderColor: 'neutral.100',
+        bg: 'neutral.900'
+      }}
     >
       {props.children}
     </Button>

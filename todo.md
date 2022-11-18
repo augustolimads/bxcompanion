@@ -15,12 +15,21 @@
 - [] página sobre no menu gaveta
 - [] página de configurações (regras, temas, integrações)
 - [] rolador de dados
+- [] gerenciador de tempo de dungeon / viagens, etc linkado ao calendario do kanka
+- [] criação de sala com nome único e linkado a uma chave do kanka
 
 ## development
 - [x] criar um util que limita o tamanho do texto pra não quebrar o layout
 - [x] formatar melhor a exibição dos equipamentos
+- [] salvar salvaguardas no state
+- [] salvar editor de pv
+- [] adicionar o dropdown de deletar o personagem nos 3 pontinhos
+
+## extra
+- [] colocar foto do personagem no modal do nome
 - [] corrigir a cor dos botões quando clicado
-- [] decidir como editar as áreas da ficha se vai ser pelo lápis (o que seria editável pelo lápis)
-- [] onde colocaria foto do personagem
-- [] Finalizar o gerenciador de ficha funcionar manual
-- [] Finalizar o gerenciador fichas de personagens
+- [] colocar XP em 2 colunas
+- [] pv atual e pv máximo e pv extra que soma no atual
+- [] pv em 2 colunas
+- [] classe em select (autocomplete)
+- [] DV em select

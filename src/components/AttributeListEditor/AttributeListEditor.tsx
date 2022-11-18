@@ -10,16 +10,20 @@ import {
   NumberInputStepper,
   Spacer,
   VStack
-} from '@chakra-ui/react'
-import { useForm } from 'react-hook-form'
-import { AttributeModifiers } from '../AttributeModifiers'
-import { AttributeListEditorProps, useAttributeListEditor } from './index'
+} from '@chakra-ui/react';
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { AttributeModifiers } from '../AttributeModifiers';
+import { AttributeListEditorProps, useAttributeListEditor } from './index';
+
+
 
 export const AttributeListEditor = (props: AttributeListEditorProps) => {
   const { editAttributeSheet, character } = useAttributeListEditor()
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { isSubmitting }
   } = useForm({
     defaultValues: {
@@ -31,6 +35,10 @@ export const AttributeListEditor = (props: AttributeListEditorProps) => {
       cha: character.attr[5].value
     }
   })
+
+  useEffect(() => {
+    setFocus(props.attrRef);
+  }, [setFocus, props.attrRef]);
 
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editAttributeSheet)}>

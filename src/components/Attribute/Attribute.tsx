@@ -5,7 +5,7 @@ import { CharacterSheetEditor } from '../CharacterSheetEditor'
 import { AttributeProps, useAttribute } from './index'
 
 export const Attribute = (props: AttributeProps) => {
-  const { modifier, isPositive } = useAttribute(props.value)
+  const { modifier } = useAttribute(props.value)
   const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -38,8 +38,9 @@ export const Attribute = (props: AttributeProps) => {
             borderColor="neutral.500"
             fontSize="xs"
             p={1}
+            w={6}
+            textAlign='center'
           >
-            {isPositive}
             {modifier}
           </Text>
         </Flex>

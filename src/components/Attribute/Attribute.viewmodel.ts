@@ -1,7 +1,7 @@
 import { attributeModifier } from "src/utils/attributeModifier"
+import { formatBonus } from "src/utils/formatBonus"
 
 export const useAttribute = (value: number) => {
-    const modifier = attributeModifier(value)
-    const isPositive = modifier > 0 ? '+' : ''
-    return {modifier, isPositive}
+    const modifier = formatBonus(attributeModifier(value))
+    return {modifier}
 }

@@ -33,3 +33,4 @@
 - [] pv em 2 colunas
 - [] classe em select (autocomplete)
 - [] DV em select
+- [] quando abrir um modal que tiver input, o teclado deve sempre ficar visivel

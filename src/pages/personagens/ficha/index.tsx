@@ -1,6 +1,12 @@
 import { Box, Flex } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Layout, MainContent, MainMenu, SheetOptions } from 'src/components'
+import {
+  Layout,
+  MainContent,
+  MainMenu,
+  SheetContainer,
+  SheetOptions
+} from 'src/components'
 import { CharacterSheetName } from 'src/components/CharacterSheetName'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetMenuProvider } from 'src/hooks/useSheetMenu/useSheetMenu'
@@ -21,7 +27,9 @@ const Ficha: NextPage = () => {
           <MainMenu />
         </Box>
         <Box pt="16rem">
-          <SheetContentDisplay />
+          <SheetContainer>
+            <SheetContentDisplay />
+          </SheetContainer>
         </Box>
       </Layout>
     </SheetMenuProvider>

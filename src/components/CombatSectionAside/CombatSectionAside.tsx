@@ -1,5 +1,13 @@
-import { Button, Center, Heading, Text, VStack } from '@chakra-ui/react'
+import {
+  Button,
+  Center,
+  Heading,
+  IconButton,
+  Text,
+  VStack
+} from '@chakra-ui/react'
 import { CombatSectionAsideGroup } from '../CombatSectionAsideGroup'
+import { DiceIcon } from '../Icons'
 import { CombatSectionAsideProps, useCombatSectionAside } from './index'
 
 export const CombatSectionAside = (props: CombatSectionAsideProps) => {
@@ -56,6 +64,11 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
           </Text>
         </Button>
       </CombatSectionAsideGroup>
+      <IconButton
+        bg="transparent"
+        aria-label="dice"
+        icon={<DiceIcon size="2rem" />}
+      />
     </VStack>
   )
 }

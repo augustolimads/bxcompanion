@@ -24,7 +24,10 @@
 - [x] salvar salvaguardas no state
 - [x] salvar editor de pv
 - [x] corrigir a cor dos botões quando clicado
-- [] adicionar o dropdown de deletar o personagem nos 3 pontinhos
+- [x] adicionar o dropdown de deletar o personagem nos 3 pontinhos
+- [] adicionar % em nível
+- [] transformar notas em habilidades
+- [] criar um botão de nota e abrir um editor
 
 ## extra
 - [] colocar foto do personagem no modal do nome

@@ -24,7 +24,8 @@ export const LevelSheetEditor = (props: LevelSheetEditorProps) => {
     defaultValues: {
       level: character.level,
       currentXP: character.currentXP,
-      maxXP: character.maxXP
+      maxXP: character.maxXP,
+      xpBonus: character.xpBonus
     }
   })
 
@@ -85,6 +86,25 @@ export const LevelSheetEditor = (props: LevelSheetEditorProps) => {
         </NumberInput>
         {errors.maxXP && (
           <FormErrorMessage>{errors.maxXP.message}</FormErrorMessage>
+        )}
+      </FormControl>
+
+      <FormControl>
+        <FormLabel htmlFor="xpBonus">% bônus de XP</FormLabel>
+        <NumberInput
+          name="xpBonus"
+          id="xpBonus"
+          min={0}
+          aria-invalid={errors.xpBonus ? 'true' : 'false'}
+        >
+          <NumberInputField {...register('xpBonus')} />
+          <NumberInputStepper>
+            <NumberIncrementStepper />
+            <NumberDecrementStepper />
+          </NumberInputStepper>
+        </NumberInput>
+        {errors.xpBonus && (
+          <FormErrorMessage>{errors.xpBonus.message}</FormErrorMessage>
         )}
       </FormControl>
 

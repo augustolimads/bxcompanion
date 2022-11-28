@@ -22,7 +22,9 @@ export const SheetOptions = (props: SheetOptionsProps) => {
         _focus={{ bg: 'neutral.900' }}
       />
       <MenuList bg="neutral.700">
+        <MenuItem _focus={{ bg: 'neutral.700' }}>Sincronizar ficha</MenuItem>
         <MenuItem _focus={{ bg: 'neutral.700' }}>Configurações de ficha</MenuItem>
+        <MenuItem _focus={{ bg: 'neutral.700' }}>exportar ficha</MenuItem>
         <MenuItem _focus={{ bg: 'neutral.700' }}>Deletar personagem</MenuItem>
       </MenuList>
     </Menu>

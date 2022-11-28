@@ -5,6 +5,7 @@ export type CharacterProps = {
   level: number
   currentXP: number
   maxXP: number
+  xpBonus: number
   attr: {
     id: string
     label: string

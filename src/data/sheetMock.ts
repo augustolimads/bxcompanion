@@ -6,6 +6,7 @@ export const sheetMock = {
   level: 1,
   currentXP: 9,
   maxXP: 10,
+  xpBonus: 5,
   attr: [
     {
       id: '1',

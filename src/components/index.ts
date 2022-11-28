@@ -48,3 +48,4 @@ export { AttributeModifiers } from './AttributeModifiers';
 export { AttributeModifierItem } from './AttributeModifierItem';
 export { SheetOptions } from './SheetOptions';
 export { OptionMenu } from './OptionMenu';
+export { CombatButtonAside } from './CombatButtonAside';

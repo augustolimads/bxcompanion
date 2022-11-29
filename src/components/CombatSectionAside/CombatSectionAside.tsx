@@ -1,28 +1,31 @@
-import {
-  Button, Heading,
-  IconButton,
-  Text,
-  VStack
-} from '@chakra-ui/react'
+import { Button, Heading, IconButton, Text, VStack } from '@chakra-ui/react'
+import { AcSheetEditor } from '../AcSheetEditor'
 import { CombatButtonAside } from '../CombatButtonAside'
 import { CombatSectionAsideGroup } from '../CombatSectionAsideGroup'
 import { DiceIcon } from '../Icons'
 import { CombatSectionAsideProps, useCombatSectionAside } from './index'
 
 export const CombatSectionAside = (props: CombatSectionAsideProps) => {
-  const { ac, tac0, meelee, range } = useCombatSectionAside()
+  const { ac, tac0 } = useCombatSectionAside()
 
   return (
     <VStack w="8rem" color="white">
       <CombatSectionAsideGroup>
-        <CombatButtonAside>
+        <CombatButtonAside
+          label="Classe de armadura"
+          modalEditor={<AcSheetEditor />}
+        >
           <Text fontSize="xl" fontWeight="bold">
             CA {ac}
           </Text>
         </CombatButtonAside>
       </CombatSectionAsideGroup>
       <CombatSectionAsideGroup>
-        <CombatButtonAside h={16}>
+        <CombatButtonAside
+          h={16}
+          label="To hit armor class 0"
+          modalEditor={<AcSheetEditor />}
+        >
           <VStack>
             <Text as="p" fontWeight="bold">
               Tac0

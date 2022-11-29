@@ -2,10 +2,12 @@ export type CharacterProps = {
   id?: string
   name: string
   class: string
-  level: number
-  currentXP: number
-  maxXP: number
-  xpBonus: number
+  level: {
+    value: number
+    currentXP: number
+    maxXP: number
+    xpBonus: number
+  }
   attr: {
     id: string
     label: string
@@ -27,7 +29,9 @@ export type CharacterProps = {
   }
   combat: {
     AC: number
+    ACExtra: number
     tac0: number
+    tac0Extra: number
     equipments: EquipmentProps[]
   }
   itens: {

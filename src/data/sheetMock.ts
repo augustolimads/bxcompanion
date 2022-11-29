@@ -3,10 +3,12 @@ import { CharacterProps } from "src/hooks/useCharacter/useCharacter.types";
 export const sheetMock = {
   name: 'Falkor Merako',
   class: 'Guerreiro',
-  level: 1,
-  currentXP: 9,
-  maxXP: 10,
-  xpBonus: 5,
+  level: {
+    value: 1,
+    currentXP: 9,
+    maxXP: 10,
+    xpBonus: 5,
+  },
   attr: [
     {
       id: '1',
@@ -102,7 +104,9 @@ export const sheetMock = {
   },
   combat: {
     AC: 9,
+    ACExtra: 0,
     tac0: 19,
+    tac0Extra: 0,
     equipments: []
   },
   itens: {

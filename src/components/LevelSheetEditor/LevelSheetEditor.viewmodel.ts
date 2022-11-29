@@ -7,9 +7,12 @@ export const useLevelSheetEditor = () => {
     const editLevelSheet = ({level, currentXP, maxXP} : levelSheetEditorForm) => {
         setCharacter({
             ...character,
-            level,
-            currentXP,
-            maxXP
+            level:{
+                ...character.level,
+                value: level,
+                currentXP,
+                maxXP
+            }
         })
     }
 

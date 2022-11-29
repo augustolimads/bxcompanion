@@ -1,4 +1,4 @@
-import { Button, Text, useDisclosure } from '@chakra-ui/react';
+import { Button, useDisclosure } from '@chakra-ui/react';
 import { useRef } from 'react';
 import { CharacterSheetEditor } from '../CharacterSheetEditor';
 import { CombatButtonAsideProps, useCombatButtonAside } from './index';
@@ -15,12 +15,12 @@ export const CombatButtonAside = (props: CombatButtonAsideProps) => {
         {props.children}
       </Button>
       <CharacterSheetEditor
-        label={`Edição de`}
+        label={props.label || ''}
         isOpen={isOpen}
         onClose={onClose}
         btnRef={btnRef}
       >
-        <Text>pera</Text>
+        {props.modalEditor}
       </CharacterSheetEditor>
     </>
   );

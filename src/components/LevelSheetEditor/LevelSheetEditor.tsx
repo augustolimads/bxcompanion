@@ -22,10 +22,10 @@ export const LevelSheetEditor = (props: LevelSheetEditorProps) => {
     formState: { errors, isSubmitting }
   } = useForm({
     defaultValues: {
-      level: character.level,
-      currentXP: character.currentXP,
-      maxXP: character.maxXP,
-      xpBonus: character.xpBonus
+      level: character.level.value,
+      currentXP: character.level.currentXP,
+      maxXP: character.level.maxXP,
+      xpBonus: character.level.xpBonus
     }
   })
 

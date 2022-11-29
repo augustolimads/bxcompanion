@@ -4,8 +4,8 @@ export const useLevelControl = () => {
   const { character } = useCharacter()
   return { 
     charClass: character.class, 
-    level: character.level,
-    currentXP: character.currentXP,
-    maxXP: character.maxXP
+    level: character.level.value,
+    currentXP: character.level.currentXP,
+    maxXP: character.level.maxXP
    }
 }

@@ -50,3 +50,4 @@ export { SheetOptions } from './SheetOptions';
 export { OptionMenu } from './OptionMenu';
 export { CombatButtonAside } from './CombatButtonAside';
 export { AcSheetEditor } from './AcSheetEditor';
+export { Tac0SheetEditor } from './Tac0SheetEditor';

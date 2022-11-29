@@ -32,7 +32,6 @@ export type CharacterProps = {
     ACExtra: number
     tac0: number
     tac0Extra: number
-    equipments: EquipmentProps[]
   }
   itens: {
     distance: {
@@ -51,7 +50,8 @@ export type CharacterProps = {
       gold: number
       platinum: number
     }
-    itens: EquipmentProps[]
+    itemList: EquipmentProps[]
+    equipments: EquipmentProps[]
   }
   spells: SpellProps[]
   notes: {

@@ -3,6 +3,7 @@ import { AcSheetEditor } from '../AcSheetEditor'
 import { CombatButtonAside } from '../CombatButtonAside'
 import { CombatSectionAsideGroup } from '../CombatSectionAsideGroup'
 import { DiceIcon } from '../Icons'
+import { Tac0SheetEditor } from '../Tac0SheetEditor'
 import { CombatSectionAsideProps, useCombatSectionAside } from './index'
 
 export const CombatSectionAside = (props: CombatSectionAsideProps) => {
@@ -24,7 +25,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
         <CombatButtonAside
           h={16}
           label="To hit armor class 0"
-          modalEditor={<AcSheetEditor />}
+          modalEditor={<Tac0SheetEditor />}
         >
           <VStack>
             <Text as="p" fontWeight="bold">

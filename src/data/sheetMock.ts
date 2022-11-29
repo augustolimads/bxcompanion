@@ -106,8 +106,8 @@ export const sheetMock = {
     AC: 9,
     ACExtra: 0,
     tac0: 19,
-    tac0Extra: 0,
-    equipments: []
+    tac0Extra: 0
+    
   },
   itens: {
     distance: {
@@ -126,7 +126,8 @@ export const sheetMock = {
       gold: 0,
       platinum: 0
     },
-    itens: []
+    itemList: [],
+    equipments: []
   },
   spells: [],
   notes: {

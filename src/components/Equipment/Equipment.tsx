@@ -1,31 +1,50 @@
-import { Button, Text } from '@chakra-ui/react'
+import { Button, Text, useDisclosure } from '@chakra-ui/react'
+import { useRef } from 'react'
 import { formatBonus } from 'src/utils/formatBonus'
+import { CharacterSheetEditor } from '../CharacterSheetEditor'
+import { EquipmentSheetEditor } from '../EquipmentSheetEditor'
 import { EquipmentProps, useEquipment } from './index'
 
 export const Equipment = (props: EquipmentProps) => {
   const { result } = useEquipment()
+  const btnRef = useRef<HTMLButtonElement>(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Button
-      w="full"
-      bg="neutral.300"
-      size="sm"
-      color="white"
-      gap={1}
-      justifyContent="start"
-    >
-      {props.amount && (
-        <Text color="neutral.100" justifySelf="start">
-          {props.amount}x
-        </Text>
-      )}
-      <Text>{props.label}</Text>
-      {props.bonus && <Text color="neutral.100">{formatBonus(props.bonus)}</Text>}
-      {props.damage && (
-        <Text color="neutral.100" ml={3}>
-          dano: {props.damage}
-        </Text>
-      )}
-    </Button>
+    <>
+      <Button
+        w="full"
+        bg="neutral.300"
+        size="sm"
+        color="white"
+        gap={1}
+        justifyContent="start"
+        ref={btnRef}
+        onClick={onOpen}
+      >
+        {props.amount && (
+          <Text color="neutral.100" justifySelf="start">
+            {props.amount}x
+          </Text>
+        )}
+        <Text>{props.label}</Text>
+        {props.bonus && (
+          <Text color="neutral.100">{formatBonus(props.bonus)}</Text>
+        )}
+        {props.damage && (
+          <Text color="neutral.100" ml={3}>
+            dano: {props.damage}
+          </Text>
+        )}
+      </Button>
+      <CharacterSheetEditor
+        label={`Edição de Equipamento`}
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+      >
+        <EquipmentSheetEditor />
+      </CharacterSheetEditor>
+    </>
   )
 }

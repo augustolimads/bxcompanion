@@ -72,6 +72,7 @@ export type EquipmentProps = {
   bonus?: number
   damage?: string
   amount?: number
+  description?: string
 }
 
 export type SpellProps = {

@@ -127,7 +127,30 @@ export const sheetMock = {
       platinum: 0
     },
     itemList: [],
-    equipments: []
+    equipments: [
+      {
+        id: '1',
+        label: 'Espada longa',
+        bonus: 5,
+        damage: 'd8',
+        description: 'é uma espada com detalhes dourados'
+      },
+      {
+        id: '2',
+        label: 'Armadura de couro',
+        bonus: 5,
+      },
+      {
+        id: '3',
+        label: 'escudo',
+        bonus: 1,
+      },
+      {
+        id: '4',
+        label: 'flechas',
+        amount: 10
+      },
+    ]
   },
   spells: [],
   notes: {

@@ -68,8 +68,11 @@ export type CharacterProps = {
 
 export type EquipmentProps = {
   id?: string
+  equipped?: boolean
+  type: EquipTypeProps
   label: string
-  bonus?: number
+  TAC0Bonus?: number
+  ACBonus?: number
   damage?: string
   amount?: number
   description?: string
@@ -100,3 +103,5 @@ export type CharacterContextProps = {
 export type itemAttributeProps = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
 
 export type itemSavesProps = 'death' | 'vsMagic' | 'wand' | 'paralysis' | 'breath' | 'spells'
+
+export type EquipTypeProps = 'weapon' | 'armor' | 'ammo' | 'item'

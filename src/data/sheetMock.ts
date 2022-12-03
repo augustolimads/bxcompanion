@@ -130,23 +130,31 @@ export const sheetMock = {
     equipments: [
       {
         id: '1',
+        equipped: true,
         label: 'Espada longa',
-        bonus: 5,
+        type: 'weapon',
+        TAC0Bonus: 5,
         damage: 'd8',
         description: 'é uma espada com detalhes dourados'
       },
       {
         id: '2',
+        equipped: true,
+        type: 'armor',
         label: 'Armadura de couro',
-        bonus: 5,
+        ACBonus: 5,
       },
       {
         id: '3',
+        equipped: false,
+        type: 'armor',
         label: 'escudo',
-        bonus: 1,
+        ACBonus: 1,
       },
       {
         id: '4',
+        equipped: true,
+        type: 'ammo',
         label: 'flechas',
         amount: 10
       },

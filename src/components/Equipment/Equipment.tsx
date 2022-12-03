@@ -1,8 +1,9 @@
-import { Button, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Text, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { formatBonus } from 'src/utils/formatBonus'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
 import { EquipmentSheetEditor } from '../EquipmentSheetEditor'
+import { HandIcon } from '../Icons'
 import { EquipmentProps, useEquipment } from './index'
 
 export const Equipment = (props: EquipmentProps) => {
@@ -19,22 +20,31 @@ export const Equipment = (props: EquipmentProps) => {
         color="white"
         gap={1}
         justifyContent="start"
+        borderWidth={props.isEquipped ? 2 : 0}
         ref={btnRef}
         onClick={onOpen}
       >
-        {props.amount && (
+        {props.type === 'ammo' && (
           <Text color="neutral.100" justifySelf="start">
             {props.amount}x
           </Text>
         )}
         <Text>{props.label}</Text>
-        {props.bonus && (
-          <Text color="neutral.100">{formatBonus(props.bonus)}</Text>
+        {(props.type === 'weapon' && props.TAC0Bonus) && (
+          <Text color="neutral.100">{formatBonus(props.TAC0Bonus)}</Text>
         )}
-        {props.damage && (
+        {(props.type === 'armor' && props.ACBonus) && (
+          <Text color="neutral.100">{formatBonus(props.ACBonus)}</Text>
+        )}
+        {(props.type === 'weapon' && props.damage) && (
           <Text color="neutral.100" ml={3}>
             dano: {props.damage}
           </Text>
+        )}
+        {props.isEquipped && (
+          <Box ml='auto'>
+            <HandIcon />
+          </Box>
         )}
       </Button>
       <CharacterSheetEditor
@@ -42,8 +52,9 @@ export const Equipment = (props: EquipmentProps) => {
         isOpen={isOpen}
         onClose={onClose}
         btnRef={btnRef}
+        hasMenu
       >
-        <EquipmentSheetEditor />
+        <EquipmentSheetEditor id={props.id} />
       </CharacterSheetEditor>
     </>
   )

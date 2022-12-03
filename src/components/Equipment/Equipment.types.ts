@@ -1,7 +1,12 @@
+import { EquipTypeProps } from 'src/hooks/useCharacter/useCharacter.types'
+
 export type EquipmentProps = {
     id?: string
+    type?: EquipTypeProps
+    isEquipped?: boolean
     label: string
-    bonus?: number
+    TAC0Bonus?: number
+    ACBonus?: number
     damage?: string
     amount?: number
 }

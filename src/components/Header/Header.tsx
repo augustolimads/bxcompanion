@@ -19,7 +19,7 @@ export const Header = ({ children }: HeaderProps) => {
       <SheetContainer>
         <Flex color="white" alignItems="center">
           <IconButton
-            aria-label="Search database"
+            aria-label="menu"
             ref={btnRef}
             colorScheme="transparent"
             onClick={onOpen}

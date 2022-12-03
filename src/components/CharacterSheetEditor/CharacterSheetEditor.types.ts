@@ -7,4 +7,5 @@ export type CharacterSheetEditorProps = {
     onClose: () => void
     btnRef: RefObject<HTMLButtonElement | HTMLDivElement>
     children: JSX.Element
+    hasMenu?: boolean
 }

@@ -1,19 +1,20 @@
-import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { Equipment } from '../Equipment'
 import { SheetList } from '../SheetList'
 import { CombatSectionProps, useCombatSection } from './index'
 
 export const CombatSection = (props: CombatSectionProps) => {
-  const { result } = useCombatSection()
-  const { character } = useCharacter()
+  const { character, createEquipment } = useCombatSection()
 
   return (
-    <SheetList buttonLabel="Novo Equipamento">
+    <SheetList buttonLabel="Novo Equipamento" onClick={createEquipment}>
       {character.itens.equipments.map((equipment) => (
         <Equipment
           id={equipment.id}
+          type={equipment.type}
+          isEquipped={equipment.equipped}
           label={equipment.label}
-          bonus={equipment.bonus}
+          TAC0Bonus={equipment.TAC0Bonus}
+          ACBonus={equipment.ACBonus}
           damage={equipment.damage}
           amount={equipment.amount}
         />

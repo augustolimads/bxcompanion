@@ -4,5 +4,4 @@ export type NameSheetEditorProps = {
 
 export type NameSheetEditorForm = {
     name: string
-    charClass: string
 }

@@ -19,7 +19,6 @@ export const NameSheetEditor = (props: NameSheetEditorProps) => {
   } = useForm({
     defaultValues: {
       name: character.name,
-      charClass: character.class
     }
   })
 
@@ -38,18 +37,6 @@ export const NameSheetEditor = (props: NameSheetEditorProps) => {
         )}
       </FormControl>
 
-      <FormControl>
-        <FormLabel htmlFor="class">Classe do personagem</FormLabel>
-        <Input
-          id="charClass"
-          placeholder="Classe do personagem"
-          {...register('charClass')}
-          aria-invalid={errors.charClass ? 'true' : 'false'}
-        />
-        {errors.charClass && (
-          <FormErrorMessage>{errors.charClass.message}</FormErrorMessage>
-        )}
-      </FormControl>
       <Spacer />
       <Button
         bg="neutral.900"

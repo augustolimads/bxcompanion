@@ -2,6 +2,7 @@ import {
   Button,
   FormControl,
   FormLabel,
+  HStack,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
@@ -29,6 +30,7 @@ export const HitpointEditor = (props: HitpointEditorProps) => {
 
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editHpSheet)}>
+      <HStack>
       {forms.map((el) => (
         <FormControl key={el.id}>
           <FormLabel htmlFor={el.label}>{el.label}</FormLabel>
@@ -41,6 +43,7 @@ export const HitpointEditor = (props: HitpointEditorProps) => {
           </NumberInput>
         </FormControl>
       ))}
+      </HStack>
 
       <Spacer />
       <Button bg="neutral.900" color="neutral.100" type="submit">

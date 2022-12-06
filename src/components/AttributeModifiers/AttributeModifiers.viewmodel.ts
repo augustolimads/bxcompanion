@@ -101,8 +101,8 @@ const chaData = [
 
 export const useAttributeModifiers = (attrRef: AttrRef) => {
   const { character } = useCharacter()
-  const attr = character.attr.find((el) => el.ref === attrRef)
-  const attrValue = attr?.value
+  const attr = character.attr[attrRef]
+  const attrValue = attr
 
   const [attrData, setAttrData] = useState<AttrData[]>(strData)
 

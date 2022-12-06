@@ -27,12 +27,12 @@ export const AttributeListEditor = (props: AttributeListEditorProps) => {
     formState: { isSubmitting }
   } = useForm({
     defaultValues: {
-      str: character.attr[0].value,
-      dex: character.attr[1].value,
-      con: character.attr[2].value,
-      int: character.attr[3].value,
-      wis: character.attr[4].value,
-      cha: character.attr[5].value
+      str: character.attr.str,
+      dex: character.attr.dex,
+      con: character.attr.con,
+      int: character.attr.int,
+      wis: character.attr.wis,
+      cha: character.attr.cha
     }
   })
 

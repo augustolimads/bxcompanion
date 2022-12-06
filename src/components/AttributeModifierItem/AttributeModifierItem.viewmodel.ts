@@ -8,8 +8,8 @@ import { AttrMod } from './AttributeModifierItem.types'
 export const useAttributeModifierItem = (attrRef: AttrRef) => {
   const { character } = useCharacter()
   const [attrMod, setAttrMod] = useState<AttrMod>()
-  const attr = character.attr.find((el) => el.ref === attrRef)
-  const attrValue = attr?.value || 0
+  const attr = character.attr[attrRef]
+  const attrValue = attr || 0
   useEffect(() => {
     const attrMod = formatBonus(attributeModifier(attrValue))
     setAttrMod({

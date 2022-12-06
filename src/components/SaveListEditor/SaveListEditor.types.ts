@@ -10,3 +10,12 @@ export type EditSaveProps = {
     breath: number
     spells: number
 }
+
+export type saveId = 'vsMagic' | 'death' | 'wand' | 'paralysis' | 'breath' | 'spells'
+
+export type saveListProps = {
+    id: saveId
+    label: string
+    abbreviate: string
+    value: number
+}

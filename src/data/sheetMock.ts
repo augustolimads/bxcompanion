@@ -9,94 +9,22 @@ export const sheetMock = {
     maxXP: 10,
     xpBonus: 5,
   },
-  attr: [
-    {
-      id: '1',
-      label: 'Força',
-      abbreviate: 'for',
-      ref: 'str',
-      value: 12
-    },
-    {
-      id: '2',
-      label: 'Destreza',
-      abbreviate: 'des',
-      ref: 'dex',
-      value: 16
-    },
-    {
-      id: '3',
-      label: 'Constituição',
-      abbreviate: 'con',
-      ref: 'con',
-      value: 5
-    },
-    {
-      id: '4',
-      label: 'Inteligência',
-      abbreviate: 'int',
-      ref: 'int',
-      value: 8
-    },
-    {
-      id: '5',
-      label: 'Sabedoria',
-      abbreviate: 'sab',
-      ref: 'wis',
-      value: 10
-    },
-    {
-      id: '6',
-      label: 'Carisma',
-      abbreviate: 'car',
-      ref: 'cha',
-      value: 14
-    },
-  ],
-  saves: [
-    {
-      id: '1',
-      label: 'Vs Magia',
-      abbreviate: 'vs magia',
-      ref: 'vsMagic',
-      value: 12
-    },
-    {
-      id: '2',
-      label: 'Morte e veneno',
-      abbreviate: 'morte',
-      ref: 'death',
-      value: 16
-    },
-    {
-      id: '3',
-      label: 'Varinhas',
-      abbreviate: 'varinhas',
-      ref: 'wand',
-      value: 8
-    },
-    {
-      id: '4',
-      label: 'Paralisia',
-      abbreviate: 'paralisia',
-      ref: 'paralysis',
-      value: 13
-    },
-    {
-      id: '5',
-      label: 'Baforada',
-      abbreviate: 'sopro',
-      ref: 'breath',
-      value: 10
-    },
-    {
-      id: '6',
-      label: 'Feitiços',
-      abbreviate: 'feitiços',
-      ref: 'spells',
-      value: 14
-    },
-  ],
+  attr:{
+    str: 12,
+    dex: 16,
+    con: 5,
+    int: 8,
+    wis: 10,
+    cha: 14
+  },
+  saves: {
+    vsMagic: 0,
+    death: 16,
+    wand: 8,
+    paralysis: 13, 
+    breath: 10,
+    spells: 14,
+  },
   hp: {
     hd: 8,
     current: 10,
@@ -129,34 +57,38 @@ export const sheetMock = {
     itemList: [],
     equipments: [
       {
-        id: '1',
+        id: 'espada-longa',
         equipped: true,
         label: 'Espada longa',
         type: 'weapon',
         TAC0Bonus: 5,
         damage: 'd8',
-        description: 'é uma espada com detalhes dourados'
+        description: 'é uma espada com detalhes dourados',
+        weight: 0
       },
       {
-        id: '2',
+        id: 'armadura-de-couro',
         equipped: true,
         type: 'armor',
         label: 'Armadura de couro',
         ACBonus: 5,
+        weight: 0
       },
       {
-        id: '3',
+        id: 'escudo',
         equipped: false,
         type: 'armor',
         label: 'escudo',
         ACBonus: 1,
+        weight: 0
       },
       {
-        id: '4',
+        id: 'flechas',
         equipped: true,
         type: 'ammo',
         label: 'flechas',
-        amount: 10
+        amount: 10,
+        weight: 0
       },
     ]
   },

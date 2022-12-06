@@ -14,25 +14,25 @@ import { useForm } from 'react-hook-form'
 import { SaveListEditorProps, useSaveListEditor } from './index'
 
 export const SaveListEditor = (props: SaveListEditorProps) => {
-  const { editSaveSheet, character } = useSaveListEditor()
+  const { defaultSaves, editSaveSheet, saveList } = useSaveListEditor()
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting }
   } = useForm({
     defaultValues: {
-      vsMagic: character.saves[0].value,
-      death: character.saves[1].value,
-      wand: character.saves[2].value,
-      paralysis: character.saves[3].value,
-      breath: character.saves[4].value,
-      spells: character.saves[5].value,
+      vsMagic: defaultSaves.vsMagic,
+      death: defaultSaves.death,
+      wand: defaultSaves.wand,
+      paralysis: defaultSaves.paralysis,
+      breath: defaultSaves.breath,
+      spells: defaultSaves.spells,
     }
   })
 
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editSaveSheet)}>
-      {character.saves.map((item, index) => {
+      {saveList.map((item, index) => {
         if (index === 0) {
           return
         }
@@ -47,7 +47,7 @@ export const SaveListEditor = (props: SaveListEditorProps) => {
               min={0}
               max={20}
             >
-              <NumberInputField {...register(item.ref)} />
+              <NumberInputField {...register(item.id)} />
               <NumberInputStepper>
                 <NumberIncrementStepper />
                 <NumberDecrementStepper />

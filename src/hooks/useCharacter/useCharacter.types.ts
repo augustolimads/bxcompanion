@@ -9,19 +9,21 @@ export type CharacterProps = {
     xpBonus: number
   }
   attr: {
-    id: string
-    label: string
-    abbreviate: string
-    ref: itemAttributeProps
-    value: number
-  }[]
+    str: number
+    dex: number
+    con: number
+    int: number
+    wis: number
+    cha: number
+  }
   saves: {
-    id: string
-    label: string
-    abbreviate: string
-    ref: itemSavesProps
-    value: number
-  }[]
+    vsMagic: number
+    death: number
+    wand: number
+    paralysis: number
+    breath: number
+    spells: number
+  }
   hp: {
     hd: number
     current: number
@@ -76,6 +78,7 @@ export type EquipmentProps = {
   damage?: string
   amount?: number
   description?: string
+  weight?: number
 }
 
 export type SpellProps = {
@@ -102,6 +105,12 @@ export type CharacterContextProps = {
 
 export type itemAttributeProps = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'
 
-export type itemSavesProps = 'death' | 'vsMagic' | 'wand' | 'paralysis' | 'breath' | 'spells'
+export type itemSavesProps =
+  | 'death'
+  | 'vsMagic'
+  | 'wand'
+  | 'paralysis'
+  | 'breath'
+  | 'spells'
 
 export type EquipTypeProps = 'weapon' | 'armor' | 'ammo' | 'item'

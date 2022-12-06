@@ -1,31 +1,29 @@
 import { Flex, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
-import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
 import { SaveListEditor } from '../SaveListEditor'
 import { SavingThrow } from '../SavingThrow'
 import { SaveListProps, useSaveList } from './index'
 
 export const SaveList = (props: SaveListProps) => {
-  const { vsMagicMod } = useSaveList()
-  const { character } = useCharacter()
+  const { vsMagicMod, saveList } = useSaveList()
   const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
       <Flex gap={1} justify="space-between" ref={btnRef} onClick={onOpen}>
-        {character.saves.map((item) => {
+        {saveList.map((item) => {
           return (
             <SavingThrow
               label={item.abbreviate}
               value={
-                item.ref === 'vsMagic'
+                item.id === 'vsMagic'
                   ? vsMagicMod
                   : item.value
               }
-              highLight={item.ref === 'vsMagic'}
-              symbol={item.ref === 'vsMagic'}
+              highLight={item.id === 'vsMagic'}
+              symbol={item.id === 'vsMagic'}
             />
           )
         })}

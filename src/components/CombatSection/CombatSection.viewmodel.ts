@@ -5,13 +5,22 @@ export const useCombatSection = () => {
 
   function createEquipment() {
     const equipmentList = character.itens.equipments
-    equipmentList.push({id: '123', label: 'teste', type: 'weapon'})
+    const equipmentListSize = equipmentList.length
+    let excedentEquipmentListSize = equipmentListSize
+    const equipmentSlug = `item-${excedentEquipmentListSize}`
+    const hasSlugOnEquipmentList =
+      equipmentList.findIndex((el) => el.id === equipmentSlug) === -1
+        ? false
+        : true
+    while (hasSlugOnEquipmentList) {
+      excedentEquipmentListSize + 1
+    }
+    equipmentList.push({ id: equipmentSlug, label: 'Item', type: 'weapon' })
 
     setCharacter({
       ...character,
-      ...character.itens.equipments = equipmentList
-      }
-    )
+      ...(character.itens.equipments = equipmentList)
+    })
   }
 
   function duplicateEquipment() {}

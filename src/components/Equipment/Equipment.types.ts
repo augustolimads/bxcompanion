@@ -9,4 +9,5 @@ export type EquipmentProps = {
     ACBonus?: number
     damage?: string
     amount?: number
+    weight?: number
 }

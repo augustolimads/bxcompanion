@@ -21,8 +21,12 @@ import { Option } from '../Option'
 import { EquipmentSheetEditorProps, useEquipmentSheetEditor } from './index'
 
 export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
-  const { getEquipmentStats, editEquipmentSheet, onEquipTypeElements, equipType } =
-    useEquipmentSheetEditor(props.id)
+  const {
+    getEquipmentStats,
+    editEquipmentSheet,
+    onEquipTypeElements,
+    equipType
+  } = useEquipmentSheetEditor(props.id)
   const {
     register,
     handleSubmit,
@@ -37,6 +41,7 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
       description: getEquipmentStats()?.description,
       equipped: getEquipmentStats()?.equipped,
       amount: getEquipmentStats()?.amount,
+      weight: getEquipmentStats()?.weight
     }
   })
 
@@ -114,41 +119,59 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
         </HStack>
       )}
 
-      {equipType === 'armor' && (
-        <FormControl>
-          <FormLabel htmlFor="ACBonus">valor de CA</FormLabel>
-          <NumberInput
-            name="ACBonus"
-            id="ACBonus"
-            min={0}
-            aria-invalid={errors.ACBonus ? 'true' : 'false'}
-          >
-            <NumberInputField {...register('ACBonus')} />
-            <NumberInputStepper>
-              <NumberIncrementStepper />
-              <NumberDecrementStepper />
-            </NumberInputStepper>
-          </NumberInput>
-        </FormControl>
-      )}
+      <HStack>
+        {equipType === 'armor' && (
+          <FormControl>
+            <FormLabel htmlFor="ACBonus">valor de CA</FormLabel>
+            <NumberInput
+              name="ACBonus"
+              id="ACBonus"
+              min={0}
+              aria-invalid={errors.ACBonus ? 'true' : 'false'}
+            >
+              <NumberInputField {...register('ACBonus')} />
+              <NumberInputStepper>
+                <NumberIncrementStepper />
+                <NumberDecrementStepper />
+              </NumberInputStepper>
+            </NumberInput>
+          </FormControl>
+        )}
 
-      {equipType === 'ammo' && (
+        {equipType === 'ammo' && (
+          <FormControl>
+            <FormLabel htmlFor="amount">Quantidade</FormLabel>
+            <NumberInput
+              name="amount"
+              id="amount"
+              min={0}
+              aria-invalid={errors.amount ? 'true' : 'false'}
+            >
+              <NumberInputField {...register('amount')} />
+              <NumberInputStepper>
+                <NumberIncrementStepper />
+                <NumberDecrementStepper />
+              </NumberInputStepper>
+            </NumberInput>
+          </FormControl>
+        )}
+
         <FormControl>
-          <FormLabel htmlFor="amount">Quantidade</FormLabel>
+          <FormLabel htmlFor="weight">Peso</FormLabel>
           <NumberInput
-            name="amount"
-            id="amount"
+            name="weight"
+            id="weight"
             min={0}
-            aria-invalid={errors.amount ? 'true' : 'false'}
+            aria-invalid={errors.weight ? 'true' : 'false'}
           >
-            <NumberInputField {...register('amount')} />
+            <NumberInputField {...register('weight')} />
             <NumberInputStepper>
               <NumberIncrementStepper />
               <NumberDecrementStepper />
             </NumberInputStepper>
           </NumberInput>
         </FormControl>
-      )}
+      </HStack>
 
       <FormControl>
         <FormLabel htmlFor="description">Descritor</FormLabel>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import slugify from 'react-slugify'
 import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { EquipTypeProps } from 'src/hooks/useCharacter/useCharacter.types'
 import { EditEquipmentProps } from './EquipmentSheetEditor.types'
@@ -13,9 +14,12 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
     const equipIndex = character.itens.equipments.findIndex(
       (el) => el.id === equipId
     )
+
+    const slug = slugify(values.label)
+    
     setCharacter({
       ...character,
-      ...character.itens.equipments[equipIndex] = values
+      ...character.itens.equipments[equipIndex] = {...values, id: slug}
     })
   }
 

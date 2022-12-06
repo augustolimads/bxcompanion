@@ -3,6 +3,7 @@ export type LevelSheetEditorProps = {
 }
 
 export type levelSheetEditorForm = {
+    charClass: string
     level: number
     currentXP: number
     maxXP: number

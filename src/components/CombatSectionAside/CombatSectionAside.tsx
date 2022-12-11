@@ -7,7 +7,7 @@ import { Tac0SheetEditor } from '../Tac0SheetEditor'
 import { CombatSectionAsideProps, useCombatSectionAside } from './index'
 
 export const CombatSectionAside = (props: CombatSectionAsideProps) => {
-  const { ac, tac0 } = useCombatSectionAside()
+  const { ac, tac0, getListAmmo, decreaseAmmo } = useCombatSectionAside()
 
   return (
     <VStack w="8rem" color="white">
@@ -39,21 +39,32 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
       </CombatSectionAsideGroup>
       <CombatSectionAsideGroup>
         <Heading fontSize="md">Munição</Heading>
-        <Button
-          size="sm"
-          w="full"
-          flexDir="column"
-          h={12}
-          bg="neutral.900"
-          color="neutral.100"
-        >
-          <Text as="p" fontWeight="bold">
-            Flechas
-          </Text>
-          <Text as="p" fontSize="xl">
-            20
-          </Text>
-        </Button>
+        <VStack flexDir="column" alignItems="center" maxW={20}>
+          {getListAmmo.map((el) => (
+            <Button
+              size="sm"
+              w="full"
+              flexDir="column"
+              h={12}
+              bg="neutral.900"
+              color="neutral.100"
+              key={el.id}
+              onClick={() => decreaseAmmo(el.id)}
+            >
+              <Text
+                as="p"
+                fontWeight="bold"
+                overflowWrap="break-word"
+                wordBreak="break-all"
+              >
+                {el.label}
+              </Text>
+              <Text as="p" fontSize="xl">
+                {el.amount}
+              </Text>
+            </Button>
+          ))}
+        </VStack>
       </CombatSectionAsideGroup>
       <IconButton
         bg="transparent"

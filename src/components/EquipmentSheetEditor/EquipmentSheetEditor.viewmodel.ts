@@ -16,10 +16,14 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
     )
 
     const slug = slugify(values.label)
-    
+
     setCharacter({
       ...character,
-      ...character.itens.equipments[equipIndex] = {...values, id: slug}
+      ...(character.itens.equipments[equipIndex] = {
+        ...values,
+        amount: Number(values.amount),
+        id: slug
+      })
     })
   }
 

@@ -24,7 +24,7 @@ export const SheetOptions = (props: SheetOptionsProps) => {
       <MenuList bg="neutral.700">
         <OptionMenu label='Sincronizar ficha' />
         <OptionMenu label='Configurações de ficha' />
-        <OptionMenu label='exportar ficha' />
+        <OptionMenu label='Exportar ficha' />
         <OptionMenu label='Deletar personagem' />
       </MenuList>
     </Menu>

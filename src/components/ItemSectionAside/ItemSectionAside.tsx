@@ -35,6 +35,9 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
         </Text>
       </Box>
       <VStack bg="neutral.500" rounded="md" p={2} w="full" align="start">
+        <Heading textAlign="center" fontWeight="bold" fontSize="md">
+          Moedas
+        </Heading>
         <HStack>
           <Text w={8}>PC</Text>
           <Text flex="1">0</Text>

@@ -15,14 +15,25 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
       (el) => el.id === equipId
     )
 
+    const equipmentList = character.itens.equipments
+    const equipmentListSize = equipmentList.length
+    let excedentEquipmentListSize = equipmentListSize
     const slug = slugify(values.label)
+    const equipmentSlug = `${slug}-${excedentEquipmentListSize}`
+    const hasSlugOnEquipmentList =
+      equipmentList.findIndex((el) => el.id === equipmentSlug) === -1
+        ? false
+        : true
+    while (hasSlugOnEquipmentList) {
+      excedentEquipmentListSize + 1
+    }
 
     setCharacter({
       ...character,
       ...(character.itens.equipments[equipIndex] = {
         ...values,
         amount: Number(values.amount),
-        id: slug
+        id: equipmentSlug
       })
     })
   }

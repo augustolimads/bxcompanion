@@ -6,7 +6,7 @@ export const CombatSection = (props: CombatSectionProps) => {
   const { character, createEquipment } = useCombatSection()
 
   return (
-    <SheetList buttonLabel="Novo Equipamento" onClick={createEquipment}>
+    <SheetList buttonLabel="Novo Equipamento" onClick={createEquipment} pb={12}>
       {character.itens.equipments.map((equipment) => (
         <Equipment
           id={equipment.id}

@@ -1,4 +1,4 @@
-import { Button, VStack } from '@chakra-ui/react'
+import { Button, Flex, VStack } from '@chakra-ui/react'
 import { SheetListProps, useSheetList } from './index'
 
 export const SheetList = (props: SheetListProps) => {
@@ -7,7 +7,7 @@ export const SheetList = (props: SheetListProps) => {
   const pb = props.pb ? props.pb : 3
 
   return (
-    <VStack w="full" h="60vh">
+    <VStack w="full"  h="60vh" overflowY="hidden">
       {props.buttonLabel && (
         <Button
           size="xs"
@@ -18,9 +18,16 @@ export const SheetList = (props: SheetListProps) => {
           {props.buttonLabel}
         </Button>
       )}
-      <VStack flex="1" w="full" overflowY="scroll" h="60vh" pb={pb}>
+      <Flex
+        flexDir="column"
+        w="full"
+        overflowY="scroll"
+        pb={pb}
+        gap={2}
+        h="60vh"
+      >
         {props.children}
-      </VStack>
+      </Flex>
     </VStack>
   )
 }

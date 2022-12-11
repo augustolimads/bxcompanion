@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Text, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, HStack, Text, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { formatBonus } from 'src/utils/formatBonus'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
@@ -8,15 +8,17 @@ import { EquipmentProps, useEquipment } from './index'
 
 export const Equipment = (props: EquipmentProps) => {
   const { result } = useEquipment()
-  const btnRef = useRef<HTMLButtonElement>(null)
+  const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <Button
+      <Flex      
+        rounded="md"
+        p={1}
         w="full"
+        alignItems='center'
         bg="neutral.300"
-        size="sm"
         color="white"
         gap={1}
         justifyContent="start"
@@ -50,7 +52,7 @@ export const Equipment = (props: EquipmentProps) => {
           )}
           {props.isEquipped && <HandIcon />}
         </Box>
-      </Button>
+      </Flex>
       <CharacterSheetEditor
         label={`Edição de Equipamento`}
         isOpen={isOpen}

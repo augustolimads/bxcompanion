@@ -4,10 +4,12 @@ import { NameSheetEditorForm } from "./NameSheetEditor.types"
 export const useNameSheetEditor = () => {
     const { character, setCharacter } = useCharacter()
 
-    const editNameSheet = ({name} : NameSheetEditorForm) => {
+    const editNameSheet = ({name, avatar, title} : NameSheetEditorForm) => {
         setCharacter({
             ...character,
-            name: name,
+            name,
+            title,
+            avatar
         })
     }
 

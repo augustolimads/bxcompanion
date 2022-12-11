@@ -1,6 +1,8 @@
 export type CharacterProps = {
   id?: string
+  avatar?: string
   name: string
+  title?: string
   class: string
   level: {
     value: number

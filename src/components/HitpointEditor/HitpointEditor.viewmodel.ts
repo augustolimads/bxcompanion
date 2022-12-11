@@ -4,12 +4,6 @@ import { editHpProps, formProps } from './HitpointEditor.types'
 
 const forms:formProps[] = [
   {
-    id: '1',
-    label: 'DV',
-    ref: 'hd',
-    value: 0
-  },
-  {
     id: '2',
     label: 'PV atual',
     ref: 'current',
@@ -21,6 +15,29 @@ const forms:formProps[] = [
     ref: 'max',
     value: 0
   }
+]
+
+const hdOptions = [
+  {
+    id: 'd4',
+    value: 4
+  },
+  {
+    id: 'd6',
+    value: 6
+  },
+  {
+    id: 'd8',
+    value: 8
+  },
+  {
+    id: 'd10',
+    value: 10
+  },
+  {
+    id: 'd12',
+    value: 12
+  },
 ]
 
 export const useHitpointEditor = () => {
@@ -47,5 +64,5 @@ useEffect(() => {
   ])
 },[character.hp.current, character.hp.max])
 
-  return { forms, character, editHpSheet }
+  return { forms, character, editHpSheet, hdOptions }
 }

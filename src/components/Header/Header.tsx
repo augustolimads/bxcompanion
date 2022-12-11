@@ -14,7 +14,6 @@ export const Header = ({ children }: HeaderProps) => {
       w="full"
       position="fixed"
       zIndex={3}
-      px={6}
     >
       <SheetContainer>
         <Flex color="white" alignItems="center">

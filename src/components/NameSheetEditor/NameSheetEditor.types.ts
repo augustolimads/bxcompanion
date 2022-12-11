@@ -4,4 +4,6 @@ export type NameSheetEditorProps = {
 
 export type NameSheetEditorForm = {
     name: string
+    avatar?: string
+    title?: string 
 }

@@ -1,28 +1,30 @@
-import { Text, useDisclosure } from '@chakra-ui/react'
+import { Avatar, HStack, Text, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
 import { NameSheetEditor } from '../NameSheetEditor'
 import { CharacterSheetNameProps, useCharacterSheetName } from './index'
 
 export const CharacterSheetName = (props: CharacterSheetNameProps) => {
-  const { name } = useCharacterSheetName()
+  const { name, avatar } = useCharacterSheetName()
   const btnRef = useRef<HTMLParagraphElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <>
+    <HStack flex='1' gap={2} ml={5} onClick={onOpen}>
+      <Avatar 
+        name={name}
+        src={avatar}
+      />
       <Text
         fontSize="md"
-        flex="1"
         textAlign="center"
-        ref={btnRef}
-        onClick={onOpen}
+        ref={btnRef}        
       >
         {name}
       </Text>
       <CharacterSheetEditor label='Edição do personagem' isOpen={isOpen} onClose={onClose} btnRef={btnRef}>
         <NameSheetEditor />
       </CharacterSheetEditor>
-    </>
+    </HStack>
   )
 }

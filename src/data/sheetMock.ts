@@ -1,7 +1,9 @@
 import { CharacterProps } from "src/hooks/useCharacter/useCharacter.types";
 
 export const sheetMock = {
+  avatar: 'https://i.imgur.com/lj0WFdj.png',
   name: 'Falkor Merako',
+  title: 'O matador de batatas',
   class: 'Guerreiro',
   level: {
     value: 1,

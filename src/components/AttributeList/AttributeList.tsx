@@ -9,6 +9,7 @@ export const AttributeList = (props: AttributeListProps) => {
     <Flex gap={1} justify="space-between">
       {attrList.map((item) => (
         <Attribute
+          key={item.id}
           abbreviate={item.abbreviate}
           label={item.label}
           value={item.value}

@@ -4,18 +4,19 @@ import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { EquipTypeProps } from 'src/hooks/useCharacter/useCharacter.types'
 import { EditEquipmentProps } from './EquipmentSheetEditor.types'
 
-export const useEquipmentSheetEditor = (equipId?: string) => {
+export const useEquipmentSheetEditor = (equipId?: string, isItem: boolean) => {
   const { character, setCharacter } = useCharacter()
   const [equipType, setEquipType] = useState(
-    character.itens.equipments.find((el) => el.id === equipId)?.type
+    character.itens.itemList.find((el) => el.id === equipId)?.type
   )
 
   function editEquipmentSheet(values: EditEquipmentProps) {
-    const equipIndex = character.itens.equipments.findIndex(
+    const equipmentList = character.itens.itemList
+
+    const equipIndex = equipmentList.findIndex(
       (el) => el.id === equipId
     )
-
-    const equipmentList = character.itens.equipments
+    
     const equipmentListSize = equipmentList.length
     let excedentEquipmentListSize = equipmentListSize
     const slug = slugify(values.label)
@@ -30,7 +31,7 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
 
     setCharacter({
       ...character,
-      ...(character.itens.equipments[equipIndex] = {
+      ...(equipmentList[equipIndex] = {
         ...values,
         amount: Number(values.amount),
         id: equipmentSlug
@@ -39,7 +40,7 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
   }
 
   const getEquipmentStats = () => {
-    const result = character.itens.equipments.find((el) => el.id === equipId)
+    const result = character.itens.itemList.find((el) => el.id === equipId)
     return result
   }
 

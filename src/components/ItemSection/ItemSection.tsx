@@ -3,28 +3,19 @@ import { SheetList } from '../SheetList'
 import { ItemSectionProps, useItemSection } from './index'
 
 export const ItemSection = (props: ItemSectionProps) => {
-  const { result } = useItemSection()
+  const { itens } = useItemSection()
 
   return (
-    <SheetList buttonLabel='Novo Item'>
-      <Equipment 
-        label='Tocha'
-        amount={2}
-        weight={2}
-      />
-      <Equipment 
-        label='Saco de dormir'
-        weight={2}
-      />
-      <Equipment 
-        label='Pregos'
-        amount={2}
-        weight={2}
-      />
-      <Equipment 
-        label='corda de 10m'
-        weight={2}
-      />
+    <SheetList buttonLabel="Novo Item" pb={12}>
+      {itens &&
+        itens.map((el) => (
+          <Equipment
+            isItem
+            label={el.label}
+            amount={el.amount}
+            weight={el.weight}            
+          />
+        ))}
     </SheetList>
   )
 }

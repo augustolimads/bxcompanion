@@ -55,7 +55,6 @@ export type CharacterProps = {
       platinum: number
     }
     itemList: EquipmentProps[]
-    equipments: EquipmentProps[]
   }
   spells: SpellProps[]
   notes: {

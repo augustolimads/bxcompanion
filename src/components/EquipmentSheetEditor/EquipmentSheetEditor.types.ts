@@ -2,6 +2,7 @@ import { EquipTypeProps } from "src/hooks/useCharacter/useCharacter.types"
 
 export type EquipmentSheetEditorProps = {
     id?: string
+    isItem?: boolean
 }
 
 export type EditEquipmentProps = {

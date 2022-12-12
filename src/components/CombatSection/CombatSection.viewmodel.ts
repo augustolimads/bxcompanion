@@ -2,9 +2,9 @@ import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 
 export const useCombatSection = () => {
   const { character, setCharacter } = useCharacter()
+  const equipmentList = character.itens.itemList.filter(el => el.type !== 'item')
 
   function createEquipment() {
-    const equipmentList = character.itens.equipments
     const equipmentListSize = equipmentList.length
     let excedentEquipmentListSize = equipmentListSize
     const equipmentSlug = `item-${excedentEquipmentListSize}`
@@ -19,7 +19,7 @@ export const useCombatSection = () => {
 
     setCharacter({
       ...character,
-      ...(character.itens.equipments = equipmentList)
+      ...(character.itens.itemList = equipmentList)
     })
   }
 
@@ -27,5 +27,5 @@ export const useCombatSection = () => {
 
   function deleteEquipment() {}
 
-  return { character, createEquipment }
+  return { equipmentList, createEquipment }
 }

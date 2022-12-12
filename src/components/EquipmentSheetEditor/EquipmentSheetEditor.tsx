@@ -26,7 +26,7 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
     editEquipmentSheet,
     onEquipTypeElements,
     equipType
-  } = useEquipmentSheetEditor(props.id)
+  } = useEquipmentSheetEditor(props.id, Boolean(props.isItem))
   const {
     register,
     handleSubmit,
@@ -47,37 +47,39 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
 
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editEquipmentSheet)}>
-      <HStack gap={3}>
-        <FormControl flex="1">
-          <FormLabel htmlFor="type">Tipo do equipamento</FormLabel>
-          <Select
-            bg="neutral.700"
-            {...register('type')}
-            onChange={(event) =>
-              onEquipTypeElements(event.target.value as EquipTypeProps)
-            }
-          >
-            <Option color="neutral.900" bg="neutral.700" value="weapon">
-              Arma
-            </Option>
-            <Option color="neutral.900" bg="neutral.700" value="armor">
-              Armadura
-            </Option>
-            <Option color="neutral.900" bg="neutral.700" value="ammo">
-              Munição
-            </Option>
-          </Select>
-        </FormControl>
-        <FormControl flex="0.25">
-          <FormLabel htmlFor="equipped">Equipar?</FormLabel>
-          <Switch
-            id="equipped"
-            size="lg"
-            colorScheme="twitter"
-            {...register('equipped')}
-          />
-        </FormControl>
-      </HStack>
+      {!props.isItem && (
+        <HStack gap={3}>
+          <FormControl flex="1">
+            <FormLabel htmlFor="type">Tipo do equipamento</FormLabel>
+            <Select
+              bg="neutral.700"
+              {...register('type')}
+              onChange={(event) =>
+                onEquipTypeElements(event.target.value as EquipTypeProps)
+              }
+            >
+              <Option color="neutral.900" bg="neutral.700" value="weapon">
+                Arma
+              </Option>
+              <Option color="neutral.900" bg="neutral.700" value="armor">
+                Armadura
+              </Option>
+              <Option color="neutral.900" bg="neutral.700" value="ammo">
+                Munição
+              </Option>
+            </Select>
+          </FormControl>
+          <FormControl flex="0.25">
+            <FormLabel htmlFor="equipped">Equipar?</FormLabel>
+            <Switch
+              id="equipped"
+              size="lg"
+              colorScheme="twitter"
+              {...register('equipped')}
+            />
+          </FormControl>
+        </HStack>
+      )}
 
       <FormControl>
         <FormLabel htmlFor="label">Nome do equipamento</FormLabel>
@@ -138,7 +140,7 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
           </FormControl>
         )}
 
-        {equipType === 'ammo' && (
+        {(equipType === 'ammo' || props.isItem) && (
           <FormControl>
             <FormLabel htmlFor="amount">Quantidade</FormLabel>
             <NumberInput

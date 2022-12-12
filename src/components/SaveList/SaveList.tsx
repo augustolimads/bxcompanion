@@ -16,6 +16,7 @@ export const SaveList = (props: SaveListProps) => {
         {saveList.map((item) => {
           return (
             <SavingThrow
+              key={item.id}
               label={item.abbreviate}
               value={
                 item.id === 'vsMagic'

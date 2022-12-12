@@ -10,4 +10,5 @@ export type EquipmentProps = {
     damage?: string
     amount?: number
     weight?: number
+    isItem?: boolean
 }

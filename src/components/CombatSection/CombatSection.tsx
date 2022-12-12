@@ -3,12 +3,13 @@ import { SheetList } from '../SheetList'
 import { CombatSectionProps, useCombatSection } from './index'
 
 export const CombatSection = (props: CombatSectionProps) => {
-  const { character, createEquipment } = useCombatSection()
+  const { equipmentList, createEquipment } = useCombatSection()
 
   return (
     <SheetList buttonLabel="Novo Equipamento" onClick={createEquipment} pb={12}>
-      {character.itens.equipments.map((equipment) => (
+      {equipmentList.map((equipment) => (
         <Equipment
+          key={equipment.id}
           id={equipment.id}
           type={equipment.type}
           isEquipped={equipment.equipped}

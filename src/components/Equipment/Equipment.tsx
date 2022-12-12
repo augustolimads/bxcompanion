@@ -13,11 +13,11 @@ export const Equipment = (props: EquipmentProps) => {
 
   return (
     <>
-      <Flex      
+      <Flex
         rounded="md"
         p={1}
         w="full"
-        alignItems='center'
+        alignItems="center"
         bg="neutral.300"
         color="white"
         gap={1}
@@ -44,11 +44,13 @@ export const Equipment = (props: EquipmentProps) => {
           </Text>
         )}
         <Box ml="auto">
-          {props.weight && props.weight > 0 && (
+          {props.isItem && (
             <HStack>
               <WeightIcon size={14} />
-              <Text color="neutral.100">{props.weight * (props.amount || 1)}</Text>
-            </HStack>
+              <Text color="neutral.100">
+                {(props.weight || 0) * (props.amount || 1)}
+              </Text>
+            </HStack> 
           )}
           {props.isEquipped && <HandIcon />}
         </Box>
@@ -60,7 +62,7 @@ export const Equipment = (props: EquipmentProps) => {
         btnRef={btnRef}
         hasMenu
       >
-        <EquipmentSheetEditor id={props.id} />
+        <EquipmentSheetEditor id={props.id} isItem={props.isItem} />
       </CharacterSheetEditor>
     </>
   )

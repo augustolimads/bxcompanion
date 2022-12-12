@@ -1,4 +1,4 @@
-import { CharacterProps } from "src/hooks/useCharacter/useCharacter.types";
+import { CharacterProps } from 'src/hooks/useCharacter/useCharacter.types'
 
 export const sheetMock = {
   avatar: 'https://i.imgur.com/lj0WFdj.png',
@@ -9,9 +9,9 @@ export const sheetMock = {
     value: 1,
     currentXP: 9,
     maxXP: 10,
-    xpBonus: 5,
+    xpBonus: 5
   },
-  attr:{
+  attr: {
     str: 12,
     dex: 16,
     con: 5,
@@ -23,9 +23,9 @@ export const sheetMock = {
     vsMagic: 0,
     death: 16,
     wand: 8,
-    paralysis: 13, 
+    paralysis: 13,
     breath: 10,
-    spells: 14,
+    spells: 14
   },
   hp: {
     hd: 8,
@@ -37,7 +37,6 @@ export const sheetMock = {
     ACExtra: 0,
     tac0: 19,
     tac0Extra: 0
-    
   },
   itens: {
     distance: {
@@ -56,8 +55,28 @@ export const sheetMock = {
       gold: 0,
       platinum: 0
     },
-    itemList: [],
-    equipments: [
+    itemList: [
+      {
+        id: 'tocha',
+        label: 'Tocha',
+        type: 'item',
+        description: '',
+        weight: 1
+      },
+      {
+        id: 'casaco-de-peles',
+        label: 'Casaco de peles',
+        type: 'item',
+        description: '',
+        weight: 2
+      },
+      {
+        id: 'pincel',
+        label: 'Pincel',
+        type: 'item',
+        description: '',
+        weight: 0
+      },
       {
         id: 'espada-longa',
         equipped: true,
@@ -91,7 +110,7 @@ export const sheetMock = {
         label: 'flechas',
         amount: 10,
         weight: 0
-      },
+      }
     ]
   },
   spells: [],
@@ -99,7 +118,7 @@ export const sheetMock = {
     alignment: 'Neutro',
     vision: 'Penumbra',
     languages: ['Comum', 'anão'],
-    notes:[]
+    notes: []
   },
   proficiency: {
     armor: ['leve', 'pesado'],

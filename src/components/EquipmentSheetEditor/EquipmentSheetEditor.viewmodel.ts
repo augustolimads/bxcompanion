@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import slugify from 'react-slugify'
 import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
 import { EquipTypeProps } from 'src/hooks/useCharacter/useCharacter.types'
+import { setSlug } from 'src/utils/setSlug'
 import { EditEquipmentProps } from './EquipmentSheetEditor.types'
 
-export const useEquipmentSheetEditor = (equipId?: string, isItem: boolean) => {
+export const useEquipmentSheetEditor = (equipId?: string) => {
   const { character, setCharacter } = useCharacter()
   const [equipType, setEquipType] = useState(
     character.itens.itemList.find((el) => el.id === equipId)?.type
@@ -17,18 +17,8 @@ export const useEquipmentSheetEditor = (equipId?: string, isItem: boolean) => {
       (el) => el.id === equipId
     )
     
-    const equipmentListSize = equipmentList.length
-    let excedentEquipmentListSize = equipmentListSize
-    const slug = slugify(values.label)
-    const equipmentSlug = `${slug}-${excedentEquipmentListSize}`
-    const hasSlugOnEquipmentList =
-      equipmentList.findIndex((el) => el.id === equipmentSlug) === -1
-        ? false
-        : true
-    while (hasSlugOnEquipmentList) {
-      excedentEquipmentListSize + 1
-    }
-
+    const equipmentSlug = setSlug(equipmentList, values.label)
+    
     setCharacter({
       ...character,
       ...(equipmentList[equipIndex] = {

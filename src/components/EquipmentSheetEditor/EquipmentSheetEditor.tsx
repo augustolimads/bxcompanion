@@ -26,7 +26,7 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
     editEquipmentSheet,
     onEquipTypeElements,
     equipType
-  } = useEquipmentSheetEditor(props.id, Boolean(props.isItem))
+  } = useEquipmentSheetEditor(props.id)
   const {
     register,
     handleSubmit,

@@ -5,7 +5,9 @@ export const useCombatSectionAside = () => {
   const ac = character.combat.AC + character.combat.ACExtra
   const tac0 = character.combat.tac0 + character.combat.tac0Extra
   const listEquipment = character.itens.itemList
-  const getListAmmo = listEquipment.filter((el) => el.type === 'ammo')
+  const getListAmmo = listEquipment.filter(
+    (el) => el.type === 'ammo' && el.equipped
+  )
 
   const decreaseAmmo = (id?: string) => {
     const ammoElement = getListAmmo.find((el) => el.id === id)

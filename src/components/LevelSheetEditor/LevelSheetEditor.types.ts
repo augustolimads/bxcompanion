@@ -7,4 +7,5 @@ export type levelSheetEditorForm = {
     level: number
     currentXP: number
     maxXP: number
+    xpBonus: number
 }

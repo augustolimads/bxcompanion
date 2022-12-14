@@ -1,21 +1,28 @@
-import { useCharacter } from "src/hooks/useCharacter/useCharacter"
-import { levelSheetEditorForm } from "./LevelSheetEditor.types"
+import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
+import { levelSheetEditorForm } from './LevelSheetEditor.types'
 
 export const useLevelSheetEditor = () => {
-    const { character, setCharacter } = useCharacter()
+  const { character, setCharacter } = useCharacter()
 
-    const editLevelSheet = ({level, currentXP, maxXP, charClass} : levelSheetEditorForm) => {
-        setCharacter({
-            ...character,
-            level:{
-                ...character.level,
-                class: charClass,
-                value: level,
-                currentXP,
-                maxXP
-            }
-        })
-    }
+  const editLevelSheet = ({
+    level,
+    currentXP,
+    maxXP,
+    charClass,
+    xpBonus
+  }: levelSheetEditorForm) => {
+    setCharacter({
+      ...character,
+      class: charClass,
+      level: {
+        ...character.level,
+        value: level,
+        currentXP,
+        maxXP,
+        xpBonus
+      }
+    })
+  }
 
-    return {character, editLevelSheet}
+  return { character, editLevelSheet }
 }

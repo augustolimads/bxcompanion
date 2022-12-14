@@ -9,7 +9,7 @@ export const useTac0SheetEditor = () => {
       ...character,
       combat: {
         ...character.combat,
-        tac0Extra: Number(value.tac0Bonus)
+        tac0: Number(value.tac0)
       },
     })
   }

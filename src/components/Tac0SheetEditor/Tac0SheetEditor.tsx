@@ -22,7 +22,7 @@ export const Tac0SheetEditor = (props:Tac0SheetEditorProps) => {
     formState: { isSubmitting }
   } = useForm({
     defaultValues: {
-      tac0Bonus: character.combat.tac0Extra
+      tac0: character.combat.tac0
     }
   })
 
@@ -35,23 +35,23 @@ export const Tac0SheetEditor = (props:Tac0SheetEditorProps) => {
         roundedLeft="lg"
       >
         <FormLabel
-          htmlFor="tac0Bonus"
+          htmlFor="tac0"
           mt={2}
           ml={2}
           color="neutral.100"
           flex="1"
           textAlign="right"
         >
-          Bônus de Tac0
+          valor de TAC0
         </FormLabel>
         <NumberInput
-          name="tac0Bonus"
-          defaultValue={0}
+          name="tac0"
+          defaultValue={20}
           max={20}
           flex="0.4"
           bg="neutral.700"
         >
-          <NumberInputField {...register('tac0Bonus')} />
+          <NumberInputField {...register('tac0')} />
           <NumberInputStepper>
             <NumberIncrementStepper />
             <NumberDecrementStepper />

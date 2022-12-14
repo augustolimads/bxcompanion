@@ -26,14 +26,6 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
           20
         </Text>
       </Box>
-      <Box bg="neutral.500" rounded="md" p={2} w="full">
-        <Heading textAlign="center" fontWeight="bold" fontSize="md">
-          carga
-        </Heading>
-        <Text textAlign="center" fontSize="xl">
-          100/100
-        </Text>
-      </Box>
       <VStack bg="neutral.500" rounded="md" p={2} w="full" align="start">
         <Heading textAlign="center" fontWeight="bold" fontSize="md">
           Moedas

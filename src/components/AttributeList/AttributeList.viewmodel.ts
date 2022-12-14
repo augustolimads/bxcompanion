@@ -12,18 +12,6 @@ export const useAttributeList = () => {
             value: character.attr.str
         },
         {
-            id: 'dex',
-            label: 'Destreza',
-            abbreviate: 'des',
-            value: character.attr.dex
-        },
-        {
-            id: 'con',
-            label: 'Constituição',
-            abbreviate: 'con',
-            value: character.attr.con
-        },
-        {
             id: 'int',
             label: 'Inteligência',
             abbreviate: 'int',
@@ -35,6 +23,18 @@ export const useAttributeList = () => {
             abbreviate: 'sab',
             value: character.attr.wis
         },
+        {
+            id: 'dex',
+            label: 'Destreza',
+            abbreviate: 'des',
+            value: character.attr.dex
+        },
+        {
+            id: 'con',
+            label: 'Constituição',
+            abbreviate: 'con',
+            value: character.attr.con
+        },      
         {
             id: 'cha',
             label: 'Carisma',

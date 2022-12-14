@@ -1,7 +1,9 @@
-import { Button, Flex, Text, useDisclosure } from '@chakra-ui/react'
+import { Button, Flex, HStack, Text, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
+import { colors } from 'src/styles/colors'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
 import { HitpointEditor } from '../HitpointEditor'
+import { HeartIcon } from '../Icons'
 import { ProgressHp } from '../ProgressHp'
 import { HitpointProps, useHitpoint } from './index'
 
@@ -43,10 +45,13 @@ export const Hitpoint = (props: HitpointProps) => {
           ref={btnRef}
           onClick={onOpen}
         >
-          <Text color="neutral.100" fontSize="xs">
-            {currentHP}/{maxHP}
-            {isExceded && excededHP}
-          </Text>
+          <HStack>
+            <HeartIcon color={colors.neutral[300]} />
+            <Text color="neutral.100" fontSize="xs">
+              {currentHP}/{maxHP}
+              {isExceded && excededHP}
+            </Text>
+          </HStack>
           <ProgressHp value={fullCurrentHP} max={maxHP} />
         </Flex>
         <Button

@@ -42,7 +42,7 @@ const conData = [
 ]
 const intData = [
   {
-    id: '1',
+    id: 'linguas-conhecidas',
     label: 'Línguas conhecidas',
     value: '',
     options: [
@@ -56,7 +56,7 @@ const intData = [
     ]
   },
   {
-    id: '2',
+    id: 'alfabetizacao',
     label: 'Alfabetização',
     value: '',
     options: [

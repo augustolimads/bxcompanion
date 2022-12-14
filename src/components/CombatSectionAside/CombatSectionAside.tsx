@@ -10,7 +10,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
   const { ac, tac0, getListAmmo, decreaseAmmo } = useCombatSectionAside()
 
   return (
-    <VStack w="8rem" color="white">
+    <VStack w="8rem" color="white" h="full">
       <CombatSectionAsideGroup>
         <CombatButtonAside
           label="Classe de armadura"
@@ -29,7 +29,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
         >
           <VStack>
             <Text as="p" fontWeight="bold">
-              Tac0
+              TAC0
             </Text>
             <Text as="p" fontSize="xl">
               {tac0}

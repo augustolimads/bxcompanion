@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
-import { EquipTypeProps } from 'src/hooks/useCharacter/useCharacter.types'
+import { useCharacter } from 'src/store/useCharacter/useCharacter'
+import { EquipTypeProps } from 'src/store/useCharacter/useCharacter.types'
 import { setSlug } from 'src/utils/setSlug'
 import { EditEquipmentProps } from './EquipmentSheetEditor.types'
 
@@ -16,9 +16,9 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
     const equipIndex = equipmentList.findIndex(
       (el) => el.id === equipId
     )
-    
+
     const equipmentSlug = setSlug(equipmentList, values.label)
-    
+
     setCharacter({
       ...character,
       ...(equipmentList[equipIndex] = {

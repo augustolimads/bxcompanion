@@ -16,7 +16,7 @@ import {
   VStack
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
-import { EquipTypeProps } from 'src/hooks/useCharacter/useCharacter.types'
+import { EquipTypeProps } from 'src/store/useCharacter/useCharacter.types'
 import { Option } from '../Option'
 import { EquipmentSheetEditorProps, useEquipmentSheetEditor } from './index'
 

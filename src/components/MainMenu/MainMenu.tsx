@@ -1,5 +1,5 @@
 import { Container, Flex } from '@chakra-ui/react'
-import { useSheetMenu } from 'src/hooks/useSheetMenu/useSheetMenu'
+import { useSheetMenu } from 'src/store/useSheetMenu/useSheetMenu'
 import { MainMenuItem } from '../MainMenuItem'
 import { MainMenuProps, useMainMenu } from './index'
 

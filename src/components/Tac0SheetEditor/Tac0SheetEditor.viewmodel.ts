@@ -1,4 +1,4 @@
-import { useCharacter } from "src/hooks/useCharacter/useCharacter"
+import { useCharacter } from "src/store/useCharacter/useCharacter"
 import { Tac0SheetEditorProps } from "./Tac0SheetEditor.types"
 
 export const useTac0SheetEditor = () => {

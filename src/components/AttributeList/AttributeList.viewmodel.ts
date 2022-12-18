@@ -1,4 +1,4 @@
-import { useCharacter } from "src/hooks/useCharacter/useCharacter"
+import { useCharacter } from "src/store/useCharacter/useCharacter"
 import { AttrListProps } from "./AttributeList.types"
 
 export const useAttributeList = () => {
@@ -34,7 +34,7 @@ export const useAttributeList = () => {
             label: 'Constituição',
             abbreviate: 'con',
             value: character.attr.con
-        },      
+        },
         {
             id: 'cha',
             label: 'Carisma',

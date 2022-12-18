@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react'
-import { sheetMock } from 'src/data/sheetMock'
+import { sheetMock } from 'src/mocks/sheetMock'
 import {
   CharacterContextProps,
   CharacterProps,

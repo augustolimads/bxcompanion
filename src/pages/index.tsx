@@ -1,14 +1,8 @@
 import type { NextPage } from 'next'
-import { Layout, TeamContent } from 'src/components'
+import { TeamContent } from 'src/layouts/TeamContent'
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <Layout>
-        <TeamContent />
-      </Layout>
-    </div>
-  )
+  return <TeamContent />
 }
 
 export default Home

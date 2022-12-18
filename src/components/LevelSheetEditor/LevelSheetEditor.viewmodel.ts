@@ -1,4 +1,4 @@
-import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
+import { useCharacter } from 'src/store/useCharacter/useCharacter'
 import { levelSheetEditorForm } from './LevelSheetEditor.types'
 
 export const useLevelSheetEditor = () => {

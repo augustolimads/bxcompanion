@@ -1,10 +1,10 @@
-import { useCharacter } from 'src/hooks/useCharacter/useCharacter'
+import { useCharacter } from 'src/store/useCharacter/useCharacter'
 import { setSlug } from 'src/utils/setSlug'
 
 export const useCombatSection = () => {
   const { character, setCharacter } = useCharacter()
   const equipmentList = character.itens.itemList.filter((el) => el.type !== 'item')
-  
+
   function createEquipment() {
     const itemList = character.itens.itemList
     const equipmentSlug = setSlug(itemList, 'item')

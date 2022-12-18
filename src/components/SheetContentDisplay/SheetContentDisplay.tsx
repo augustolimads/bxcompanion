@@ -1,4 +1,4 @@
-import { useSheetMenu } from 'src/hooks/useSheetMenu/useSheetMenu'
+import { useSheetMenu } from 'src/store/useSheetMenu/useSheetMenu'
 import { CombatSection } from '../CombatSection'
 import { CombatSectionAside } from '../CombatSectionAside'
 import { ItemSection } from '../ItemSection'

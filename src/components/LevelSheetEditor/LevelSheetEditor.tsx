@@ -13,24 +13,16 @@ import {
   Spacer,
   VStack
 } from '@chakra-ui/react'
-import { useForm } from 'react-hook-form'
 import { LevelSheetEditorProps, useLevelSheetEditor } from './index'
 
 export const LevelSheetEditor = (props: LevelSheetEditorProps) => {
-  const { editLevelSheet, character } = useLevelSheetEditor()
   const {
-    register,
+    editLevelSheet,
     handleSubmit,
-    formState: { errors, isSubmitting }
-  } = useForm({
-    defaultValues: {
-      charClass: character.class,
-      level: character.level.value,
-      currentXP: character.level.currentXP,
-      maxXP: character.level.maxXP,
-      xpBonus: character.level.xpBonus
-    }
-  })
+    register,
+    errors,
+    isSubmitting
+  } = useLevelSheetEditor()
 
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editLevelSheet)}>

@@ -1,28 +1,34 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
-import { levelSheetEditorForm } from './LevelSheetEditor.types'
+import { useForm } from 'react-hook-form'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { EditLevelSheetProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 
 export const useLevelSheetEditor = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
 
-  const editLevelSheet = ({
-    level,
-    currentXP,
-    maxXP,
-    charClass,
-    xpBonus
-  }: levelSheetEditorForm) => {
-    setCharacter({
-      ...character,
-      class: charClass,
-      level: {
-        ...character.level,
-        value: level,
-        currentXP,
-        maxXP,
-        xpBonus
-      }
-    })
+  const editLevelSheet = (props: EditLevelSheetProps ) => {
+    dispatch(actions.editLevelSheet(props))
   }
 
-  return { character, editLevelSheet }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting }
+  } = useForm({
+    defaultValues: {
+      charClass: character.class,
+      level: character.level.value,
+      currentXP: character.level.currentXP,
+      maxXP: character.level.maxXP,
+      xpBonus: character.level.xpBonus
+    }
+  })
+
+  return {
+    character,
+    editLevelSheet,
+    handleSubmit,
+    register,
+    errors,
+    isSubmitting
+  }
 }

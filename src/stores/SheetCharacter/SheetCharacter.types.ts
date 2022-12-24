@@ -121,3 +121,10 @@ export type CharacterProps = {
     payload: any
   }
   
+  export type EditLevelSheetProps = {
+    charClass: string
+    level: number
+    currentXP: number
+    maxXP: number
+    xpBonus: number
+  }

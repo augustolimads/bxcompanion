@@ -1,4 +1,4 @@
-import { useSheetMenu } from 'src/store/useSheetMenu/useSheetMenu'
+import { useSheetMenu } from 'src/stores/SheetMenu'
 import { CombatSection } from '../CombatSection'
 import { CombatSectionAside } from '../CombatSectionAside'
 import { ItemSection } from '../ItemSection'
@@ -12,9 +12,9 @@ import { SheetContentDisplayProps, useSheetContentDisplay } from './index'
 
 export const SheetContentDisplay = (props: SheetContentDisplayProps) => {
   const { result } = useSheetContentDisplay()
-  const { menuActive } = useSheetMenu()
+  const { sheetMenu } = useSheetMenu()
 
-  switch (menuActive) {
+  switch (sheetMenu) {
     case 0:
       return (
         <SheetContentContainer aside={<CombatSectionAside />}>

@@ -1,4 +1,4 @@
-import { CharacterProps } from 'src/store/useCharacter/useCharacter.types'
+import { CharacterProps } from 'src/stores/useCharacter/useCharacter.types'
 
 export const sheetMock = {
   avatar: 'https://i.imgur.com/lj0WFdj.png',

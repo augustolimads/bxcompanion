@@ -1,11 +1,11 @@
 import { Container, Flex } from '@chakra-ui/react'
-import { useSheetMenu } from 'src/store/useSheetMenu/useSheetMenu'
+import { actions, useSheetMenu } from 'src/stores/SheetMenu'
 import { MainMenuItem } from '../MainMenuItem'
 import { MainMenuProps, useMainMenu } from './index'
 
 export const MainMenu = (props: MainMenuProps) => {
   const { menuButtons } = useMainMenu()
-  const { handleMenuActive, menuActive } = useSheetMenu()
+  const { sheetMenu, dispatch } = useSheetMenu()
 
   return (
     <Flex bg="neutral.900" p={1}>
@@ -13,8 +13,8 @@ export const MainMenu = (props: MainMenuProps) => {
         {menuButtons.map((item, index) => (
           <MainMenuItem
             key={`${item}+${index}`}
-            onClick={() => handleMenuActive(index)}
-            isActive={menuActive === index}
+            onClick={() => dispatch(actions.handleMenuActive(index))}
+            isActive={sheetMenu === index}
           >
             {item}
           </MainMenuItem>

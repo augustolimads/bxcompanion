@@ -1,4 +1,4 @@
-import { useCharacter } from 'src/store/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/useCharacter/useCharacter'
 import { EditAttributeProps } from './AttributeListEditor.types'
 
 export const useAttributeListEditor = () => {

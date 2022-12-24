@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useCharacter } from 'src/store/useCharacter/useCharacter'
-import { EquipTypeProps } from 'src/store/useCharacter/useCharacter.types'
+import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { EquipTypeProps } from 'src/stores/useCharacter/useCharacter.types'
 import { setSlug } from 'src/utils/setSlug'
 import { EditEquipmentProps } from './EquipmentSheetEditor.types'
 

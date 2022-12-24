@@ -1,4 +1,4 @@
-import { useCharacter } from 'src/store/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/useCharacter/useCharacter'
 import { textDelimiter } from 'src/utils/textDelimiter'
 
 export const useCharacterSheetName = () => {

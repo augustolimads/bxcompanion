@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useCharacter } from 'src/store/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/useCharacter/useCharacter'
 import { attributeModifier } from 'src/utils/attributeModifier'
 
 export const useSaveList = () => {

@@ -1,4 +1,4 @@
-import { useCharacter } from 'src/store/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/useCharacter/useCharacter'
 import { AcSheetEditorProps } from './AcSheetEditor.types'
 
 export const useAcSheetEditor = () => {

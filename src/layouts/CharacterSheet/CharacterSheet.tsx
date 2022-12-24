@@ -8,7 +8,7 @@ import {
 } from 'src/components';
 import { CharacterSheetName } from 'src/components/CharacterSheetName';
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay';
-import { SheetMenuProvider } from 'src/store/useSheetMenu/useSheetMenu';
+import { SheetMenuProvider } from 'src/stores/SheetMenu';
 import { CharacterSheetProps, useCharacterSheet } from './index';
 
 export const CharacterSheet = (props:CharacterSheetProps) => {

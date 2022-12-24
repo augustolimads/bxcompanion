@@ -1,4 +1,4 @@
-import { useCharacter } from 'src/store/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/useCharacter/useCharacter'
 import { EditSaveProps, saveListProps } from './SaveListEditor.types'
 
 export const useSaveListEditor = () => {

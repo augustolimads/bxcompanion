@@ -8,32 +8,27 @@ import {
   Spacer,
   VStack
 } from '@chakra-ui/react'
-import { useForm } from 'react-hook-form'
-import { NameSheetEditorProps, useNameSheetEditor } from './index'
+import { actions } from 'src/stores/SheetCharacter'
+import { NameSheetEditorProps } from './index'
+import { useNameSheetEditor } from './NameSheetEditor.viewmodel'
 
 export const NameSheetEditor = (props: NameSheetEditorProps) => {
-  const { editNameSheet, character } = useNameSheetEditor()
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting }
-  } = useForm({
-    defaultValues: {
-      name: character.name,
-      title: character.title,
-      avatar: character.avatar
-    }
-  })
+  const {  avatar, name, handleSubmit, register, errors, isSubmitting } =
+    useNameSheetEditor()
 
   return (
-    <VStack as="form" align="left" onSubmit={handleSubmit(editNameSheet)}>
+    <VStack
+      as="form"
+      align="left"
+      onSubmit={handleSubmit(actions.editNameSheet)}
+    >
       <Image
-        alignSelf='center'
-        boxSize='150px'
-        objectFit='cover'
-        src={character.avatar}
-        alt={character.name}
-        fallbackSrc='https://via.placeholder.com/150'
+        alignSelf="center"
+        boxSize="150px"
+        objectFit="cover"
+        src={avatar}
+        alt={name}
+        fallbackSrc="https://via.placeholder.com/150"
       />
       <FormControl>
         <FormLabel htmlFor="avatar">(URL) Avatar do personagem</FormLabel>

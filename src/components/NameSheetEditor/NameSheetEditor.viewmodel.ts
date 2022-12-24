@@ -1,17 +1,22 @@
-import { useCharacter } from "src/stores/useCharacter/useCharacter"
-import { NameSheetEditorForm } from "./NameSheetEditor.types"
+import { useForm } from 'react-hook-form'
+import { useCharacter } from 'src/stores/SheetCharacter'
 
 export const useNameSheetEditor = () => {
-    const { character, setCharacter } = useCharacter()
-
-    const editNameSheet = ({name, avatar, title} : NameSheetEditorForm) => {
-        setCharacter({
-            ...character,
-            name,
-            title,
-            avatar
-        })
+  const { character } = useCharacter()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting }
+  } = useForm({
+    defaultValues: {
+      name: character?.name || '',
+      title: character?.title || '',
+      avatar: character?.avatar || ''
     }
+  })
 
-    return {character, editNameSheet}
+  const avatar = character?.avatar || ''
+  const name = character?.name || ''
+
+  return { avatar, name, handleSubmit, register, errors, isSubmitting }
 }

@@ -8,19 +8,25 @@ import {
   Spacer,
   VStack
 } from '@chakra-ui/react'
-import { actions } from 'src/stores/SheetCharacter'
 import { NameSheetEditorProps } from './index'
 import { useNameSheetEditor } from './NameSheetEditor.viewmodel'
 
 export const NameSheetEditor = (props: NameSheetEditorProps) => {
-  const {  avatar, name, handleSubmit, register, errors, isSubmitting } =
-    useNameSheetEditor()
+  const {
+    avatar,
+    name,
+    register,
+    errors,
+    isSubmitting,
+    handleSubmit,
+    editNameSheet
+  } = useNameSheetEditor()
 
   return (
     <VStack
       as="form"
       align="left"
-      onSubmit={handleSubmit(actions.editNameSheet)}
+      onSubmit={handleSubmit(editNameSheet)}
     >
       <Image
         alignSelf="center"

@@ -1,9 +1,8 @@
 import { Button, Flex } from '@chakra-ui/react';
 import { Layout, TeamItem } from 'src/components';
-import { TeamContentProps, useTeamContent } from './index';
+import { TeamContentProps } from './index';
 
 export const TeamContent = (props: TeamContentProps) => {
-  const { result } = useTeamContent()
 
   return (
     <Layout>

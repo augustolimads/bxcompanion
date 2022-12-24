@@ -5,11 +5,9 @@ import {
 } from '@chakra-ui/react'
 import { ThreeDotsIcon } from '../Icons'
 import { OptionMenu } from '../OptionMenu'
-import { SheetOptionsProps, useSheetOptions } from './index'
+import { SheetOptionsProps } from './index'
 
 export const SheetOptions = (props: SheetOptionsProps) => {
-  const { result } = useSheetOptions()
-
 
   return (
     <Menu>

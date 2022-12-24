@@ -101,7 +101,7 @@ export type CharacterProps = {
   
   export type CharacterContextProps = {
     character: CharacterProps
-    dispatch: (props: any) => void
+    dispatch: any
   }
   
   export type itemAttributeProps = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha'

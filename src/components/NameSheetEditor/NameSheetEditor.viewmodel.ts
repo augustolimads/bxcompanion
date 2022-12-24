@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form'
-import { useCharacter } from 'src/stores/SheetCharacter'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { CharacterProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 
 export const useNameSheetEditor = () => {
-  const { character } = useCharacter()
+  const { character, dispatch } = useCharacter()
   const {
     register,
     handleSubmit,
@@ -15,8 +16,20 @@ export const useNameSheetEditor = () => {
     }
   })
 
+  const editNameSheet = (props: Partial<CharacterProps>) => {
+    dispatch(actions.editNameSheet(props))
+  }
+
   const avatar = character?.avatar || ''
   const name = character?.name || ''
 
-  return { avatar, name, handleSubmit, register, errors, isSubmitting }
+  return {
+    avatar,
+    name,
+    register,
+    errors,
+    isSubmitting,
+    handleSubmit,
+    editNameSheet
+  }
 }

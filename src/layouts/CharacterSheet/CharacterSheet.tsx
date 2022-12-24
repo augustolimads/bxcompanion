@@ -10,10 +10,9 @@ import { CharacterSheetName } from 'src/components/CharacterSheetName'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetCharacterProvider } from 'src/stores/SheetCharacter'
 import { SheetMenuProvider } from 'src/stores/SheetMenu'
-import { CharacterSheetProps, useCharacterSheet } from './index'
+import { CharacterSheetProps } from './index'
 
 export const CharacterSheet = (props: CharacterSheetProps) => {
-  const { result } = useCharacterSheet()
 
   return (
     <SheetCharacterProvider>

@@ -10,7 +10,7 @@ export const useCombatSectionAside = () => {
 
   const ac = () => {
     const baseValue = 9
-    const extraValue = character.combat.ACExtra
+    const extraValue = character.combat.ACBonus
     const armorList = character.itens.itemList.filter(
       (el) => el.type === 'armor' && el.equipped
     )

@@ -9,7 +9,7 @@ export const useAcSheetEditor = () => {
       ...character,
       combat: {
         ...character.combat,
-        ACExtra: Number(value.ACBonus)
+        ACBonus: Number(value.ACBonus)
       },
     })
   }

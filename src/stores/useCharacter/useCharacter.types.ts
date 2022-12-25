@@ -33,7 +33,7 @@ export type CharacterProps = {
   }
   combat: {
     AC: number
-    ACExtra: number
+    ACBonus: number
     tac0: number
     tac0Extra: number
   }

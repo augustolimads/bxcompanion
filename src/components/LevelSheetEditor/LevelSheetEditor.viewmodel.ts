@@ -15,7 +15,7 @@ export const useLevelSheetEditor = () => {
     formState: { errors, isSubmitting }
   } = useForm({
     defaultValues: {
-      charClass: character.class,
+      charClass: character.charClass,
       level: character.level.value,
       currentXP: character.level.currentXP,
       maxXP: character.level.maxXP,

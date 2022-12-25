@@ -11,35 +11,12 @@ import {
   Spacer,
   VStack
 } from '@chakra-ui/react';
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
 import { AttributeModifiers } from '../AttributeModifiers';
 import { AttributeListEditorProps, useAttributeListEditor } from './index';
 
-
-
 export const AttributeListEditor = (props: AttributeListEditorProps) => {
-  const { editAttributeSheet, character } = useAttributeListEditor()
-  const {
-    register,
-    handleSubmit,
-    setFocus,
-    formState: { isSubmitting }
-  } = useForm({
-    defaultValues: {
-      str: character.attr.str,
-      dex: character.attr.dex,
-      con: character.attr.con,
-      int: character.attr.int,
-      wis: character.attr.wis,
-      cha: character.attr.cha
-    }
-  })
-
-  useEffect(() => {
-    setFocus(props.attrRef);
-  }, [setFocus, props.attrRef]);
-
+  const { handleSubmit, register, isSubmitting, editAttributeSheet } = useAttributeListEditor(props)
+  
   return (
     <VStack as="form" align="left" onSubmit={handleSubmit(editAttributeSheet)}>
       <AttributeModifiers attrRef={props.attrRef} />

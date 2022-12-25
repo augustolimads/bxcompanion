@@ -1,13 +1,13 @@
 import {
-  Button,
-  FormControl,
-  FormLabel,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  VStack
+    Button,
+    FormControl,
+    FormLabel,
+    NumberDecrementStepper,
+    NumberIncrementStepper,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    VStack
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { AcSheetEditorProps, useAcSheetEditor } from './index'
@@ -22,7 +22,7 @@ export const AcSheetEditor = (props: AcSheetEditorProps) => {
     formState: { isSubmitting }
   } = useForm({
     defaultValues: {
-      ACBonus: character.combat.ACExtra
+      ACBonus: character.combat.ACBonus
     }
   })
 

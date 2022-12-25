@@ -1,4 +1,4 @@
-import { useCharacter } from "src/stores/useCharacter/useCharacter"
+import { useCharacter } from "src/stores/SheetCharacter"
 import { AttrListProps } from "./AttributeList.types"
 
 export const useAttributeList = () => {

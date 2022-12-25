@@ -1,10 +1,10 @@
-import { CharacterProps } from 'src/stores/useCharacter/useCharacter.types'
+import { CharacterProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 
 export const sheetMock = {
   avatar: 'https://i.imgur.com/lj0WFdj.png',
   name: 'Falkor Merako',
   title: 'O matador de batatas',
-  class: 'Guerreiro',
+  charClass: 'Guerreiro',
   level: {
     value: 1,
     currentXP: 9,
@@ -34,7 +34,7 @@ export const sheetMock = {
   },
   combat: {
     AC: 9,
-    ACExtra: 0,
+    ACBonus: 0,
     tac0: 19,
     tac0Extra: 0
   },

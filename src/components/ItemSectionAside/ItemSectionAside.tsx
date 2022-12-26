@@ -2,7 +2,7 @@ import { Box, Heading, HStack, Text, VStack } from '@chakra-ui/react'
 import { ItemSectionAsideProps, useItemSectionAside } from './index'
 
 export const ItemSectionAside = (props: ItemSectionAsideProps) => {
-  const { result } = useItemSectionAside()
+  const { distances, coins } = useItemSectionAside()
 
   return (
     <VStack w="6rem" color="neutral.100">
@@ -11,19 +11,19 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
           Jornada
         </Heading>
         <Text textAlign="center" fontSize="md">
-          20
+          {distances.journey}
         </Text>
         <Heading textAlign="center" fontWeight="bold" fontSize="sm">
           Exploração
         </Heading>
         <Text textAlign="center" fontSize="md">
-          20
+          {distances.exploration}
         </Text>
         <Heading textAlign="center" fontWeight="bold" fontSize="sm">
           Encontro
         </Heading>
         <Text textAlign="center" fontSize="md">
-          20
+          {distances.encounter}
         </Text>
       </Box>
       <VStack bg="neutral.500" rounded="md" p={2} w="full" align="start">
@@ -32,23 +32,23 @@ export const ItemSectionAside = (props: ItemSectionAsideProps) => {
         </Heading>
         <HStack>
           <Text w={8}>PC</Text>
-          <Text flex="1">0</Text>
+          <Text flex="1">{coins.copper}</Text>
         </HStack>
         <HStack>
           <Text w={8}>PP</Text>
-          <Text flex="1">1000</Text>
+          <Text flex="1">{coins.silver}</Text>
         </HStack>
         <HStack>
           <Text w={8}>PE</Text>
-          <Text flex="1">999</Text>
+          <Text flex="1">{coins.electron}</Text>
         </HStack>
         <HStack>
           <Text w={8}>PO</Text>
-          <Text flex="1">555</Text>
+          <Text flex="1">{coins.gold}</Text>
         </HStack>
         <HStack>
           <Text w={8}>PL</Text>
-          <Text flex="1">777</Text>
+          <Text flex="1">{coins.platinum}</Text>
         </HStack>
       </VStack>
     </VStack>

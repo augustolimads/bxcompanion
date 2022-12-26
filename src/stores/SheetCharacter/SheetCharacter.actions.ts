@@ -84,14 +84,28 @@ export const decreaseAmmo = (props: DecreaseAmmoProps) => {
 
 export const createEquipment = (props: CreateEquipmentProps) => {
   return {
-    type: Actions.CREATE_EQUIPMENT,
+    type: Actions.CREATE_ITEM,
     payload: { newEquipment: props }
   }
 }
 
 export const editEquipment = (props: EditEquipmentProps) => {
   return {
-    type: Actions.EDIT_EQUIPMENT,
+    type: Actions.EDIT_ITEM,
+    payload: { values: props }
+  }
+}
+
+export const createItem = (props: CreateEquipmentProps) => {
+  return {
+    type: Actions.CREATE_ITEM,
+    payload: { newEquipment: props }
+  }
+}
+
+export const editItem = (props: EditEquipmentProps) => {
+  return {
+    type: Actions.EDIT_ITEM,
     payload: { values: props }
   }
 }

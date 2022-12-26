@@ -110,14 +110,14 @@ export const sheetCharacterReducer = (
           amount: actualAmount - 1
         })
       }
-    case Actions.CREATE_EQUIPMENT:
+    case Actions.CREATE_ITEM:
       const itemList = state.itens.itemList
       itemList.push(action.payload.newEquipment)
       return {
         ...state,
         ...(state.itens.itemList = itemList)
       }
-    case Actions.EDIT_EQUIPMENT:
+    case Actions.EDIT_ITEM:
       const equipmentList = state.itens.itemList
       const equipIndex = equipmentList.findIndex(
         (el) => el.id === action.payload.values.equipId

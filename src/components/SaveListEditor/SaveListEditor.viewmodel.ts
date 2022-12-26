@@ -1,8 +1,9 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
-import { EditSaveProps, saveListProps } from './SaveListEditor.types'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { SaveProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
+import { saveListProps } from './SaveListEditor.types'
 
 export const useSaveListEditor = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
   const defaultSaves = character.saves
 
   const saveList = [
@@ -44,18 +45,8 @@ export const useSaveListEditor = () => {
     }
   ] as saveListProps[]
 
-  const editSaveSheet = (values: EditSaveProps) => {
-    setCharacter({
-      ...character,
-      saves: {
-        vsMagic: values.vsMagic,
-        death: values.death,
-        wand: values.wand,
-        paralysis: values.paralysis,
-        breath: values.breath,
-        spells: values.spells,
-      }
-    })
+  const editSaveSheet = (values: SaveProps) => {
+    dispatch(actions.editSaves(values))
   }
   return { defaultSaves, saveList, editSaveSheet }
 }

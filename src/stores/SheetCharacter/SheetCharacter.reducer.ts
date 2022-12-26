@@ -10,6 +10,7 @@ export const sheetCharacterReducer = (
 ) => {
   switch (action.type) {
     case Actions.EDIT_NAME:
+      console.log('o nome pega ne')
       return {
         ...state,
         name: action.payload.name,

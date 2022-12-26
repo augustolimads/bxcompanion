@@ -7,7 +7,7 @@ export type CharacterProps = {
   level: LevelProps
   attr: AttributeProps
   saves: SaveProps
-  hp: HealthProps
+  hp: HitpointProps
   combat: CombatProps
   itens: {
     distance: DistanceProps
@@ -53,7 +53,7 @@ export type SaveProps = {
   spells: number
 }
 
-export type HealthProps = {
+export type HitpointProps = {
   hd: number
   current: number
   max: number

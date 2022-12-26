@@ -1,7 +1,7 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/SheetCharacter/SheetCharacter'
 
 export const useProgressHp = () => {
-  const {character} = useCharacter()
+  const { character } = useCharacter()
   const current = character.hp.current
   const max = character.hp.max
   const operationPercentage = (current * 100) / max

@@ -1,6 +1,7 @@
 import {
   AttributeProps,
-  EquipmentProps
+  EquipmentProps,
+  HitpointProps
 } from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { Actions } from './SheetCharacter.enums'
 import {
@@ -10,7 +11,6 @@ import {
   EditEquipment,
   EditLevelSheetProps,
   EditTAC0Props,
-  HealthProps,
   SaveProps
 } from './SheetCharacter.types'
 
@@ -42,7 +42,7 @@ export const editSaves = (props: SaveProps) => {
   }
 }
 
-export const editHP = (props: HealthProps) => {
+export const editHP = (props: HitpointProps) => {
   return {
     type: Actions.EDIT_HP,
     payload: { ...props }
@@ -50,12 +50,14 @@ export const editHP = (props: HealthProps) => {
 }
 
 export const increaseHitpoint = () => {
+  console.log('+1')
   return {
     type: Actions.INCREASE_HITPOINT
   }
 }
 
 export const decreaseHitpoint = () => {
+  console.log('-1')
   return {
     type: Actions.DECREASE_HITPOINT
   }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
-import { editHpProps, formProps } from './HitpointEditor.types'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { HitpointProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
+import { formProps } from './HitpointEditor.types'
 
 const forms:formProps[] = [
   {
@@ -41,18 +42,16 @@ const hdOptions = [
 ]
 
 export const useHitpointEditor = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
   const [formState, setFormState] = useState(forms)
 
-  const editHpSheet = ({hd, current, max}: editHpProps) => {
-    setCharacter({
-        ...character,
-        hp: {
-          hd,
-          current,
-          max
-        }
-    })
+  const editHpSheet = (props: HitpointProps) => {
+    const numberConverted = {
+      hd: Number(props.hd) || 0,
+      current: Number(props.current) || 0,
+      max: Number(props.max) || 0,
+    }
+    dispatch(actions.editHP(numberConverted))
 }
 
 useEffect(() => {

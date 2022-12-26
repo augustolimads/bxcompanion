@@ -1,7 +1,7 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
 
 export const useHitpoint = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
   const currentHPRaw = character.hp.current
   const maxHP = character.hp.max
   const operation = currentHPRaw - maxHP
@@ -14,23 +14,11 @@ export const useHitpoint = () => {
   const fullCurrentHP = isExceded ? currentHP + operation : currentHP
 
   const increaseHitpoint = () => {
-    setCharacter({
-      ...character,
-      hp: {
-        ...character.hp,
-        current: Number(character.hp.current) + 1
-      }
-    })
+    dispatch(actions.increaseHitpoint())
   }
 
   const decreaseHitpoint = () => {
-    setCharacter({
-      ...character,
-      hp: {
-        ...character.hp,
-        current: Number(character.hp.current) - 1
-      }
-    })
+    dispatch(actions.decreaseHitpoint())
   }
 
   return {

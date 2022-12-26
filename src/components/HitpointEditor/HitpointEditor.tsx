@@ -49,8 +49,7 @@ export const HitpointEditor = (props: HitpointEditorProps) => {
             <NumberInput
               name={el.label}
               defaultValue={el.value}
-              min={4}
-              max={12}
+              min={-10}
             >
               <NumberInputField {...register(el.ref)} />
               <NumberInputStepper>

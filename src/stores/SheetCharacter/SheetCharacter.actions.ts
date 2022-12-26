@@ -1,12 +1,14 @@
 import {
-  AttributeProps, CreateEquipmentProps, HitpointProps
+  AttributeProps,
+  CreateEquipmentProps,
+  HitpointProps
 } from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { Actions } from './SheetCharacter.enums'
 import {
   CharacterProps,
   DecreaseAmmoProps,
   EditACProps,
-  EditEquipment,
+  EditEquipmentProps,
   EditLevelSheetProps,
   EditTAC0Props,
   SaveProps
@@ -83,13 +85,13 @@ export const decreaseAmmo = (props: DecreaseAmmoProps) => {
 export const createEquipment = (props: CreateEquipmentProps) => {
   return {
     type: Actions.CREATE_EQUIPMENT,
-    payload: { ...props }
+    payload: { newEquipment: props }
   }
 }
 
-export const editEquipment = (props: EditEquipment) => {
+export const editEquipment = (props: EditEquipmentProps) => {
   return {
     type: Actions.EDIT_EQUIPMENT,
-    payload: { ...props }
+    payload: { values: props }
   }
 }

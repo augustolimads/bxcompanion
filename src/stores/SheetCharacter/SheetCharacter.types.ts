@@ -159,7 +159,16 @@ export type CreateEquipmentProps = {
   type: EquipmentProps['type']
 }
 
-export type EditEquipmentProps = EquipmentProps & {
-  equipId: EquipmentProps['id']
+export type EditEquipmentProps = {
+  equipId?: EquipmentProps['id']
   equipmentSlug: EquipmentProps['id']
+  equipped?: boolean
+  type?: EquipTypeProps
+  label: string
+  TAC0Bonus?: number
+  ACBonus?: number
+  damage?: string
+  amount?: number
+  description?: string
+  weight?: number
 }

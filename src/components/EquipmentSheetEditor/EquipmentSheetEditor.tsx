@@ -33,7 +33,7 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
     formState: { errors, isSubmitting }
   } = useForm({
     defaultValues: {
-      label: getEquipmentStats()?.label || '',
+      label: getEquipmentStats()?.label || 'item',
       type: getEquipmentStats()?.type || 'weapon',
       TAC0Bonus: getEquipmentStats()?.TAC0Bonus,
       ACBonus: getEquipmentStats()?.ACBonus,

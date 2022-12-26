@@ -1,17 +1,18 @@
-import { EquipTypeProps } from "src/stores/SheetCharacter/SheetCharacter.types"
+import { EquipmentProps } from "src/stores/SheetCharacter/SheetCharacter.types"
 
 export type EquipmentSheetEditorProps = {
     id?: string
     isItem?: boolean
 }
 
-export type EditEquipmentProps = {
-    label: string
-    type: EquipTypeProps
-    TAC0Bonus?: number
-    ACBonus?: number
-    damage?: string
-    description?: string
-    equipped?: boolean
-    amount?: number
+export type EditEquipmentLocalProps = {
+    label: EquipmentProps['label']
+    type: EquipmentProps['type']
+    TAC0Bonus?: EquipmentProps['TAC0Bonus']
+    ACBonus?: EquipmentProps['ACBonus']
+    damage?: EquipmentProps['damage']
+    description?: EquipmentProps['description']
+    equipped?: EquipmentProps['equipped']
+    amount?: EquipmentProps['amount']
+    weight?: EquipmentProps['weight']
 }

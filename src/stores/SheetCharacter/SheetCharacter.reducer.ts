@@ -10,7 +10,6 @@ export const sheetCharacterReducer = (
 ) => {
   switch (action.type) {
     case Actions.EDIT_NAME:
-      console.log('o nome pega ne')
       return {
         ...state,
         name: action.payload.name,
@@ -108,12 +107,12 @@ export const sheetCharacterReducer = (
         ...state,
         ...(listEquipment[ammoIndex] = {
           ...listEquipment[ammoIndex],
-          amount: (actualAmount) - 1
+          amount: actualAmount - 1
         })
       }
     case Actions.CREATE_EQUIPMENT:
       const itemList = state.itens.itemList
-      itemList.push(action.payload.NewEquipment)
+      itemList.push(action.payload.newEquipment)
       return {
         ...state,
         ...(state.itens.itemList = itemList)
@@ -121,14 +120,15 @@ export const sheetCharacterReducer = (
     case Actions.EDIT_EQUIPMENT:
       const equipmentList = state.itens.itemList
       const equipIndex = equipmentList.findIndex(
-        (el) => el.id === action.payload.equipId
+        (el) => el.id === action.payload.values.equipId
       )
+      const amount = Number(action.payload.values?.amount) || 1
       return {
         ...state,
         ...(equipmentList[equipIndex] = {
           ...action.payload.values,
-          amount: Number(action.payload.values.amount),
-          id: action.payload.equipmentSlug
+          amount,
+          id: action.payload.values.equipmentSlug
         })
       }
     default:

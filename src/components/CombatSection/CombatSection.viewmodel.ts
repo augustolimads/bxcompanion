@@ -4,7 +4,7 @@ import { setSlug } from 'src/utils/setSlug'
 
 export const useCombatSection = () => {
   const { character, dispatch } = useCharacter()
-  const equipmentList = character.itens.itemList.filter((el) => el.type !== 'item')
+  const equipmentList = character.itens.itemList.filter((el) => el && el.type !== 'item')
 
   function createEquipment() {
     const itemList = character.itens.itemList

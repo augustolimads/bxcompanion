@@ -137,7 +137,10 @@ export type CharacterReducerProps = {
   payload: any
 }
 
-export type EditLevelSheetProps = LevelProps & {
+export type EditLevelSheetProps = {
+  level: LevelProps['value']
+  currentXP: LevelProps['currentXP']
+  maxXP: LevelProps['maxXP']
   charClass: CharacterProps['charClass']
 }
 

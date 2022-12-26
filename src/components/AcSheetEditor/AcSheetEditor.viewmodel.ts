@@ -1,17 +1,11 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
-import { AcSheetEditorProps } from './AcSheetEditor.types'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { EditACProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 
 export const useAcSheetEditor = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
 
-  const editACSheet = (value: AcSheetEditorProps) => {
-    setCharacter({
-      ...character,
-      combat: {
-        ...character.combat,
-        ACBonus: Number(value.ACBonus)
-      },
-    })
+  const editACSheet = (value: EditACProps) => {
+    dispatch(actions.editAC(value))
   }
 
   return { character, editACSheet }

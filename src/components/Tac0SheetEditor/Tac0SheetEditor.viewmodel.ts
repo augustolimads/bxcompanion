@@ -1,17 +1,14 @@
-import { useCharacter } from "src/stores/useCharacter/useCharacter"
-import { Tac0SheetEditorProps } from "./Tac0SheetEditor.types"
+import { actions, useCharacter } from "src/stores/SheetCharacter"
+import { EditTAC0Props } from "src/stores/SheetCharacter/SheetCharacter.types"
 
 export const useTac0SheetEditor = () => {
-    const { character, setCharacter } = useCharacter()
+    const { character, dispatch } = useCharacter()
 
-  const editTac0Sheet = (value: Tac0SheetEditorProps) => {
-    setCharacter({
-      ...character,
-      combat: {
-        ...character.combat,
-        tac0: Number(value.tac0)
-      },
-    })
+  const editTac0Sheet = (value: EditTAC0Props) => {
+    const ConvertedValue = {
+      tac0: Number(value.tac0)
+    }
+    dispatch(actions.editTAC0(ConvertedValue))
   }
 
   return { character, editTac0Sheet }

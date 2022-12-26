@@ -67,7 +67,7 @@ export type CombatProps = {
 }
 
 export type EquipmentProps = {
-  id?: string
+  id: string
   equipped?: boolean
   type: EquipTypeProps
   label: string
@@ -151,6 +151,12 @@ export type EditTAC0Props = {
 
 export type DecreaseAmmoProps = {
   id: EquipmentProps['id']
+}
+
+export type CreateEquipmentProps = {
+  id: EquipmentProps['id']
+  label: EquipmentProps['label']
+  type: EquipmentProps['type']
 }
 
 export type EditEquipment = {

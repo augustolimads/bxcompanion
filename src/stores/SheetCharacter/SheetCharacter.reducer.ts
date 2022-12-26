@@ -96,19 +96,19 @@ export const sheetCharacterReducer = (
       }
     case Actions.DECREASE_AMMO:
       const listEquipment = state.itens.itemList
-      const getListAmmo = listEquipment.filter(
-        (el) => el.type === 'ammo' && el.equipped
+      const ammoElement = listEquipment.find(
+        (el) => el.id === action.payload.id
       )
-      const ammoElement = getListAmmo.find((el) => el.id === action.payload.id)
+      const actualAmount = ammoElement?.amount || 0
+
       const ammoIndex = listEquipment.findIndex(
         (el) => el.id === action.payload.id
       )
-      const actualAmount = ammoElement?.amount
       return {
         ...state,
         ...(listEquipment[ammoIndex] = {
           ...listEquipment[ammoIndex],
-          amount: (actualAmount || 0) - 1
+          amount: (actualAmount) - 1
         })
       }
     case Actions.CREATE_EQUIPMENT:
@@ -127,7 +127,7 @@ export const sheetCharacterReducer = (
         ...state,
         ...(equipmentList[equipIndex] = {
           ...action.payload.values,
-          amount: action.payload.values.amount,
+          amount: Number(action.payload.values.amount),
           id: action.payload.equipmentSlug
         })
       }

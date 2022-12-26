@@ -49,7 +49,7 @@ export const CombatSectionAside = (props: CombatSectionAsideProps) => {
               bg="neutral.900"
               color="neutral.100"
               key={el.id}
-              onClick={() => decreaseAmmo(el.id)}
+              onClick={() => decreaseAmmo({id: el.id})}
             >
               <Text
                 as="p"

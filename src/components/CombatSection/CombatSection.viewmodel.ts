@@ -1,20 +1,16 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { CreateEquipmentProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { setSlug } from 'src/utils/setSlug'
 
 export const useCombatSection = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
   const equipmentList = character.itens.itemList.filter((el) => el.type !== 'item')
 
   function createEquipment() {
     const itemList = character.itens.itemList
     const equipmentSlug = setSlug(itemList, 'item')
-    itemList.push({ id: equipmentSlug, label: 'Item', type: 'weapon' })
-
-    setCharacter({
-      ...character,
-      ...(character.itens.itemList = itemList)
-    })
-    // console.log(character.itens.itemList)
+    const newItem = { id: equipmentSlug, label: 'Item', type: 'weapon' } as CreateEquipmentProps
+    dispatch(actions.createEquipment(newItem))
   }
 
   function duplicateEquipment() {}

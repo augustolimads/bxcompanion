@@ -1,22 +1,22 @@
 import {
-    Button,
-    FormControl,
-    FormLabel,
-    HStack,
-    Input,
-    NumberDecrementStepper,
-    NumberIncrementStepper,
-    NumberInput,
-    NumberInputField,
-    NumberInputStepper,
-    Select,
-    Spacer,
-    Switch,
-    Textarea,
-    VStack
+  Button,
+  FormControl,
+  FormLabel,
+  HStack,
+  Input,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  Select,
+  Spacer,
+  Switch,
+  Textarea,
+  VStack
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
-import { EquipTypeProps } from 'src/stores/useCharacter/useCharacter.types'
+import { EquipTypeProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { Option } from '../Option'
 import { EquipmentSheetEditorProps, useEquipmentSheetEditor } from './index'
 

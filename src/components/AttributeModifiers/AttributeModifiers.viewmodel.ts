@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/SheetCharacter'
 import { attributeOtherMod } from 'src/utils/attributeOtherMod'
 import { AttrData } from '../AttributeModifierItem/AttributeModifierItem.types'
 import { AttrRef } from './AttributeModifiers.types'

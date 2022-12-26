@@ -8,10 +8,9 @@ import { NoteSectionAside } from '../NoteSectionAside'
 import { SheetContentContainer } from '../SheetContentContainer'
 import { SpellSection } from '../SpellSection'
 import { SpellSectionAside } from '../SpellSectionAside'
-import { SheetContentDisplayProps, useSheetContentDisplay } from './index'
+import { SheetContentDisplayProps } from './index'
 
 export const SheetContentDisplay = (props: SheetContentDisplayProps) => {
-  const { result } = useSheetContentDisplay()
   const { sheetMenu } = useSheetMenu()
 
   switch (sheetMenu) {

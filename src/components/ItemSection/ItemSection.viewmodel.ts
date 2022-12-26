@@ -1,4 +1,4 @@
-import { useCharacter } from "src/stores/useCharacter/useCharacter"
+import { useCharacter } from "src/stores/SheetCharacter"
 
 export const useItemSection = () => {
     const {character} = useCharacter()

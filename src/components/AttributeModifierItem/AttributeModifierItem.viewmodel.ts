@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { useCharacter } from 'src/stores/SheetCharacter'
 import { attributeModifier } from 'src/utils/attributeModifier'
 import { formatBonus } from 'src/utils/formatBonus'
 import { AttrRef } from '../AttributeModifiers/AttributeModifiers.types'

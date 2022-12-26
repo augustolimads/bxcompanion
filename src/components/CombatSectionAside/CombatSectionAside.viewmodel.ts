@@ -1,7 +1,9 @@
-import { useCharacter } from 'src/stores/useCharacter/useCharacter'
+import { actions } from 'src/stores/SheetCharacter'
+import { useCharacter } from 'src/stores/SheetCharacter/SheetCharacter'
+import { DecreaseAmmoProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 
 export const useCombatSectionAside = () => {
-  const { character, setCharacter } = useCharacter()
+  const { character, dispatch } = useCharacter()
   const tac0 = character.combat.tac0 + character.combat.tac0Extra
   const listEquipment = character.itens.itemList
   const getListAmmo = listEquipment.filter(
@@ -24,18 +26,11 @@ export const useCombatSectionAside = () => {
     return baseValue - extraValue
   }
 
-  const decreaseAmmo = (id?: string) => {
-    const ammoElement = getListAmmo.find((el) => el.id === id)
-    const ammoIndex = listEquipment.findIndex((el) => el.id === id)
+  const decreaseAmmo = (values: DecreaseAmmoProps) => {
+    const ammoElement = listEquipment.find((el) => el.id === values.id)
     const actualAmount = ammoElement?.amount
-    if (actualAmount && actualAmount > 0) {
-      setCharacter({
-        ...character,
-        ...(listEquipment[ammoIndex] = {
-          ...listEquipment[ammoIndex],
-          amount: (actualAmount || 0) - 1
-        })
-      })
+    if(actualAmount && actualAmount > 0) {
+      dispatch(actions.decreaseAmmo(values))
     }
   }
 

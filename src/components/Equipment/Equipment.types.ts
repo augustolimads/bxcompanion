@@ -1,4 +1,4 @@
-import { EquipTypeProps } from 'src/stores/useCharacter/useCharacter.types'
+import { EquipTypeProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 
 export type EquipmentProps = {
     id?: string

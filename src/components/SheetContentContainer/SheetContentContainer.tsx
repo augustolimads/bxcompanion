@@ -1,8 +1,7 @@
 import { HStack } from '@chakra-ui/react'
-import { SheetContentContainerProps, useSheetContentContainer } from './index'
+import { SheetContentContainerProps } from './index'
 
 export const SheetContentContainer = (props: SheetContentContainerProps) => {
-  const { result } = useSheetContentContainer()
 
   return (
     <HStack h="60vh" overflow="hidden" align="start" py={2} px={4}>

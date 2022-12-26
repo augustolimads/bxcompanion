@@ -1,7 +1,7 @@
-import { Actions } from "./SheetMenu.enums"
+import { Actions, Areas } from "./SheetMenu.enums"
 import { ReducerProps } from "./useSheetMenu.types"
 
-export const initialMenuActive = 0
+export const initialMenuActive = Areas.COMBAT
 
 export const sheetMenuReducer = (state: number, action: ReducerProps) => {
     switch (action.type) {

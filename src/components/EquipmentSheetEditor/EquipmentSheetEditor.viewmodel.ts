@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { actions, useCharacter } from 'src/stores/SheetCharacter'
-import { EquipTypeProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
+import { EditEquipmentProps, EquipTypeProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { setSlug } from 'src/utils/setSlug'
-import { EditEquipmentProps } from './EquipmentSheetEditor.types'
 
 export const useEquipmentSheetEditor = (equipId?: string) => {
   const { character, dispatch } = useCharacter()
@@ -12,9 +11,10 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
 
   function editEquipmentSheet(values: EditEquipmentProps) {
     const equipmentList = character.itens.itemList
+    const label = values.label || ''
     const formattedValues = {
-      equipmentSlug: setSlug(equipmentList, values.label),
-      values,
+      ...values,
+      equipmentSlug: setSlug(equipmentList, label),
       equipId
     }
 

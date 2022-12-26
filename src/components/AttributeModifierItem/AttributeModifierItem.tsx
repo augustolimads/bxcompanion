@@ -13,7 +13,7 @@ export const AttributeModifierItem = (props: AttributeModifierItemProps) => {
         <Text>{attrMod}</Text>
       </HStack>
       {props.attrData.map((item) => (
-        <HStack>
+        <HStack key={item.id}>
           <Text fontWeight="bold" minW="200px">
             {item.label}
           </Text>

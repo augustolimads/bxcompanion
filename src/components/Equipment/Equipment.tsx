@@ -45,7 +45,7 @@ export const Equipment = (props: EquipmentProps) => {
         )}
         <Box ml="auto">
           {props.isItem && (
-            <HStack>
+            <HStack key={props.id}>
               <WeightIcon size={14} />
               <Text color="neutral.100">
                 {(props.weight || 0) * (props.amount || 1)}

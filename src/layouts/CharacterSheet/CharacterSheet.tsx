@@ -13,7 +13,6 @@ import { SheetMenuProvider } from 'src/stores/SheetMenu'
 import { CharacterSheetProps } from './index'
 
 export const CharacterSheet = (props: CharacterSheetProps) => {
-
   return (
     <SheetCharacterProvider>
       <SheetMenuProvider>

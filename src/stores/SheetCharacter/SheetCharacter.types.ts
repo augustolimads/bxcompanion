@@ -159,8 +159,7 @@ export type CreateEquipmentProps = {
   type: EquipmentProps['type']
 }
 
-export type EditEquipment = {
+export type EditEquipmentProps = EquipmentProps & {
   equipId: EquipmentProps['id']
   equipmentSlug: EquipmentProps['id']
-  values: EquipmentProps
 }

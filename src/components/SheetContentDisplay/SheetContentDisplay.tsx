@@ -1,4 +1,5 @@
 import { useSheetMenu } from 'src/stores/SheetMenu'
+import { Areas } from 'src/stores/SheetMenu/SheetMenu.enums'
 import { CombatSection } from '../CombatSection'
 import { CombatSectionAside } from '../CombatSectionAside'
 import { ItemSection } from '../ItemSection'
@@ -8,31 +9,30 @@ import { NoteSectionAside } from '../NoteSectionAside'
 import { SheetContentContainer } from '../SheetContentContainer'
 import { SpellSection } from '../SpellSection'
 import { SpellSectionAside } from '../SpellSectionAside'
-import { SheetContentDisplayProps } from './index'
 
-export const SheetContentDisplay = (props: SheetContentDisplayProps) => {
+export const SheetContentDisplay = () => {
   const { sheetMenu } = useSheetMenu()
 
   switch (sheetMenu) {
-    case 0:
+    case Areas.COMBAT:
       return (
         <SheetContentContainer aside={<CombatSectionAside />}>
           <CombatSection />
         </SheetContentContainer>
       )
-    case 1:
+    case Areas.ITENS:
       return (
         <SheetContentContainer aside={<ItemSectionAside />}>
           <ItemSection />
         </SheetContentContainer>
       )
-    case 2:
+    case Areas.SPELLS:
       return (
         <SheetContentContainer aside={<SpellSectionAside />}>
           <SpellSection />
         </SheetContentContainer>
       )
-    case 3:
+    case Areas.NOTES:
       return (
         <SheetContentContainer aside={<NoteSectionAside />}>
           <NoteSection />
@@ -40,7 +40,7 @@ export const SheetContentDisplay = (props: SheetContentDisplayProps) => {
       )
     default:
       return (
-        <SheetContentContainer>
+        <SheetContentContainer aside={<CombatSectionAside />}>
           <CombatSection />
         </SheetContentContainer>
       )

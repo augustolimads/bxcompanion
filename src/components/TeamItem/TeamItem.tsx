@@ -1,9 +1,8 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react'
 import Link from 'next/link'
-import { TeamItemProps, useTeamItem } from './index'
+import { TeamItemProps } from './index'
 
 export const TeamItem = (props: TeamItemProps) => {
-  const { result } = useTeamItem()
 
   return (
     <Link href={`/personagens/ficha`}>

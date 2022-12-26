@@ -1,8 +1,7 @@
 import { Container } from '@chakra-ui/react';
-import { SheetContainerProps, useSheetContainer } from './index';
+import { SheetContainerProps } from './index';
 
 export const SheetContainer = (props:SheetContainerProps) => {
-  const {result} = useSheetContainer()
 
   return (
     <Container py={2} px={4} >

@@ -52,3 +52,5 @@ export { TeamItem } from './TeamItem'
 
 
 
+
+export { CombatEquipmentItem } from './CombatEquipmentItem';

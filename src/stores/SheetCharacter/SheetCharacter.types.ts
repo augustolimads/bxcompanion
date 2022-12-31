@@ -67,8 +67,8 @@ export type CombatProps = {
 }
 
 export type EquipmentProps = {
+  equippedOn: string
   id: string
-  equipped?: boolean
   type: EquipTypeProps
   label: string
   TAC0Bonus?: number
@@ -77,6 +77,7 @@ export type EquipmentProps = {
   amount?: number
   description?: string
   weight?: number
+  imageRef?: string
 }
 
 export type DistanceProps = {
@@ -130,7 +131,7 @@ export type itemSavesProps =
   | 'breath'
   | 'spells'
 
-export type EquipTypeProps = 'weapon' | 'armor' | 'ammo' | 'item'
+export type EquipTypeProps = 'weapon' | 'armor' | 'ammo' | 'item' | 'shield' | 'helmet' | 'magic'
 
 export type CharacterReducerProps = {
   type: string
@@ -165,7 +166,7 @@ export type CreateEquipmentProps = {
 export type EditEquipmentProps = {
   equipId?: EquipmentProps['id']
   equipmentSlug: EquipmentProps['id']
-  equipped?: boolean
+  equippedOn?: string
   type?: EquipTypeProps
   label: string
   TAC0Bonus?: number

@@ -79,37 +79,57 @@ export const sheetMock = {
       },
       {
         id: 'espada-longa',
-        equipped: true,
+        equippedOn: 'r-hand',
         label: 'Espada longa',
         type: 'weapon',
         TAC0Bonus: 5,
         damage: 'd8',
         description: 'é uma espada com detalhes dourados',
-        weight: 0
+        weight: 0,
+        imageRef: 'espada-longa'
       },
       {
         id: 'armadura-de-couro',
-        equipped: true,
+        equippedOn: 'armor',
         type: 'armor',
         label: 'Armadura de couro',
         ACBonus: 5,
-        weight: 0
+        weight: 0,
+        imageRef: 'couro'
       },
       {
         id: 'escudo',
-        equipped: false,
-        type: 'armor',
+        equippedOn: 'l-hand',
+        type: 'shield',
         label: 'escudo',
         ACBonus: 1,
-        weight: 0
+        weight: 0,
+        imageRef: 'escudo'
+      },
+      {
+        id: 'elmo',
+        equippedOn: 'helmet',
+        type: 'helmet',
+        label: 'Elmo',
+        weight: 0,
+        imageRef: 'elmo'
+      },
+      {
+        id: 'anel-do-poder',
+        equippedOn: 'magic0',
+        type: 'magic',
+        label: 'Anel do poder',
+        weight: 0,
+        imageRef: 'anel'
       },
       {
         id: 'flechas',
-        equipped: true,
+        equippedOn: 'ammo',
         type: 'ammo',
         label: 'flechas',
         amount: 10,
-        weight: 0
+        weight: 0,
+        imageRef: 'flecha'
       }
     ]
   },
@@ -124,4 +144,4 @@ export const sheetMock = {
     armor: ['leve', 'pesado'],
     weapon: ['todas']
   }
-} as CharacterProps
+} as unknown as CharacterProps

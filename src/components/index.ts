@@ -7,6 +7,8 @@ export { AttributeModifiers } from './AttributeModifiers'
 export { CharacterSheetEditor } from './CharacterSheetEditor'
 export { CharacterSheetName } from './CharacterSheetName'
 export { CombatButtonAside } from './CombatButtonAside'
+export { CombatEquipmentItem } from './CombatEquipmentItem'
+export { CombatEquipmentItemEditor } from './CombatEquipmentItemEditor'
 export { CombatSection } from './CombatSection'
 export { CombatSectionAside } from './CombatSectionAside'
 export { CombatSectionAsideGroup } from './CombatSectionAsideGroup'
@@ -53,4 +55,3 @@ export { TeamItem } from './TeamItem'
 
 
 
-export { CombatEquipmentItem } from './CombatEquipmentItem';

@@ -1,13 +1,12 @@
-import { Box, Flex, HStack, Text, useDisclosure } from '@chakra-ui/react'
+import { Flex, HStack, Text, useDisclosure } from '@chakra-ui/react'
 import { useRef } from 'react'
 import { formatBonus } from 'src/utils/formatBonus'
 import { CharacterSheetEditor } from '../CharacterSheetEditor'
 import { EquipmentSheetEditor } from '../EquipmentSheetEditor'
 import { HandIcon, WeightIcon } from '../Icons'
-import { EquipmentProps, useEquipment } from './index'
+import { EquipmentProps } from './index'
 
 export const Equipment = (props: EquipmentProps) => {
-  const { result } = useEquipment()
   const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -26,11 +25,14 @@ export const Equipment = (props: EquipmentProps) => {
         ref={btnRef}
         onClick={onOpen}
       >
-        {props.type === 'ammo' && (
-          <Text color="neutral.100" justifySelf="start">
-            {props.amount}x
-          </Text>
-        )}
+        <HStack>
+          {props.isEquipped && <HandIcon />}
+          {props.type === 'ammo' && (
+            <Text color="neutral.100" justifySelf="start">
+              {props.amount}x
+            </Text>
+          )}
+        </HStack>
         <Text>{props.label}</Text>
         {props.type === 'weapon' && props.TAC0Bonus && (
           <Text color="neutral.100">{formatBonus(props.TAC0Bonus)}</Text>
@@ -43,17 +45,12 @@ export const Equipment = (props: EquipmentProps) => {
             dano: {props.damage}
           </Text>
         )}
-        <Box ml="auto">
-          {props.isItem && (
-            <HStack key={props.id}>
-              <WeightIcon size={14} />
-              <Text color="neutral.100">
-                {(props.weight || 0) * (props.amount || 1)}
-              </Text>
-            </HStack> 
-          )}
-          {props.isEquipped && <HandIcon />}
-        </Box>
+        <HStack ml="auto" key={props.id}>
+          <WeightIcon size={14} />
+          <Text color="neutral.100">
+            {(props.weight || 0) * (props.amount || 1)}
+          </Text>
+        </HStack>
       </Flex>
       <CharacterSheetEditor
         label={`Edição de Equipamento`}
@@ -62,7 +59,7 @@ export const Equipment = (props: EquipmentProps) => {
         btnRef={btnRef}
         hasMenu
       >
-        <EquipmentSheetEditor id={props.id} isItem={props.isItem} />
+        <EquipmentSheetEditor id={props.id} />
       </CharacterSheetEditor>
     </>
   )

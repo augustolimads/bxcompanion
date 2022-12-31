@@ -1,5 +1,8 @@
-import { Center, GridItem, Image, Text } from '@chakra-ui/react'
+import { Center, GridItem, Image, Text, useDisclosure } from '@chakra-ui/react'
+import { useRef } from 'react'
 import { colors } from 'src/styles/colors'
+import { CharacterSheetEditor } from '../CharacterSheetEditor'
+import { CombatEquipmentItemEditor } from '../CombatEquipmentItemEditor'
 import {
   ArmorIcon,
   BackpackIcon,
@@ -11,7 +14,11 @@ import {
 import { CombatEquipmentItemProps, useCombatEquipmentItem } from './index'
 
 export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
-  const { result } = useCombatEquipmentItem()
+  const { setEquipmentImage } = useCombatEquipmentItem({
+    imageRef: props.imageRef
+  })
+  const btnRef = useRef<HTMLDivElement>(null)
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const equipmentEmptyIcon = () => {
     switch (props.type) {
@@ -33,31 +40,29 @@ export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
   }
 
   return (
-    <GridItem
-      bg="neutral.300"
-      rounded="md"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      h="100%"
-    >
-      {!(props.primaryInfo || props.secondaryInfo || props.image) &&
-        equipmentEmptyIcon()}
-      {(props.primaryInfo || props.secondaryInfo || props.image) && (
-        <Center
-          position="relative"
-          overflow="hidden"
-          h="100%"
-          w="100%"
-        >
-          <Image
-            src={props.image}
-            objectFit="contain"
-            maxW={props.size === 'lg' ? '5rem' : '3rem'}
-            maxH={props.size === 'lg' ? '5rem' : '3rem'}
-          />
+    <>
+      <GridItem
+        bg="neutral.300"
+        rounded="md"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        h="100%"
+        ref={btnRef}
+        onClick={onOpen}
+      >
+        <Center position="relative" overflow="hidden" h="100%" w="100%">
+          {!props.imageRef && equipmentEmptyIcon()}
+          {props.imageRef && (
+            <Image
+              src={setEquipmentImage()}
+              objectFit="contain"
+              maxW={props.size === 'lg' ? '5rem' : '3rem'}
+              maxH={props.size === 'lg' ? '5rem' : '3rem'}
+            />
+          )}
           <Text
-            padding='0 4px'
+            padding="0 4px"
             position="absolute"
             bottom="0"
             left="0"
@@ -70,7 +75,7 @@ export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
             {props.primaryInfo}
           </Text>
           <Text
-            padding='0 4px'
+            padding="0 4px"
             position="absolute"
             bottom="0"
             right="0"
@@ -83,7 +88,16 @@ export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
             {props.secondaryInfo}
           </Text>
         </Center>
-      )}
-    </GridItem>
+      </GridItem>
+      <CharacterSheetEditor
+        label={`Selecione o equipamento`}
+        isOpen={isOpen}
+        onClose={onClose}
+        btnRef={btnRef}
+        hasMenu
+      >
+        <CombatEquipmentItemEditor type={props.type} />
+      </CharacterSheetEditor>
+    </>
   )
 }

@@ -1,8 +1,12 @@
 export type CombatEquipmentItemProps = {
   id?: string
   size?: 'md' | 'lg'
-  type?: 'magic' | 'ammo' | 'helmet' | 'armor' | 'weapon' | 'shield' | 'misc'
+  type?: string
   primaryInfo?: string
   secondaryInfo?: string
-  image?: string
+  imageRef?: string
+}
+
+export type useCombatEquipmentItemProps = {
+  imageRef?: string
 }

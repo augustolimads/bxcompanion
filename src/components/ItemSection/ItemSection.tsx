@@ -17,6 +17,7 @@ export const ItemSection = (props: ItemSectionProps) => {
             weight={el.weight}
             id={el.id}
             type={el.type}
+            isEquipped={Boolean(el.equippedOn)}
           />
         ))}
     </SheetList>

@@ -16,56 +16,52 @@ export const sheetEquipmentsReducer = (
         ...state[ammoIndex],
         amount: newAmount
       }
-      const newState = state.filter(el => el.id !== action.payload.id)
-
+      const newState = state.filter((el) => el.id !== action.payload.id)
       return [...newState, (state[ammoIndex] = ammoElement)]
     case Actions.CREATE_ITEM:
-      const itemList = state
-      itemList.push(action.payload.newEquipment)
-      return {
-        ...state,
-        ...(state = itemList)
-      }
+      const newItem = action.payload.newEquipment
+      return [...state, newItem]
     case Actions.EDIT_ITEM:
-      const equipmentList = state
-      const equipIndex = equipmentList.findIndex(
+      const editEquipIndex = state.findIndex(
         (el) => el.id === action.payload.values.equipId
       )
+      const filteredEditedItemList = state.filter(
+        (el, index) => index !== editEquipIndex
+      )
       const amount = Number(action.payload.values?.amount) || 1
-      return {
-        ...state,
-        ...(equipmentList[equipIndex] = {
-          ...action.payload.values,
-          amount,
-          id: action.payload.values.equipmentSlug
-        })
+      const newEditedEquipment = {
+        ...action.payload.values,
+        amount,
+        id: action.payload.values.equipmentSlug
       }
+
+      return [...filteredEditedItemList, newEditedEquipment]
     case Actions.WEAR_EQUIPMENT:
-      console.log('reducer wear')
-      const wearEquipmentList = state
-      const wearEquipIndex = wearEquipmentList.findIndex(
+      const wearIndex = state.findIndex(
         (el) => el.id === action.payload.equipId
       )
-      return {
-        ...state,
-        ...(wearEquipmentList[wearEquipIndex] = {
-          ...wearEquipmentList[wearEquipIndex],
-          equippedOn: action.payload.equippedOn
-        })
+      const filteredWearItemList = state.filter(
+        (el, index) => index !== wearIndex
+      )
+      const newWearEquipment = {
+        ...state[wearIndex],
+        equippedOn: action.payload.equippedOn
       }
+
+      return [...filteredWearItemList, newWearEquipment]
     case Actions.UNEQUIP_EQUIPMENT:
-      console.log('reducer unequip')
-      const unequipEquipmentList = state
-      const unequipEquipIndex = unequipEquipmentList.findIndex(
+      const unequipIndex = state.findIndex(
         (el) => el.id === action.payload.equipId
       )
-      return {
-        ...state,
-        ...(unequipEquipmentList[unequipEquipIndex] = {
-          ...unequipEquipmentList[unequipEquipIndex],
-          equippedOn: ''
-        })
+      const filteredUnequipItemList = state.filter(
+        (el, index) => index !== unequipIndex
+      )
+      const newUnequipEquipment = {
+        ...state[unequipIndex],
+        equippedOn: action.payload.equippedOn
       }
+
+      return [...filteredUnequipItemList, newUnequipEquipment]
     default:
       return state
   }

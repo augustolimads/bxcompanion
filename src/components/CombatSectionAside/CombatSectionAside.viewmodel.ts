@@ -10,7 +10,6 @@ export const useCombatSectionAside = () => {
     (el) => el && el.type === 'ammo' && Boolean(el.equippedOn)
   )
 
-  console.log(getListAmmo)
   const ac = () => {
     const baseValue = 9
     const extraValue = character.combat.ACBonus

@@ -90,7 +90,7 @@ export const sheetMock = {
       },
       {
         id: 'armadura-de-couro',
-        equippedOn: 'armor',
+        equippedOn: '',
         type: 'armor',
         label: 'Armadura de couro',
         ACBonus: 5,

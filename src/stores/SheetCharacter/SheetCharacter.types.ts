@@ -176,3 +176,8 @@ export type EditEquipmentProps = {
   description?: string
   weight?: number
 }
+
+export type WearEquipmentProps = {
+  equipId: string
+  equippedOn: string
+}

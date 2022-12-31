@@ -7,14 +7,14 @@ export const useCombatSectionAside = () => {
   const tac0 = character.combat.tac0 + character.combat.tac0Extra
   const listEquipment = character.itens.itemList
   const getListAmmo = listEquipment.filter(
-    (el) => el && el.type === 'ammo' && el.equipped
+    (el) => el && el.type === 'ammo' && Boolean(el.equippedOn)
   )
 
   const ac = () => {
     const baseValue = 9
     const extraValue = character.combat.ACBonus
     const armorList = character.itens.itemList.filter(
-      (el) => el && el.type === 'armor' && el.equipped
+      (el) => el && el.type === 'armor' && Boolean(el.equippedOn)
     )
     if (armorList.length > 0) {
       const armorACList = armorList.map((el) => el.ACBonus)

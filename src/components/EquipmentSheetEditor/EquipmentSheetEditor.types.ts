@@ -12,7 +12,6 @@ export type EditEquipmentLocalProps = {
     ACBonus?: EquipmentProps['ACBonus']
     damage?: EquipmentProps['damage']
     description?: EquipmentProps['description']
-    equipped?: EquipmentProps['equipped']
     amount?: EquipmentProps['amount']
     weight?: EquipmentProps['weight']
 }

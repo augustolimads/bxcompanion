@@ -10,7 +10,9 @@ import {
 export const CombatEquipmentItemEditor = (
   props: CombatEquipmentItemEditorProps
 ) => {
-  const { equipmentList } = useCombatEquipmentItemEditor(props?.type)
+  const { equipmentList, handleWearEquipment } = useCombatEquipmentItemEditor(
+    props?.type
+  )
 
   return (
     <SheetList>
@@ -26,6 +28,7 @@ export const CombatEquipmentItemEditor = (
           gap={1}
           justifyContent="start"
           borderWidth={Boolean(el.equippedOn) ? 2 : 0}
+          onClick={() => handleWearEquipment(el.equippedOn, el.id)}
         >
           <HStack>
             {Boolean(el.equippedOn) && <HandIcon />}
@@ -39,9 +42,10 @@ export const CombatEquipmentItemEditor = (
           {el.type === 'weapon' && el.TAC0Bonus && (
             <Text color="neutral.100">{formatBonus(el.TAC0Bonus)}</Text>
           )}
-          {el.type === 'armor' && el.ACBonus && (
-            <Text color="neutral.100">{el.ACBonus}</Text>
-          )}
+          {(el.type === 'armor' ||
+            el.type === 'shield' ||
+            el.type === 'helmet') &&
+            el.ACBonus && <Text color="neutral.100">{el.ACBonus}</Text>}
           {el.type === 'weapon' && el.damage && (
             <Text color="neutral.100" ml={3}>
               dano: {el.damage}

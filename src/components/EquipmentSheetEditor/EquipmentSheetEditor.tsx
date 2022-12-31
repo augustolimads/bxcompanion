@@ -11,7 +11,6 @@ import {
   NumberInputStepper,
   Select,
   Spacer,
-  Switch,
   Textarea,
   VStack
 } from '@chakra-ui/react'
@@ -34,12 +33,11 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
   } = useForm({
     defaultValues: {
       label: getEquipmentStats()?.label || 'item',
-      type: getEquipmentStats()?.type || 'weapon',
+      type: getEquipmentStats()?.type || 'item',
       TAC0Bonus: getEquipmentStats()?.TAC0Bonus,
       ACBonus: getEquipmentStats()?.ACBonus,
       damage: getEquipmentStats()?.damage,
       description: getEquipmentStats()?.description,
-      equipped: getEquipmentStats()?.equipped,
       amount: getEquipmentStats()?.amount,
       weight: getEquipmentStats()?.weight
     }
@@ -58,6 +56,18 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
                 onEquipTypeElements(event.target.value as EquipTypeProps)
               }
             >
+              <Option color="neutral.900" bg="neutral.700" value="magic">
+                Mágico
+              </Option>
+              <Option color="neutral.900" bg="neutral.700" value="helmet">
+                Elmo
+              </Option>
+              <Option color="neutral.900" bg="neutral.700" value="shield">
+                Escudo
+              </Option>
+              <Option color="neutral.900" bg="neutral.700" value="item">
+                Item
+              </Option>
               <Option color="neutral.900" bg="neutral.700" value="weapon">
                 Arma
               </Option>
@@ -68,15 +78,6 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
                 Munição
               </Option>
             </Select>
-          </FormControl>
-          <FormControl flex="0.25">
-            <FormLabel htmlFor="equipped">Equipar?</FormLabel>
-            <Switch
-              id="equipped"
-              size="lg"
-              colorScheme="twitter"
-              {...register('equipped')}
-            />
           </FormControl>
         </HStack>
       )}
@@ -122,7 +123,9 @@ export const EquipmentSheetEditor = (props: EquipmentSheetEditorProps) => {
       )}
 
       <HStack>
-        {equipType === 'armor' && (
+        {(equipType === 'armor' ||
+          equipType === 'shield' ||
+          equipType === 'helmet') && (
           <FormControl>
             <FormLabel htmlFor="ACBonus">valor de CA</FormLabel>
             <NumberInput

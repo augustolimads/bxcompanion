@@ -1,7 +1,8 @@
 import {
   AttributeProps,
   CreateEquipmentProps,
-  HitpointProps
+  HitpointProps,
+  WearEquipmentProps
 } from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { Actions } from './SheetCharacter.enums'
 import {
@@ -107,5 +108,21 @@ export const editItem = (props: EditEquipmentProps) => {
   return {
     type: Actions.EDIT_ITEM,
     payload: { values: props }
+  }
+}
+
+export const wearEquipment = (props: WearEquipmentProps) => {
+  console.log('action wear')
+  return {
+    type: Actions.WEAR_EQUIPMENT,
+    payload: { ...props }
+  }
+}
+
+export const unequipEquipment = (props: Partial<WearEquipmentProps>) => {
+  console.log('action unequip')
+  return {
+    type: Actions.WEAR_EQUIPMENT,
+    payload: { ...props }
   }
 }

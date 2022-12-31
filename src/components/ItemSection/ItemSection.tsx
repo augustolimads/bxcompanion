@@ -18,6 +18,9 @@ export const ItemSection = (props: ItemSectionProps) => {
             id={el.id}
             type={el.type}
             isEquipped={Boolean(el.equippedOn)}
+            ACBonus={el.ACBonus}
+            TAC0Bonus={el.TAC0Bonus}
+            damage={el.damage}
           />
         ))}
     </SheetList>

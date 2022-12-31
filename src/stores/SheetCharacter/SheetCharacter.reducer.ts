@@ -131,6 +131,32 @@ export const sheetCharacterReducer = (
           id: action.payload.values.equipmentSlug
         })
       }
+    case Actions.WEAR_EQUIPMENT:
+      console.log('reducer wear')
+      const wearEquipmentList = state.itens.itemList
+      const wearEquipIndex = wearEquipmentList.findIndex(
+        (el) => el.id === action.payload.equipId
+      )
+      return {
+        ...state,
+        ...(wearEquipmentList[wearEquipIndex] = {
+          ...wearEquipmentList[wearEquipIndex],
+          equippedOn: action.payload.equippedOn
+        })
+      }
+    case Actions.UNEQUIP_EQUIPMENT:
+      console.log('reducer unequip')
+      const unequipEquipmentList = state.itens.itemList
+      const unequipEquipIndex = unequipEquipmentList.findIndex(
+        (el) => el.id === action.payload.equipId
+      )
+      return {
+        ...state,
+        ...(unequipEquipmentList[unequipEquipIndex] = {
+          ...unequipEquipmentList[unequipEquipIndex],
+          equippedOn: ''
+        })
+      }
     default:
       return state
   }

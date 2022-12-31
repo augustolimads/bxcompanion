@@ -13,7 +13,6 @@ export const CombatSection = (props: CombatSectionProps) => {
         gap={2}
       >
         {mainEquipmentList.map((el) => {
-          console.log(el)
           return(
           <CombatEquipmentItem
             key={el.id}

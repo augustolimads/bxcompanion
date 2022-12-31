@@ -4,7 +4,7 @@ import { DecreaseAmmoProps } from 'src/stores/SheetEquipments/SheetEquipments.ty
 
 export const useCombatSectionAside = () => {
   const { character } = useCharacter()
-  const { equipments, dispatch} = useEquipments()
+  const { equipments, dispatch } = useEquipments()
   const tac0 = character.combat.tac0 + character.combat.tac0Extra
   const getListAmmo = equipments.filter(
     (el) => el && el.type === 'ammo' && Boolean(el.equippedOn)
@@ -14,14 +14,18 @@ export const useCombatSectionAside = () => {
     const baseValue = 9
     const extraValue = character.combat.ACBonus
     const armorList = equipments.filter(
-      (el) => el && el.type === 'armor' && Boolean(el.equippedOn)
+      (el) =>
+        el &&
+        (el.type === 'armor' || el.type === 'helmet' || el.type === 'shield') &&
+        el.ACBonus &&
+        Boolean(el.equippedOn)
     )
     if (armorList?.length || 0 > 0) {
-      const armorACList = armorList?.map((el) => el.ACBonus)
-      const sumAllArmor = armorACList?.reduce(
-        (accumulator, current) => (accumulator || 0) - (current || 0)
+      const armorACList = armorList?.map((el) => el.ACBonus || 0)
+      const sumAllArmor = armorACList.reduce(
+        (accumulator, current) => (accumulator) - (current)
       )
-      return (sumAllArmor || 0) - extraValue
+      return Math.abs(sumAllArmor) - extraValue
     }
     return baseValue - extraValue
   }
@@ -29,7 +33,7 @@ export const useCombatSectionAside = () => {
   const decreaseAmmo = (values: DecreaseAmmoProps) => {
     const ammoElement = equipments.find((el) => el.id === values.id)
     const actualAmount = ammoElement?.amount
-    if(actualAmount && actualAmount > 0) {
+    if (actualAmount && actualAmount > 0) {
       dispatch(actions.decreaseAmmo(values))
     }
   }

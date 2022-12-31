@@ -1,16 +1,15 @@
-import { useCharacter } from 'src/stores/SheetCharacter'
-import { EquipmentProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
+import { useEquipments } from 'src/stores/SheetEquipments'
+import { EquipmentProps } from 'src/stores/SheetEquipments/SheetEquipments.types'
 import { CombatEquipmentItemProps } from '../CombatEquipmentItem'
 
 export const useCombatSection = () => {
-  const { character, dispatch } = useCharacter()
-  const equipmentList = character.itens.itemList
-  const misc = equipmentList.find(el => el.equippedOn === 'misc')
-  const helmet = equipmentList.find(el => el.equippedOn === 'helmet')
-  const ammo = equipmentList.find(el => el.equippedOn === 'ammo')
-  const armor = equipmentList.find(el => el.equippedOn === 'armor')
-  const lHand = equipmentList.find(el => el.equippedOn === 'l-hand')
-  const rHand = equipmentList.find(el => el.equippedOn === 'r-hand')
+  const { equipments } = useEquipments()
+  const misc = equipments.find(el => el.equippedOn === 'misc')
+  const helmet = equipments.find(el => el.equippedOn === 'helmet') 
+  const ammo = equipments.find(el => el.equippedOn === 'ammo') 
+  const armor = equipments.find(el => el.equippedOn === 'armor') 
+  const lHand = equipments.find(el => el.equippedOn === 'l-hand') 
+  const rHand = equipments.find(el => el.equippedOn === 'r-hand') 
 
   const convertedEquipment = (object?: EquipmentProps) => {
     if(object?.type === 'weapon') {

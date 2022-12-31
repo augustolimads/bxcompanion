@@ -1,9 +1,9 @@
-import { actions, useCharacter } from 'src/stores/SheetCharacter'
+import { actions, useEquipments } from "src/stores/SheetEquipments"
 
 export const useCombatEquipmentItemEditor = (type: string | undefined) => {
-  const { character } = useCharacter()
+  const { equipments, dispatch } = useEquipments()
 
-  const equipmentList = character.itens.itemList.filter((el) => {
+  const equipmentList = equipments.filter((el) => {
     if (Boolean(el.equippedOn) && el.equippedOn !== type) {
       return
     }
@@ -15,9 +15,9 @@ export const useCombatEquipmentItemEditor = (type: string | undefined) => {
 
   const handleWearEquipment = (equippedOn: string, equipId: string) => {
     if (equippedOn === type) {
-      actions.unequipEquipment({ equipId })
+      dispatch(actions.unequipEquipment({ equipId }))
     } else {
-      actions.wearEquipment({ equipId, equippedOn: type || '' })
+      dispatch(actions.wearEquipment({ equipId, equippedOn: type || '' }))
     }
   }
 

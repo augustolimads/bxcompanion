@@ -1,8 +1,7 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
-import { NoteSectionAsideProps, useNoteSectionAside } from './index'
+import { NoteSectionAsideProps } from './index'
 
 export const NoteSectionAside = (props: NoteSectionAsideProps) => {
-  const { result } = useNoteSectionAside()
 
   return (
     <VStack align="start" color="neutral.100" w="10rem">

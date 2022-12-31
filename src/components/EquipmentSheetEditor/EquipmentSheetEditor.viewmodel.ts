@@ -1,22 +1,21 @@
 import { useState } from 'react'
-import { actions, useCharacter } from 'src/stores/SheetCharacter'
-import { EquipTypeProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
+import { actions, useEquipments } from 'src/stores/SheetEquipments'
+import { EquipTypeProps } from 'src/stores/SheetEquipments/SheetEquipments.types'
 import { setSlug } from 'src/utils/setSlug'
 import { EditEquipmentLocalProps } from './EquipmentSheetEditor.types'
 
 export const useEquipmentSheetEditor = (equipId?: string) => {
-  const { character, dispatch } = useCharacter()
+  const { equipments, dispatch } = useEquipments()
   const [equipType, setEquipType] = useState(
-    character.itens.itemList.find((el) => el.id === equipId)?.type
+    equipments?.find((el) => el.id === equipId)?.type
   )
 
   function editEquipmentSheet(values: EditEquipmentLocalProps) {
-    const equipmentList = character.itens.itemList
     const label = values.label || ''
     const formattedValues = {
       ...values,
       TAC0BOnus: Number(values.TAC0Bonus) || 0,
-      equipmentSlug: setSlug(equipmentList, label),
+      equipmentSlug: setSlug(equipments || [], label),
       equipId
     }
 
@@ -24,7 +23,7 @@ export const useEquipmentSheetEditor = (equipId?: string) => {
   }
 
   const getEquipmentStats = () => {
-    const result = character.itens.itemList.find((el) => el.id === equipId)
+    const result = equipments.find((el) => el.id === equipId)
     return result
   }
 

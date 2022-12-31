@@ -1,8 +1,7 @@
 import { Button } from '@chakra-ui/react'
-import { MainMenuItemProps, useMainMenuItem } from './index'
+import { MainMenuItemProps } from './index'
 
 export const MainMenuItem = (props: MainMenuItemProps) => {
-  const { result } = useMainMenuItem()
   return (
     <Button
       w="full"

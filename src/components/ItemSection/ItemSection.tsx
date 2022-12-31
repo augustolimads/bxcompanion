@@ -1,8 +1,8 @@
 import { Equipment } from '../Equipment'
 import { SheetList } from '../SheetList'
-import { ItemSectionProps, useItemSection } from './index'
+import { useItemSection } from './index'
 
-export const ItemSection = (props: ItemSectionProps) => {
+export const ItemSection = () => {
   const { itens, createItem } = useItemSection()
 
   return (

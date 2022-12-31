@@ -1,17 +1,11 @@
-import {
-  AttributeProps,
-  CreateEquipmentProps,
-  HitpointProps,
-  WearEquipmentProps
-} from 'src/stores/SheetCharacter/SheetCharacter.types'
 import { Actions } from './SheetCharacter.enums'
 import {
+  AttributeProps,
   CharacterProps,
-  DecreaseAmmoProps,
   EditACProps,
-  EditEquipmentProps,
   EditLevelSheetProps,
   EditTAC0Props,
+  HitpointProps,
   SaveProps
 } from './SheetCharacter.types'
 
@@ -72,57 +66,6 @@ export const editAC = (props: EditACProps) => {
 export const editTAC0 = (props: EditTAC0Props) => {
   return {
     type: Actions.EDIT_TAC0,
-    payload: { ...props }
-  }
-}
-
-export const decreaseAmmo = (props: DecreaseAmmoProps) => {
-  return {
-    type: Actions.DECREASE_AMMO,
-    payload: { ...props }
-  }
-}
-
-export const createEquipment = (props: CreateEquipmentProps) => {
-  return {
-    type: Actions.CREATE_ITEM,
-    payload: { newEquipment: props }
-  }
-}
-
-export const editEquipment = (props: EditEquipmentProps) => {
-  return {
-    type: Actions.EDIT_ITEM,
-    payload: { values: props }
-  }
-}
-
-export const createItem = (props: CreateEquipmentProps) => {
-  return {
-    type: Actions.CREATE_ITEM,
-    payload: { newEquipment: props }
-  }
-}
-
-export const editItem = (props: EditEquipmentProps) => {
-  return {
-    type: Actions.EDIT_ITEM,
-    payload: { values: props }
-  }
-}
-
-export const wearEquipment = (props: WearEquipmentProps) => {
-  console.log('action wear')
-  return {
-    type: Actions.WEAR_EQUIPMENT,
-    payload: { ...props }
-  }
-}
-
-export const unequipEquipment = (props: Partial<WearEquipmentProps>) => {
-  console.log('action unequip')
-  return {
-    type: Actions.WEAR_EQUIPMENT,
     payload: { ...props }
   }
 }

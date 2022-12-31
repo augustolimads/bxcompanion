@@ -8,11 +8,4 @@ export enum Actions {
   DECREASE_HITPOINT = 'DecreaseHitpoint',
   EDIT_AC = 'EditArmorClass',
   EDIT_TAC0 = 'EditToHitArmorClass0',
-  DECREASE_AMMO = 'DecreaseAmmunition',
-  CREATE_EQUIPMENT = 'CreateEquipment',
-  EDIT_EQUIPMENT = 'EditEquipment',
-  CREATE_ITEM = 'CreateItem',
-  EDIT_ITEM = 'EditItem',
-  WEAR_EQUIPMENT = 'WearEquipment',
-  UNEQUIP_EQUIPMENT = 'UnequipEquipment'
 }

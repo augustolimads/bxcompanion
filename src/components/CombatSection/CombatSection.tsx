@@ -4,7 +4,6 @@ import { CombatSectionProps, useCombatSection } from './index'
 
 export const CombatSection = (props: CombatSectionProps) => {
   const { magicItensList, mainEquipmentList } = useCombatSection()
-
   return (
     <Box w="95vw" h="58vh" px="2">
       <Grid

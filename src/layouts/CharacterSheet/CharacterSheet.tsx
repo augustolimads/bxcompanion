@@ -9,6 +9,7 @@ import {
 import { CharacterSheetName } from 'src/components/CharacterSheetName'
 import { SheetContentDisplay } from 'src/components/SheetContentDisplay'
 import { SheetCharacterProvider } from 'src/stores/SheetCharacter'
+import { SheetEquipmentsProvider } from 'src/stores/SheetEquipments'
 import { SheetMenuProvider } from 'src/stores/SheetMenu'
 import { CharacterSheetProps } from './index'
 
@@ -29,9 +30,11 @@ export const CharacterSheet = (props: CharacterSheetProps) => {
             <MainMenu />
           </Box>
           <Box pt="16rem">
-            <SheetContainer>
-              <SheetContentDisplay />
-            </SheetContainer>
+            <SheetEquipmentsProvider>
+              <SheetContainer>
+                <SheetContentDisplay />
+              </SheetContainer>
+            </SheetEquipmentsProvider>
           </Box>
         </Layout>
       </SheetMenuProvider>

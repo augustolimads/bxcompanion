@@ -1,7 +1,7 @@
 import { Box, Heading, HStack, Text, VStack } from '@chakra-ui/react'
-import { ItemSectionAsideProps, useItemSectionAside } from './index'
+import { useItemSectionAside } from './index'
 
-export const ItemSectionAside = (props: ItemSectionAsideProps) => {
+export const ItemSectionAside = () => {
   const { distances, coins } = useItemSectionAside()
 
   return (

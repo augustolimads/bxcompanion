@@ -1,14 +1,13 @@
-import { actions, useCharacter } from 'src/stores/SheetCharacter'
-import { CreateEquipmentProps } from 'src/stores/SheetCharacter/SheetCharacter.types'
+import { actions, useEquipments } from 'src/stores/SheetEquipments'
+import { CreateEquipmentProps } from 'src/stores/SheetEquipments/SheetEquipments.types'
 import { setSlug } from 'src/utils/setSlug'
 
 export const useItemSection = () => {
-  const { character, dispatch } = useCharacter()
-  const itens = character.itens.itemList.filter((el) => !Boolean(el.equippedOn))
+  const { equipments, dispatch } = useEquipments()
+  const itens = equipments?.filter((el) => !Boolean(el.equippedOn)) || []
 
   function createItem() {
-    const itemList = character.itens.itemList
-    const equipmentSlug = setSlug(itemList, 'item')
+    const equipmentSlug = setSlug(equipments || [], 'item')
     const newItem = {
       id: equipmentSlug,
       label: 'Item',

@@ -1,4 +1,4 @@
-import { EquipmentProps } from "src/stores/SheetCharacter/SheetCharacter.types"
+import { EquipmentProps } from "src/stores/SheetEquipments/SheetEquipments.types"
 
 export type EquipmentSheetEditorProps = {
     id?: string

@@ -30,6 +30,7 @@ export const sheetEquipmentsReducer = (
       )
       const amount = Number(action.payload.values?.amount) || 1
       const newEditedEquipment = {
+        ...state[editEquipIndex],
         ...action.payload.values,
         amount,
         id: action.payload.values.equipmentSlug

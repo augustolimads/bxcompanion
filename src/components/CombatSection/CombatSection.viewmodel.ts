@@ -84,26 +84,28 @@ export const useCombatSection = () => {
     }
   ] as CombatEquipmentItemProps[]
 
-  const emptyFilledMagicList = new Array(12).fill({}) 
+  const emptyFilledMagicList = new Array(12).fill({})
 
-  const magicItensList = emptyFilledMagicList.map((el, index) => {
-    if (magicItems[index]) {
+  const magicItemsList = emptyFilledMagicList.map((el, index) => {
+    const itemMagic = magicItems.find((item) => item.equippedOn.substring(5) === String(index))
+    if (itemMagic) {
+      console.log({itemMagic, magicItems})
       return {
-        id: magicItems[index].id,
-        imageRef: magicItems[index].imageRef,
+        id: itemMagic.equippedOn,
+        imageRef: itemMagic.imageRef,
         size: 'md',
         primaryInfo: '',
         secondaryInfo: ''
       }
     }
     return {
-      id: '',
+      id: 'magic' + index,
       imageRef: '',
       size: 'md',
       primaryInfo: '',
       secondaryInfo: ''
     }
-  }) as CombatEquipmentItemProps[]
+  }) 
 
-  return { mainEquipmentList, magicItensList }
+  return { mainEquipmentList, magicItemsList }
 }

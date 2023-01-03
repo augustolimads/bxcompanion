@@ -10,6 +10,9 @@ export const useCombatEquipmentItemEditor = (type: string | undefined) => {
     if (type === 'misc' || type === 'l-hand' || type === 'r-hand') {
       return el.type === 'weapon' || el.type === 'shield'
     }
+    if(el.type === 'magic') {
+      return el.type
+    }
     return el.type === type
   })
 

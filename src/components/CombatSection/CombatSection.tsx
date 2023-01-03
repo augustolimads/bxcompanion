@@ -3,7 +3,7 @@ import { CombatEquipmentItem } from '../CombatEquipmentItem'
 import { CombatSectionProps, useCombatSection } from './index'
 
 export const CombatSection = (props: CombatSectionProps) => {
-  const { magicItensList, mainEquipmentList } = useCombatSection()
+  const { magicItemsList, mainEquipmentList } = useCombatSection()
   return (
     <Box w="95vw" h="58vh" px="2">
       <Grid
@@ -11,18 +11,16 @@ export const CombatSection = (props: CombatSectionProps) => {
         templateRows="repeat(2, 5rem)"
         gap={2}
       >
-        {mainEquipmentList.map((el) => {
-          return (
-            <CombatEquipmentItem
-              key={el.id}
-              type={el.id}
-              imageRef={el.imageRef}
-              size={el?.size}
-              primaryInfo={el.primaryInfo}
-              secondaryInfo={el.secondaryInfo}
-            />
-          )
-        })}
+        {mainEquipmentList.map((el) => (
+          <CombatEquipmentItem
+            key={el.id}
+            type={el.id}
+            imageRef={el.imageRef}
+            size={el?.size}
+            primaryInfo={el.primaryInfo}
+            secondaryInfo={el.secondaryInfo}
+          />
+        ))}
       </Grid>
       <Grid
         pt="8"
@@ -30,11 +28,10 @@ export const CombatSection = (props: CombatSectionProps) => {
         templateRows="repeat(3, 4rem)"
         gap={2}
       >
-        {magicItensList.map((el, index) => (
+        {magicItemsList.map(el => (
           <CombatEquipmentItem
             key={el.id}
-            id={el.id}
-            type={el.type}
+            type={el.id}
             imageRef={el.imageRef}
           />
         ))}

@@ -13,13 +13,17 @@ export const useCombatEquipmentItemEditor = (type: string | undefined) => {
     return el.type === type
   })
 
+  const equippedItem = equipmentList.find(el => Boolean(el.equippedOn))
+
+
   const handleWearEquipment = (equippedOn: string, equipId: string) => {
     if (equippedOn === type) {
       dispatch(actions.unequipEquipment({ equipId }))
     } else {
+      equipmentList.forEach(el => dispatch(actions.unequipEquipment({equipId: el.id})))
       dispatch(actions.wearEquipment({ equipId, equippedOn: type || '' }))
     }
   }
 
-  return { equipmentList, handleWearEquipment }
+  return { equipmentList, handleWearEquipment, equippedItem }
 }

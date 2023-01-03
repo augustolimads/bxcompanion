@@ -4,28 +4,29 @@ import { CombatEquipmentItemProps } from '../CombatEquipmentItem'
 
 export const useCombatSection = () => {
   const { equipments } = useEquipments()
-  const misc = equipments.find(el => el.equippedOn === 'misc')
-  const helmet = equipments.find(el => el.equippedOn === 'helmet') 
-  const ammo = equipments.find(el => el.equippedOn === 'ammo') 
-  const armor = equipments.find(el => el.equippedOn === 'armor') 
-  const lHand = equipments.find(el => el.equippedOn === 'l-hand') 
-  const rHand = equipments.find(el => el.equippedOn === 'r-hand') 
+  const misc = equipments.find((el) => el.equippedOn === 'misc')
+  const helmet = equipments.find((el) => el.equippedOn === 'helmet')
+  const ammo = equipments.find((el) => el.equippedOn === 'ammo')
+  const armor = equipments.find((el) => el.equippedOn === 'armor')
+  const lHand = equipments.find((el) => el.equippedOn === 'l-hand')
+  const rHand = equipments.find((el) => el.equippedOn === 'r-hand')
+  const magicItems = equipments.filter((el) => el.equippedOn?.includes('magic'))
 
   const convertedEquipment = (object?: EquipmentProps) => {
-    if(object?.type === 'weapon') {
+    if (object?.type === 'weapon') {
       return {
         primary: `+${object?.TAC0Bonus}`,
         secondary: object?.damage,
         imageRef: object?.imageRef
       }
     }
-    if(object?.type === 'shield' || object?.type === 'armor' ) {
+    if (object?.type === 'shield' || object?.type === 'armor') {
       return {
         secondary: object?.ACBonus,
         imageRef: object?.imageRef
       }
     }
-    if(object?.type === 'ammo') {
+    if (object?.type === 'ammo') {
       return {
         primary: object?.amount,
         imageRef: object?.imageRef
@@ -44,14 +45,14 @@ export const useCombatSection = () => {
       imageRef: convertedEquipment(misc)?.imageRef,
       size: 'lg',
       primaryInfo: convertedEquipment(misc)?.primary,
-      secondaryInfo: convertedEquipment(misc)?.secondary,
+      secondaryInfo: convertedEquipment(misc)?.secondary
     },
     {
       id: 'helmet',
       imageRef: convertedEquipment(helmet)?.imageRef,
       size: 'lg',
       primaryInfo: convertedEquipment(helmet)?.primary,
-      secondaryInfo: convertedEquipment(helmet)?.secondary,
+      secondaryInfo: convertedEquipment(helmet)?.secondary
     },
     {
       id: 'ammo',
@@ -80,83 +81,29 @@ export const useCombatSection = () => {
       size: 'lg',
       primaryInfo: convertedEquipment(rHand).primary,
       secondaryInfo: convertedEquipment(rHand).secondary
-    },
+    }
   ] as CombatEquipmentItemProps[]
 
-  const magicItensList = [
-    {
+  const emptyFilledMagicList = new Array(12).fill({}) 
+
+  const magicItensList = emptyFilledMagicList.map((el, index) => {
+    if (magicItems[index]) {
+      return {
+        id: magicItems[index].id,
+        imageRef: magicItems[index].imageRef,
+        size: 'md',
+        primaryInfo: '',
+        secondaryInfo: ''
+      }
+    }
+    return {
+      id: '',
       imageRef: '',
       size: 'md',
       primaryInfo: '',
       secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-    {
-      imageRef: '',
-      size: 'md',
-      primaryInfo: '',
-      secondaryInfo: ''
-    },
-  ] as CombatEquipmentItemProps[]
+    }
+  }) as CombatEquipmentItemProps[]
 
   return { mainEquipmentList, magicItensList }
 }

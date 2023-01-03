@@ -37,7 +37,6 @@ export const decreaseAmmo = (props: DecreaseAmmoProps) => {
   }
   
   export const wearEquipment = (props: WearEquipmentProps) => {
-    console.log('action wear')
     return {
       type: Actions.WEAR_EQUIPMENT,
       payload: { ...props }
@@ -45,7 +44,6 @@ export const decreaseAmmo = (props: DecreaseAmmoProps) => {
   }
   
   export const unequipEquipment = (props: Partial<WearEquipmentProps>) => {
-    console.log('action unequip')
     return {
       type: Actions.WEAR_EQUIPMENT,
       payload: { ...props }

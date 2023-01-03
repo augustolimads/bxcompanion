@@ -1,6 +1,7 @@
 import { useCharacter } from 'src/stores/SheetCharacter/SheetCharacter'
 import { actions, useEquipments } from 'src/stores/SheetEquipments'
 import { DecreaseAmmoProps } from 'src/stores/SheetEquipments/SheetEquipments.types'
+import { attributeModifier } from 'src/utils/attributeModifier'
 
 export const useCombatSectionAside = () => {
   const { character } = useCharacter()
@@ -10,24 +11,26 @@ export const useCombatSectionAside = () => {
     (el) => el && el.type === 'ammo' && Boolean(el.equippedOn)
   )
 
-  const ac = () => {
+  const ACValue = () => {
     const baseValue = 9
     const extraValue = character.combat.ACBonus
-    const armorList = equipments.filter(
+    const mainArmor = equipments.find((el) => el?.equippedOn === 'armor')
+    const newBaseValue = mainArmor ? mainArmor.ACBonus : baseValue
+    const dexterityValue = attributeModifier(character.attr.dex)
+    const DefensiveAccessories = equipments.filter(
       (el) =>
         el &&
-        (el.type === 'armor' || el.type === 'helmet' || el.type === 'shield') &&
         el.ACBonus &&
-        Boolean(el.equippedOn)
+        el.equippedOn !== 'armor' &&
+        el.equippedOn !== 'misc' &&
+        Boolean(el?.equippedOn?.length > 2 || false)
     )
-    if (armorList?.length || 0 > 0) {
-      const armorACList = armorList?.map((el) => el.ACBonus || 0)
-      const sumAllArmor = armorACList.reduce(
-        (accumulator, current) => (accumulator) - (current)
-      )
-      return Math.abs(sumAllArmor) - extraValue
-    }
-    return baseValue - extraValue
+    const armorACList = DefensiveAccessories?.map((el) => el.ACBonus || 0)
+    const sumAllDefensiveAcc =
+      DefensiveAccessories.length > 0
+        ? armorACList.reduce((accumulator, current) => accumulator - current)
+        : 0
+    return Number(newBaseValue) - Math.abs(sumAllDefensiveAcc) - extraValue - dexterityValue
   }
 
   const decreaseAmmo = (values: DecreaseAmmoProps) => {
@@ -38,5 +41,5 @@ export const useCombatSectionAside = () => {
     }
   }
 
-  return { ac: ac(), tac0, getListAmmo, decreaseAmmo }
+  return { ac: ACValue(), tac0, getListAmmo, decreaseAmmo }
 }

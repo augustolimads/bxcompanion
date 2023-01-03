@@ -96,7 +96,7 @@ export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
         btnRef={btnRef}
         hasMenu
       >
-        <CombatEquipmentItemEditor type={props.type} />
+        <CombatEquipmentItemEditor id={props.id} type={props.type} />
       </CharacterSheetEditor>
     </>
   )

@@ -12,16 +12,17 @@ export const CombatSection = (props: CombatSectionProps) => {
         gap={2}
       >
         {mainEquipmentList.map((el) => {
-          return(
-          <CombatEquipmentItem
-            key={el.id}
-            type={el.id}
-            imageRef={el.imageRef}
-            size={el?.size}
-            primaryInfo={el.primaryInfo}
-            secondaryInfo={el.secondaryInfo}
-          />
-        )})}
+          return (
+            <CombatEquipmentItem
+              key={el.id}
+              type={el.id}
+              imageRef={el.imageRef}
+              size={el?.size}
+              primaryInfo={el.primaryInfo}
+              secondaryInfo={el.secondaryInfo}
+            />
+          )
+        })}
       </Grid>
       <Grid
         pt="8"
@@ -31,9 +32,9 @@ export const CombatSection = (props: CombatSectionProps) => {
       >
         {magicItensList.map((el, index) => (
           <CombatEquipmentItem
-            key={'magic' + index}
-            id={'magic' + index}
-            type={'magic' + index}
+            key={el.id}
+            id={el.id}
+            type={el.type}
             imageRef={el.imageRef}
           />
         ))}

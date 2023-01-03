@@ -55,3 +55,5 @@ export { TeamItem } from './TeamItem'
 
 
 
+
+export { EquipmentSummary } from './EquipmentSummary';

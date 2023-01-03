@@ -57,3 +57,4 @@ export { TeamItem } from './TeamItem'
 
 
 export { EquipmentSummary } from './EquipmentSummary';
+export { GalleryEquipmentIcon } from './GalleryEquipmentIcon';

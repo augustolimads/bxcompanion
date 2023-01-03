@@ -1,5 +1,6 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import { formatBonus } from 'src/utils/formatBonus'
+import { getEquipmentImage } from 'src/utils/getEquipmentImage'
 import { EquipmentSummaryProps, useEquipmentSummary } from './index'
 
 export const EquipmentSummary = (props: EquipmentSummaryProps) => {
@@ -7,16 +8,26 @@ export const EquipmentSummary = (props: EquipmentSummaryProps) => {
 
   return (
     <Box border="1px" w="full" rounded="lg">
-      <Box>
-        <Text align="center" p={2}>
-          {props.equippedItem.label}
-        </Text>
-      </Box>
+      <Flex justifyContent="space-between" align="center">
+        {(props.equippedItem.imageRef?.length || 0) > 2 && (
+          <Box p={1}>
+            <Image
+              w={16}
+              src={getEquipmentImage(props.equippedItem.imageRef || '')}
+            />
+          </Box>
+        )}
+        <Box flex="1">
+          <Text align="center" p={2}>
+            {props.equippedItem.label}
+          </Text>
+        </Box>
+      </Flex>
       <Flex justifyContent="space-between">
         {props.equippedItem.TAC0Bonus && (
           <Box flex="1" borderTop="1px">
             <Text align="center" p={2}>
-               {formatBonus(props.equippedItem.TAC0Bonus)}
+              {formatBonus(props.equippedItem.TAC0Bonus)}
             </Text>
           </Box>
         )}
@@ -35,7 +46,7 @@ export const EquipmentSummary = (props: EquipmentSummaryProps) => {
             </Text>
           </Box>
         )}
-         {props.equippedItem.amount && props.equippedItem.type === 'ammo' && (
+        {props.equippedItem.amount && props.equippedItem.type === 'ammo' && (
           <Box flex="1" borderTop="1px">
             <Text align="center" p={2}>
               qtd. {props.equippedItem.amount}

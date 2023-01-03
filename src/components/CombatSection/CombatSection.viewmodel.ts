@@ -89,7 +89,6 @@ export const useCombatSection = () => {
   const magicItemsList = emptyFilledMagicList.map((el, index) => {
     const itemMagic = magicItems.find((item) => item.equippedOn.substring(5) === String(index))
     if (itemMagic) {
-      console.log({itemMagic, magicItems})
       return {
         id: itemMagic.equippedOn,
         imageRef: itemMagic.imageRef,

@@ -14,7 +14,7 @@ import {
 import { CombatEquipmentItemProps, useCombatEquipmentItem } from './index'
 
 export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
-  const { setEquipmentImage } = useCombatEquipmentItem({
+  const { getEquipmentImage } = useCombatEquipmentItem({
     imageRef: props.imageRef
   })
   const btnRef = useRef<HTMLDivElement>(null)
@@ -55,7 +55,7 @@ export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
           {!props.imageRef && equipmentEmptyIcon()}
           {props.imageRef && (
             <Image
-              src={setEquipmentImage()}
+              src={getEquipmentImage(props.imageRef)}
               objectFit="contain"
               maxW={props.size === 'lg' ? '5rem' : '3rem'}
               maxH={props.size === 'lg' ? '5rem' : '3rem'}

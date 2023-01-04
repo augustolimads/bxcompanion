@@ -12,8 +12,6 @@ export type CharacterProps = {
   hp: HitpointProps
   combat: CombatProps
   itens: {
-    distance: DistanceProps
-    weight: WeightProps
     coins: CoinProps
     itemList: EquipmentProps[]
   }
@@ -66,17 +64,6 @@ export type CombatProps = {
   ACBonus: number
   tac0: number
   tac0Extra: number
-}
-
-export type DistanceProps = {
-  journey: number
-  exploration: number
-  encounter: number
-}
-
-export type WeightProps = {
-  currentWeight: number
-  maxWeight: number
 }
 
 export type CoinProps = {

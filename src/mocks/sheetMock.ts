@@ -39,15 +39,6 @@ export const sheetMock = {
     tac0Extra: 0
   },
   itens: {
-    distance: {
-      journey: 20,
-      exploration: 20,
-      encounter: 20
-    },
-    weight: {
-      currentWeight: 100,
-      maxWeight: 100
-    },
     coins: {
       copper: 0,
       silver: 0,

@@ -93,6 +93,18 @@ export const sheetCharacterReducer = (
           tac0: action.payload.tac0
         }
       }
+    case Actions.EDIT_COIN_LIST:
+      console.log(action.payload)
+      return {
+        ...state,
+        itens: {
+          ...state.itens,
+          coins: {
+            ...state.itens.coins,
+            ...action.payload.props
+          }
+        }
+      }
     default:
       return state
   }

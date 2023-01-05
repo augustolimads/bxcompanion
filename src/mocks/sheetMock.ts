@@ -40,11 +40,11 @@ export const sheetMock = {
   },
   itens: {
     coins: {
-      copper: 0,
-      silver: 0,
-      electron: 0,
-      gold: 0,
-      platinum: 0
+      copper: 100,
+      silver: 123,
+      electron: 542,
+      gold: 100,
+      platinum: 5
     },
     itemList: []
   },

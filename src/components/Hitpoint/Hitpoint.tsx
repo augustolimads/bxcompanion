@@ -47,7 +47,7 @@ export const Hitpoint = (props: HitpointProps) => {
         >
           <HStack>
             <HeartIcon color={colors.neutral[300]} />
-            <Text color="neutral.100" fontSize="xs">
+            <Text color="neutral.100" fontSize="xs" w={10}>
               {currentHP}/{maxHP}
               {isExceded && excededHP}
             </Text>

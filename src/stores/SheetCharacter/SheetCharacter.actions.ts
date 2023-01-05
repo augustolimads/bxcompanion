@@ -2,6 +2,7 @@ import { Actions } from './SheetCharacter.enums'
 import {
   AttributeProps,
   CharacterProps,
+  CoinProps,
   EditACProps,
   EditLevelSheetProps,
   EditTAC0Props,
@@ -67,5 +68,12 @@ export const editTAC0 = (props: EditTAC0Props) => {
   return {
     type: Actions.EDIT_TAC0,
     payload: { ...props }
+  }
+}
+
+export const editCoinList = (props: CoinProps) => {
+  return {
+    type: Actions.EDIT_COIN_LIST,
+    payload: { props }
   }
 }

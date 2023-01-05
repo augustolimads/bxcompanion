@@ -32,7 +32,9 @@ export const CombatEquipmentItem = (props: CombatEquipmentItemProps) => {
         return <HelmetIcon size="24" color={colors.neutral[700]} />
       case 'armor':
         return <ArmorIcon size="24" color={colors.neutral[700]} />
-      case 'weapon':
+      case 'l-hand':
+        return <OpenHand size="24" color={colors.neutral[700]} />
+      case 'r-hand':
         return <OpenHand size="24" color={colors.neutral[700]} />
       default:
         return <RingIcon size="24" color={colors.neutral[700]} />

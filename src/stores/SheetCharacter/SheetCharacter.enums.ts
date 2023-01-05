@@ -8,4 +8,5 @@ export enum Actions {
   DECREASE_HITPOINT = 'DecreaseHitpoint',
   EDIT_AC = 'EditArmorClass',
   EDIT_TAC0 = 'EditToHitArmorClass0',
+  EDIT_COIN_LIST = 'EditcoinList'
 }

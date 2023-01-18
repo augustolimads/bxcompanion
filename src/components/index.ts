@@ -59,3 +59,5 @@ export { TeamItem } from './TeamItem'
 export { EquipmentSummary } from './EquipmentSummary';
 export { GalleryEquipmentIcon } from './GalleryEquipmentIcon';
 export { SheetCoinsEditor } from './SheetCoinsEditor';
+export { AlignmentSheetEditor } from './AlignmentSheetEditor';
+export { ProficiencySheetEditor } from './ProficiencySheetEditor';

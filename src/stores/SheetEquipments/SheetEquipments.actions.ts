@@ -4,7 +4,7 @@ import { CreateEquipmentProps, DecreaseAmmoProps, EditEquipmentProps, WearEquipm
 export const decreaseAmmo = (props: DecreaseAmmoProps) => {
     return {
       type: Actions.DECREASE_AMMO,
-      payload: { ...props }
+      payload: props
     }
   }
   
@@ -39,14 +39,14 @@ export const decreaseAmmo = (props: DecreaseAmmoProps) => {
   export const wearEquipment = (props: WearEquipmentProps) => {
     return {
       type: Actions.WEAR_EQUIPMENT,
-      payload: { ...props }
+      payload: props
     }
   }
   
   export const unequipEquipment = (props: Partial<WearEquipmentProps>) => {
     return {
       type: Actions.WEAR_EQUIPMENT,
-      payload: { ...props }
+      payload: props
     }
   }
   

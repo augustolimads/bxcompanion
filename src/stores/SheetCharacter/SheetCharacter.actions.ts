@@ -13,35 +13,35 @@ import {
 export const editNameSheet = (props: Partial<CharacterProps>) => {
   return {
     type: Actions.EDIT_NAME,
-    payload: { ...props }
+    payload: props
   }
 }
 
 export const editLevelSheet = (props: EditLevelSheetProps) => {
   return {
     type: Actions.EDIT_LEVEL,
-    payload: { ...props }
+    payload: props
   }
 }
 
 export const editAttribute = (props: AttributeProps) => {
   return {
     type: Actions.EDIT_ATTRIBUTE,
-    payload: { ...props }
+    payload: props 
   }
 }
 
 export const editSaves = (props: SaveProps) => {
   return {
     type: Actions.EDIT_SAVES,
-    payload: { ...props }
+    payload: props 
   }
 }
 
 export const editHP = (props: HitpointProps) => {
   return {
     type: Actions.EDIT_HP,
-    payload: { ...props }
+    payload: props 
   }
 }
 
@@ -60,14 +60,14 @@ export const decreaseHitpoint = () => {
 export const editAC = (props: EditACProps) => {
   return {
     type: Actions.EDIT_AC,
-    payload: { ...props }
+    payload: props
   }
 }
 
 export const editTAC0 = (props: EditTAC0Props) => {
   return {
     type: Actions.EDIT_TAC0,
-    payload: { ...props }
+    payload: props 
   }
 }
 

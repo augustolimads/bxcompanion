@@ -20,6 +20,7 @@
     "@chakra-ui/react": "^2.3.6",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "chakra-ui-autocomplete": "^1.4.5",
     "framer-motion": "^8.0.2",
     "next": "12.3.1",
     "next-pwa": "^5.6.0",

@@ -8,7 +8,15 @@ import { NoteSectionAsideProps, useNoteSectionAside } from './index'
 export const NoteSectionAside = (props: NoteSectionAsideProps) => {
   const btnRef = useRef<HTMLDivElement>(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { activeModal, handleActiveModal } = useNoteSectionAside()
+  const {
+    activeModal,
+    handleActiveModal,
+    alignment,
+    vision,
+    languages,
+    armors,
+    weapons
+  } = useNoteSectionAside()
 
   return (
     <>
@@ -19,20 +27,20 @@ export const NoteSectionAside = (props: NoteSectionAsideProps) => {
           rounded="md"
           w="full"
           ref={btnRef}
-          onClick={() => handleActiveModal('aligment', onOpen())}
+          onClick={() => handleActiveModal('alignment', onOpen())}
         >
           <Heading fontWeight="bold" fontSize="sm">
             Alinhamento
           </Heading>
-          <Text fontSize="sm">Neutro</Text>
+          <Text fontSize="sm">{alignment}</Text>
           <Heading fontWeight="bold" fontSize="sm">
             Visão
           </Heading>
-          <Text fontSize="sm">Penumbra</Text>
+          <Text fontSize="sm">{vision}</Text>
           <Heading fontWeight="bold" fontSize="sm">
             Línguas
           </Heading>
-          <Text fontSize="sm">Comum, anão</Text>
+          <Text fontSize="sm">{languages.join(', ')}</Text>
         </Box>
 
         <VStack
@@ -47,31 +55,25 @@ export const NoteSectionAside = (props: NoteSectionAsideProps) => {
           <Heading fontSize="lg">Proficiências</Heading>
           <Box>
             <Heading fontWeight="bold" fontSize="sm">
-              Escudos
-            </Heading>
-            <Text fontSize="sm">leves, pesados</Text>
-          </Box>
-          <Box>
-            <Heading fontWeight="bold" fontSize="sm">
               Armaduras
             </Heading>
-            <Text fontSize="sm">leves, pesados</Text>
+            <Text fontSize="sm">{armors.join(', ')}</Text>
           </Box>
           <Box>
             <Heading fontWeight="bold" fontSize="sm">
               Armas
             </Heading>
-            <Text fontSize="sm">leves, pesados</Text>
+            <Text fontSize="sm">{weapons}</Text>
           </Box>
         </VStack>
       </VStack>
       <CharacterSheetEditor
-        label="Edição de nível"
+        label={activeModal === 'alignment' ? 'Edição de Informações' : 'Edição de Proficiências'}
         isOpen={isOpen}
         onClose={onClose}
         btnRef={btnRef}
       >
-        {activeModal === 'aligment' ? (
+        {activeModal === 'alignment' ? (
           <AlignmentSheetEditor />
         ) : (
           <ProficiencySheetEditor />

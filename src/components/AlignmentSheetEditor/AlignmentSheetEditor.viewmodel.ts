@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import slugify from 'react-slugify'
+import { useCharacter } from 'src/stores/SheetCharacter'
 
 const listLanguages = [
   'Comum',
@@ -28,14 +29,28 @@ const listLanguages = [
   'Dialeto humano'
 ]
 
-const languages = listLanguages.map(el => ({
+const listVisions = ['normal', 'infravisão 18m']
+
+const listAlignment = ['Ordeiro', 'Neutro', 'Caótico']
+
+const languagesObject = listLanguages.map((el) => ({
   value: slugify(el),
   label: el
 }))
 
 export const useAlignmentSheetEditor = () => {
-  const [pickerItems, setPickerItems] = useState(languages)
-  const [selectedItems, setSelectedItems] = useState([])
+  const { character } = useCharacter()
+  const [pickerItems, setPickerItems] = useState(languagesObject)
+  const [openDropdownSelect, setOpenDropdownSelect] = useState(false)
+  const alignment = character.notes.alignment
+  const vision = character.notes.vision
+  const currentLanguages = character.notes.languages
+  const [selectedItems, setSelectedItems] = useState(languagesObject)
+
+  const currentLanguagesObject = currentLanguages.map((el) => ({
+    value: slugify(el),
+    label: el
+  }))
 
   const handleCreateItem = (item) => {
     setPickerItems((curr) => [...curr, item])
@@ -48,5 +63,30 @@ export const useAlignmentSheetEditor = () => {
     }
   }
 
-  return { handleCreateItem, handleSelectedItemsChange, pickerItems, selectedItems }
+  const handleAlignmentSubmit = (props) => {
+    console.log(props)
+  }
+
+  const onOpenDropdownSelect = () => setOpenDropdownSelect(true)
+  const onCloseDropdownSelect = () => setOpenDropdownSelect(false)
+
+  useEffect(() => {
+    setSelectedItems(currentLanguagesObject)
+  }, [])
+
+  return {
+    handleCreateItem,
+    handleSelectedItemsChange,
+    pickerItems,
+    selectedItems,
+    alignment,
+    vision,
+    currentLanguages,
+    listVisions,
+    listAlignment,
+    handleAlignmentSubmit,
+    openDropdownSelect,
+    onOpenDropdownSelect,
+    onCloseDropdownSelect
+  }
 }

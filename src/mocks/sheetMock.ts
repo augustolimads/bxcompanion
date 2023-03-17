@@ -51,12 +51,12 @@ export const sheetMock = {
   spells: [],
   notes: {
     alignment: 'Neutro',
-    vision: 'Penumbra',
+    vision: 'normal',
     languages: ['Comum', 'anão'],
     notes: []
   },
   proficiency: {
     armor: ['leve', 'pesado'],
-    weapon: ['todas']
+    weapon: ['todas'],
   }
 } as unknown as CharacterProps

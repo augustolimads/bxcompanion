@@ -5,6 +5,7 @@ import {
   FormLabel,
   Image,
   Input,
+  Link,
   Spacer,
   VStack
 } from '@chakra-ui/react'
@@ -28,6 +29,7 @@ export const NameSheetEditor = (props: NameSheetEditorProps) => {
       align="left"
       onSubmit={handleSubmit(editNameSheet)}
     >
+      <Link href='talespire://dice/d6+d8+2'>
       <Image
         alignSelf="center"
         boxSize="150px"
@@ -36,6 +38,7 @@ export const NameSheetEditor = (props: NameSheetEditorProps) => {
         alt={name}
         fallbackSrc="https://via.placeholder.com/150"
       />
+      </Link>
       <FormControl>
         <FormLabel htmlFor="avatar">(URL) Avatar do personagem</FormLabel>
         <Input
